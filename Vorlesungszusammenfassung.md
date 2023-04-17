@@ -21,7 +21,7 @@ Aus diesen Gründen entstand um 1925 die Quantenphysik. Heutzutage ist sie extre
 
 Der in dieser Vorlesung gewählte Zugang ist ahistorisch über Postulate.
 
-## Postulate
+## Postulate & Prinzipien
 Wesentliche Merkmale der Quantenmechanik sind das _Superpositionsprinzip_ und der _Indeterminismus_.
 
 ### Superpositionsprinzip
@@ -42,7 +42,7 @@ Ein anderes Beispiel ist der Spin: Beispielsweise kann ein Silberatom gleichzeit
 Bezeichne $\mathscr H_{DMP}$ den Hilbertraum [[20230408121828]] des Doppelmuldenpotentials. Dann gibt es zwei Zustände
 $\varphi_1\in\mathscr H_{DMP}$ und $\varphi_2\in\mathscr H_{DMP}$. Die Superposition wird dann als $\mathscr H_{DMP} \ni \Psi = \varphi_1 + \varphi_2$ geschrieben.
 
-### 1. Postulat der Quantenmechanik
+### Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.
 
 Ein quantenmechanischer Zustand ist ein Vektor $\varphi\in\mathscr H_S$. Dieser Vektor hat die Norm $1$: $||\varphi||=1$
@@ -56,6 +56,28 @@ Eigenschaften des Skalarprodukts:
 * Linearität:
     * $\forall \lambda \in \mathbb C: \braket{\varphi, \lambda\psi} = \lambda\braket{\varphi, \psi} = \braket{\lambda^*\varphi, \psi}$
     * $\braket{\varphi, \psi_1 + \psi_2} = \braket{\varphi, \psi_1} + \braket{\varphi, \psi_2}$
+
+
+### Operatoren
+Ein Operator $\widehat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\widehat{A}\varphi$ abbildet.
+
+Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, die er erzeugt. Daher kann er als Matrix dargestellt werden. Er kann einer Observablen zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
+
+#### Adjunktion
+Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger = (A^*)^\mathrm T$.
+
+#### hermitesche Operatoren
+Ein Operator $\widehat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\widehat{A}^\dagger=\widehat{A}$. Daraus folgt, dass die Adjungierte $\widehat{A}^\dagger = \widehat{A}^{-1}$ auch die Inverse ist.
+
+* Quantenmechanisch wird die Adjunktion eines Operators durch $\braket{\varphi|A\psi} = \braket{A^\dagger\varphi|\psi}$ definiert.
+* Ein hermitescher Operator besitzt eine orthonormale Basis $\{\varphi_i\}$.
+* Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\widehat{A}\ket{\varphi_i} = a_i \ket{\varphi_i}$
+
+#### Spektraldarstellung hermitescher Operatoren
+Die Spektraldarstellung nutzt den Projektionsoperator $P_\chi$.
+$$
+    \widehat{A} = \sum_i a_i P_{\varphi_i} = \sum_i a_i \ket{\varphi_i}\bra{\varphi_i}
+$$
 
 ### Messpostulat
 Ein fundamentales Problem der Quantenphysik ist, dass direkte Beobachtungen nicht möglich sind.
@@ -93,6 +115,43 @@ Eine Messung nennt man ideal, wenn sich das System nach der Messung $M_\Psi$ im 
 ### Indeterminismus
 Es gibt nur zwei Fälle in denen man das Ergebnis vorhersagen kann. Dazu muss ein Zustand $\psi$ gemessen worden sein, nun wird der der Zustand $\varphi$ gemessen. Diese zweite Messung kann man genau dann vorhersagen, wenn $\varphi \bot \psi$ oder $\varphi \parallel \psi$ gelten, ansonsten kann man das Ergebnis nicht vorhersagen.
 
+### Observable
+Eine beobachtbare Größe wird in der Quantenmechanik _Observable_ genannt.
+
+Sie hat konkrete Werte, die gemessen werden. Für Messungen einem Systemen im Zustand $\Psi$ wird der Erwartungswert der Observable $O$ als $\braket{O}_\Psi$ geschrieben. Einer Observable $O$ kann ein zugehöriger Operator $\widehat{O}$ zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
+
+Im Fall des Stern-Gerlach-Experimentes ist die Observable die $z$-Komponente $\mu_z$ des magnetischen Moments.
+
+### Projektionsoperator
+Der Operator $P_\chi$ projiziert einen Vektor $\Psi$ auf den Vektor $\chi$. Dies ergibt einen Vektor mit Richtung und Orientierung des Vektors $\chi$. Die Länge des Vektors $P_\chi\Psi$ entspricht dem "Schatten", den der Vektor $\Psi$ werfen würde. Dieser wird durch das Skalarprodukt $\braket{\chi, \Psi}$ beschrieben.
+$$
+    P_\chi\Psi = \braket{\chi, \Psi} \chi
+$$
+#### Darstellung mit Dualvektoren
+Die Matrixdarstellung des Projektionsoperators kann mittels des Dualraums $\mathcal H^*$ berechnet werden:
+$$
+P_\chi \ket{\Psi} = (\braket{\chi|\Psi})\ket{\chi} = \ket{\chi}(\braket{\chi|\Psi}) = (\ket{\chi}\bra{\chi})\ket{\Psi} \Rightarrow P_\chi = \ket{\chi}\bra{\chi}
+$$
+Da $\braket{\chi|\Psi}\in\mathbb C$ kann das Kommutativgesetz angewendet werden. $\ket{\chi}\bra{\chi}$ ist eine $n\times n$-dimensionale Matrix.
+
+### Dualraum
+Der Dualraum $\mathcal H^*$ zu dem Hilbertraum $\mathcal H$ ist der Vektorraum der linearen Abbildungen (_Linearformen_) von $\mathcal H \rightarrow \mathbb C$.
+
+Es gibt einen Isomorphismus, der einem Zustand $\psi\in\mathcal H$ den _Dualvektor_ $\psi^\dagger \in\mathcal H^*$ zuordnet. Es gilt $\varphi^\dagger\psi = \braket{\varphi|\psi}$. Hierbei sind $\psi$ als $n$-dimensionaler Vektor und $\varphi^\dagger$ als $1\times n$-dimensionale Matrix darstellbar.
+
+### Dirac-Notation
+Zustände im Hilbertraum $\varphi\in\mathcal H$ werden als "Ket" $\ket{\varphi}$ dargestellt, Dualvektoren $\varphi^\dagger\in\mathcal H^*$ als "Bra" $\bra{\varphi}$. Auf diese Weise wird das Skalarprodukt als "Bra-Ket" $\braket{\varphi|\varphi}$ dargestellt.
+
+Zudem werden oft nur Indizes in Ket/Bra eingetragen. So wird aus $\ket{\varphi_{z+}}=\ket{z+}$.
+
+#### Rechenregeln
+* Ket
+    * $\ket{\varphi + \psi} = \ket{\varphi} + \ket{\psi}
+    * $\ket{\lambda\psi} = \lambda\ket{\psi}$
+* Bra
+    * $\bra{\varphi + \psi} = \bra{\varphi} + \bra{\psi}$
+    * $\ket{\lambda\psi} = \lambda^*\ket{\psi}$
+
 ## Zweizustandssysteme
 ### Bohr-Sommerfeldsches Atommodell
 Das Bohr-Sommerfeldsche Atommodell ist eine Erweiterung des Bohrschen Atommodells, das klassische Mechanik annimmt, um die Bewegung der Elektronen um den Atomkern zu beschreiben. Es wird um Quantisierungsbedingungen ergänzt.
@@ -108,9 +167,34 @@ Durch $L_z$ werden die Energieniveaus der Elektronen verschoben. Diese Verschieb
 
 Der Zeemann-Effekt wird auch Feinaufspaltung genannt.
 
-### Spin $\frac{1}{2}$
-### Stern-Gerlach-Experiment
+### Das Stern-Gerlach-Experiment
 Die Quantenphysik erwartet diskrete magnetische Momente, die klassische Physik hätte nach dem Bohr-Modell kontinuierliche magnetische Momente erwartet. Im Stern-Gerlach-Experiment wurde gemessen, was davon zutrifft.
+
+Hierzu wird ein Strahl von Silberatomen durch ein inhomogenes Magnetfeld geschickt. Durch ihr magnetisches Moment werden diese Atome abgelenkt, diese Ablenkung ist proportional zum magnetischen Moment in $z$-Richtung. Klassischerweise würde man eine kontinuierliche Verteilung der abgelenkten Strahlen erwarten, quantenmechanisch eine diskrete Verteilung.
+
+Das Experiment ergab, dass es genau zwei Punkte gab, an denen Silberatome gemessen werden konnten. Dies zeigte, dass das magnetische Moment gequantelt ist.
+
+In weiteren Messungen wurde festgestellt, dass die Zustände $\ket{z\uparrow}$ und $\ket{z\downarrow}$ senkrecht zueinander sind, selbiges gilt jeweils in $x$- und $y$-Richtung. Die Zustände der Achsen $x$, $y$ und $z$ sind unternander jedoch nicht rechtwinklig, sondern in einem Winkel von jeweils $45\degree$.
+
+Deswegen wählt man oft folgende Ortonormalbasis:
+$$
+\begin{align*}
+    \varphi_{z+}
+        &\ \ \land\ \ \varphi_{z-} \\
+    \varphi_{x+} = \frac{1}{\sqrt{2}} (\varphi_{z+} + \varphi_{z-})
+        &\ \ \land\ \ \varphi_{x-}
+        = \frac{1}{\sqrt{2}} (\varphi_{z+} - \varphi_{z-})\\
+    \varphi_{y+} = \frac{1}{\sqrt{2}} (\varphi_{z+} + \mathcal i\varphi_{z-})
+        &\ \ \land\ \ \varphi_{x-}
+        = \frac{1}{\sqrt{2}} (\varphi_{z+} - \mathcal i\varphi_{z-})
+\end{align*}
+$$
+ #### Observable
+Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen Moments. Die gemessenen Werte sind $\pm \mu_0$.
+
+Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+}, \Psi}|^2$ und $p_-=|\braket{\varphi_{z-}, \Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte. Damit hat $\mu_z$ den Erwartungswert $\braket{\mu_z}_\Psi$ für Messungen an Atomen mit dem Zustand $\Psi$. Es gilt daher $\braket{\mu_z}_{\Psi} = p_{+}\cdot\mu_0+p_{-}\cdot(-\mu_0)$.
+
+### Spin $\frac{1}{2}$
 
 ## Quantenmechanik eines Punktteilchens
 ### Impuls
