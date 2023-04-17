@@ -196,6 +196,8 @@ Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+
 
 ### Spin $\frac{1}{2}$
 
+[[20230408120804]] <!-- VL 4 -->
+
 ## Quantenmechanik eines Punktteilchens
 ### Impuls
 ### Drehimpuls
