@@ -25,7 +25,6 @@ Wesentliche Merkmale der Quantenmechanik sind das _Superpositionsprinzip_ und de
 
 ## Prinzipien
 ### Operatoren
-#### Operatoren
 Ein Operator $\widehat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\widehat{A}\varphi$ abbildet.
 
 Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, die er erzeugt. Daher kann er als Matrix dargestellt werden. Er kann einer Observablen zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
@@ -237,6 +236,7 @@ Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen M
 
 Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+}, \Psi}|^2$ und $p_-=|\braket{\varphi_{z-}, \Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte. Damit hat $\mu_z$ den Erwartungswert $\braket{\mu_z}_\Psi$ für Messungen an Atomen mit dem Zustand $\Psi$. Es gilt daher $\braket{\mu_z}_{\Psi} = p_{+}\cdot\mu_0+p_{-}\cdot(-\mu_0)$.
 
+<!--
 ### Spin $\frac{1}{2}$
 
 ## Quantenmechanik eines Punktteilchens
@@ -263,3 +263,4 @@ Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+
 
 # Literatur
 1. Vorlesung: Quantenmechanik [[20230408120804]]
+-->
