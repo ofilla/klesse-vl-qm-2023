@@ -176,9 +176,9 @@ $$
         \end{cases}
 $$
 
-1. Die gemessenen Werte sind reell, daher kann ein hermitescher Operator durch die Eigenwerte $\{a_i\}$ und Eigenzustände $\{\ket{\varphi_i}\}$ dargestellt werden. [[20230424123335]]
-2. Bornsche Regel: $p=|\braket{\varphi|\Psi}|^2$ [[20230424123509]]
-3. Eine _ideale_ Messung $M_\Psi$ präperiert das System in Zustand $\Psi$. [[20230424123549]]
+1. Die gemessenen Werte sind reell, daher kann ein hermitescher Operator durch die Eigenwerte $\{a_i\}$ und Eigenzustände $\{\ket{\varphi_i}\}$ dargestellt werden.
+2. Bornsche Regel: $p=|\braket{\varphi|\Psi}|^2$
+3. Eine _ideale_ Messung $M_\Psi$ präperiert das System in Zustand $\Psi$.
 
 #### 1. Messung von Zuständen
 Die Messwerte $a_i$, die die Zustände $\varphi_i\in\mathcal H$ im Hilbertraum messen, sind reellwertig $a_i\in \mathbb R^n$.
