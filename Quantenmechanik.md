@@ -21,13 +21,15 @@ Aus diesen Gründen entstand um 1925 die Quantenphysik. Heutzutage ist sie extre
 
 Der in dieser Vorlesung gewählte Zugang ist ahistorisch über Postulate.
 
+[^1]: z.B: elektrische Leitfähigkeit und Wärmekapazität
+
 ## Postulate & Prinzipien
 Wesentliche Merkmale der Quantenmechanik sind das _Superpositionsprinzip_ und der _Indeterminismus_.
 
 ### Superpositionsprinzip
-Superposition ist ein universell gültiges Prinzip, das besagt, dass sich ein Quantenteilchen [[20230408112055]] zugleich in mehreren Zuständen befinden kann.
+Superposition ist ein universell gültiges Prinzip, das besagt, dass sich ein Quantenteilchen zugleich in mehreren Zuständen befinden kann.
 
-Ein berühmtes Beispiel ist das Gedankenexperiment von Schrödingers Katze. [[20230408124103]] Heute verstehen wir, dass Superposition auch hier gilt, aber trotzdem in diesem Fall praktisch nicht beobachtbar ist. Dies ist ein Problem der Dekohärenz.
+Ein berühmtes Beispiel ist das Gedankenexperiment von Schrödingers Katze. Heute verstehen wir, dass Superposition auch hier gilt, aber trotzdem in diesem Fall praktisch nicht beobachtbar ist. Dies ist ein Problem der Dekohärenz.
 
 #### Teilchen im Doppelmuldenpotential
 Sei ein Teilchen in einem _Doppelmuldenpotential_ im Grundzustand. Das Potential habe zwei Minima bei $x_1$ und $x_2$, beide auf exakt gleicher Höhe $E(x_1) = E(x_2)$. Somit ist die Wahrscheinlichkeit, dass das Teilchen sich an der Stelle $x_1$ befindet, ebenso groß wie die Wahrscheinlichkeit für die Position $x_2$.
@@ -39,23 +41,28 @@ Quantenmechanisch sagen wir dagegen, das Teilchen befindet sich in _Superpositio
 Ein anderes Beispiel ist der Spin: Beispielsweise kann ein Silberatom gleichzeitig in Zuständen _up_ und _down_ (relativ zu einer z-Achse) sein.
 
 #### Mathematische Darstellung
-Bezeichne $\mathscr H_{DMP}$ den Hilbertraum [[20230408121828]] des Doppelmuldenpotentials. Dann gibt es zwei Zustände
+Bezeichne $\mathscr H_{DMP}$ den Hilbertraum des Doppelmuldenpotentials. Dann gibt es zwei Zustände
 $\varphi_1\in\mathscr H_{DMP}$ und $\varphi_2\in\mathscr H_{DMP}$. Die Superposition wird dann als $\mathscr H_{DMP} \ni \Psi = \varphi_1 + \varphi_2$ geschrieben.
 
-### Der Hilbertraum
+### 1. Postulat: Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.
 
 Ein quantenmechanischer Zustand ist ein Vektor $\varphi\in\mathscr H_S$. Dieser Vektor hat die Norm $1$: $||\varphi||=1$
 
 #### Eigenschaften des hermiteschen Skalarprodukts
-Eigenschaften des Skalarprodukts:
-* Vertauschung der Parameter erzeugt das komplex Konjugierte des Skalarprodukts: $\braket{\varphi, \psi} = \braket{\psi, \varphi}^*$
-* positiv semi-definit:
-    * $\forall \varphi \ne 0: \braket{\varphi, \varphi} > 0$
-    * $\varphi = 0 \Leftrightarrow \braket{\varphi, \varphi} = 0$
+$$
+    \braket{\Psi|\varphi}
+        = \Psi^\dagger\varphi
+        = (\Psi_1^*,\ldots,\Psi_n^*)
+           \cdot \begin{pmatrix}\varphi_1\\\vdots\\\varphi_n\end{pmatrix}
+$$
+* Vertauschung der Parameter erzeugt das komplex Konjugierte des Skalarprodukts: $\braket{\varphi|\psi} = \braket{\psi|\varphi}^*$
+* positiv semi-definit: $\forall \varphi \in V\backslash \{0\}: \braket{\varphi|\varphi} > 0$
+    * $\forall \varphi \ne 0: \braket{\varphi|\varphi} > 0$
+    * $\varphi = 0 \Leftrightarrow \braket{\varphi|\varphi} = 0$
 * Linearität:
-    * $\forall \lambda \in \mathbb C: \braket{\varphi, \lambda\psi} = \lambda\braket{\varphi, \psi} = \braket{\lambda^*\varphi, \psi}$
-    * $\braket{\varphi, \psi_1 + \psi_2} = \braket{\varphi, \psi_1} + \braket{\varphi, \psi_2}$
+    * $\forall \lambda \in \mathbb C: \braket{\varphi|\lambda\psi} = \lambda\braket{\varphi|\psi} = \braket{\lambda^*\varphi|\psi}$
+    * $\braket{\varphi|\psi_1 + \psi_2} = \braket{\varphi|\psi_1} + \braket{\varphi|\psi_2}$
 
 
 ### Operatoren
@@ -63,8 +70,7 @@ Ein Operator $\widehat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abb
 
 Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, die er erzeugt. Daher kann er als Matrix dargestellt werden. Er kann einer Observablen zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
 
-#### Adjunktion
-Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger = (A^*)^\mathrm T$.
+Die meisten quantenmechanischen Operatoren sind _selbstadjungiert_ bzw. _hermitesch_.
 
 #### hermitesche Operatoren
 Ein Operator $\widehat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\widehat{A}^\dagger=\widehat{A}$. Daraus folgt, dass die Adjungierte $\widehat{A}^\dagger = \widehat{A}^{-1}$ auch die Inverse ist.
@@ -72,14 +78,23 @@ Ein Operator $\widehat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\widehat{
 * Quantenmechanisch wird die Adjunktion eines Operators durch $\braket{\varphi|A\psi} = \braket{A^\dagger\varphi|\psi}$ definiert.
 * Ein hermitescher Operator besitzt eine orthonormale Basis $\{\varphi_i\}$.
 * Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\widehat{A}\ket{\varphi_i} = a_i \ket{\varphi_i}$
+    * Dadurch kann die Matrix $A$ in der Spektraldarstellung diagonalisiert werden.
+    * Der Erwartungswert $\braket{\widehat{A}}_\Psi$ ist das Skalarprodukt $\braket{\Psi|A|\Psi}$.
 
-#### Spektraldarstellung hermitescher Operatoren
-Die Spektraldarstellung nutzt den Projektionsoperator $P_\chi$.
+##### Adjunktion
+Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger = (A^*)^\mathrm T$.
+
+
+##### Spektraldarstellung hermitescher Operatoren
+Die Spektraldarstellung nutzt den Projektionsoperator $P_\chi$. $\sum_i \ket{\varphi_i}\bra{\varphi_i}$ ist dabei die Einheitsmatrix, $a_i\in\mathbb R$ sind reelle Eigenwerte. Daher sind $\{\varphi_i\}$ eine orthonormale Eigenbasis.
 $$
     \widehat{A} = \sum_i a_i P_{\varphi_i} = \sum_i a_i \ket{\varphi_i}\bra{\varphi_i}
 $$
+##### Erwartungswert Hermitescher Operatoren
+Der Erwartungswert $\braket{\widehat{A}}_\Psi$ eines Hermiteschen Operators $\widehat{A}$ ist für ein System im Zustand $\Psi$ durch das Skalarprodukt $\braket{\Psi|A|\Psi}$ definiert. Durch die Spektraldarstellung kann die Matrix $A$ als reellwertige Diagonalmatrix dargestellt werden, daher spielt es keine Rolle, ob $A$ auf den Ket-Vektor oder den Bra-Vektor angewendet wird.
 
-### Messpostulat
+
+### 2. Postulat: Das Messpostulat
 Ein fundamentales Problem der Quantenphysik ist, dass direkte Beobachtungen nicht möglich sind.
 
 Dieses Problem wird _operationalistisch_ gelöst. Das Messpostulat besagt, dass die Theorie mit _makroskopischen Messungen_ kompatibel sein muss.
@@ -145,12 +160,28 @@ Zustände im Hilbertraum $\varphi\in\mathcal H$ werden als "Ket" $\ket{\varphi}$
 Zudem werden oft nur Indizes in Ket/Bra eingetragen. So wird aus $\ket{\varphi_{z+}}=\ket{z+}$.
 
 #### Rechenregeln
-* Ket
-    * $\ket{\varphi + \psi} = \ket{\varphi} + \ket{\psi}
-    * $\ket{\lambda\psi} = \lambda\ket{\psi}$
-* Bra
-    * $\bra{\varphi + \psi} = \bra{\varphi} + \bra{\psi}$
-    * $\ket{\lambda\psi} = \lambda^*\ket{\psi}$
+##### Ket
+* $\ket{\varphi + \psi} = \ket{\varphi} + \ket{\psi}$
+* $\ket{\lambda\psi} = \lambda\ket{\psi}$
+
+##### Bra
+* $\bra{\varphi + \psi} = \bra{\varphi} + \bra{\psi}$
+* $\ket{\lambda\psi} = \lambda^*\ket{\psi}$
+
+##### Operator / Matrix
+$$
+\begin{aligned}
+    \ket{\varphi}\bra{\chi}
+        = &\varphi\chi^\dagger\\
+        = &\begin{pmatrix}\varphi_1\\\vdots\\\varphi_n\end{pmatrix}
+           \cdot (\Psi_1^*,\ldots,\Psi_n^*)\\
+        = &\begin{pmatrix}
+               \varphi_1\Psi_1^* && \dots && \varphi_1\Psi_n^* \\
+               \vdots && \ddots && \vdots\\
+               \varphi_n\Psi_1^* && \dots && \varphi_n\Psi_n^*
+           \end{pmatrix}
+\end{aligned}
+$$
 
 ## Zweizustandssysteme
 ### Bohr-Sommerfeldsches Atommodell
@@ -189,14 +220,12 @@ $$
         = \frac{1}{\sqrt{2}} (\varphi_{z+} - \mathcal i\varphi_{z-})
 \end{align*}
 $$
- #### Observable
+#### Observable
 Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen Moments. Die gemessenen Werte sind $\pm \mu_0$.
 
 Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+}, \Psi}|^2$ und $p_-=|\braket{\varphi_{z-}, \Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte. Damit hat $\mu_z$ den Erwartungswert $\braket{\mu_z}_\Psi$ für Messungen an Atomen mit dem Zustand $\Psi$. Es gilt daher $\braket{\mu_z}_{\Psi} = p_{+}\cdot\mu_0+p_{-}\cdot(-\mu_0)$.
 
 ### Spin $\frac{1}{2}$
-
-[[20230408120804]] <!-- VL 4 -->
 
 ## Quantenmechanik eines Punktteilchens
 ### Impuls
@@ -221,6 +250,4 @@ Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+
 
 
 # Literatur
-
-
-[^1]: z.B: elektrische Leitfähigkeit und Wärmekapazität
+1. Vorlesung: Quantenmechanik [[20230408120804]]
