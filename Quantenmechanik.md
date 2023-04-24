@@ -112,7 +112,7 @@ Es gibt einen Isomorphismus, der einem Zustand $\psi\in\mathcal H$ den _Dualvekt
 ### 1. Postulat: Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.
 
-Ein quantenmechanischer Zustand ist ein Vektor $\varphi\in\mathscr H_S$. Dieser Vektor hat die Norm $1$: $||\varphi||=1$
+Ein quantenmechanischer Zustand ist ein Vektor $\varphi\in\mathcal {H}_S$. Dieser Vektor hat die Norm $1$: $||\varphi||=1$
 
 #### Eigenschaften des hermiteschen Skalarprodukts
 $$
@@ -159,8 +159,8 @@ Quantenmechanisch sagen wir dagegen, das Teilchen befindet sich in _Superpositio
 Ein anderes Beispiel ist der Spin: Beispielsweise kann ein Silberatom gleichzeitig in Zuständen _up_ und _down_ (relativ zu einer z-Achse) sein.
 
 ##### Mathematische Darstellung
-Bezeichne $\mathscr H_{DMP}$ den Hilbertraum des Doppelmuldenpotentials. Dann gibt es zwei Zustände
-$\varphi_1\in\mathscr H_{DMP}$ und $\varphi_2\in\mathscr H_{DMP}$. Die Superposition wird dann als $\mathscr H_{DMP} \ni \Psi = \varphi_1 + \varphi_2$ geschrieben.
+Bezeichne $\mathcal H_{DMP}$ den Hilbertraum des Doppelmuldenpotentials. Dann gibt es zwei Zustände
+$\varphi_1\in\mathcal H_{DMP}$ und $\varphi_2\in\mathcal H_{DMP}$. Die Superposition wird dann als $\mathcal H_{DMP} \ni \Psi = \varphi_1 + \varphi_2$ geschrieben.
 
 ### 2. Postulat: Das Messpostulat
 Ein fundamentales Problem der Quantenphysik ist, dass direkte Beobachtungen nicht möglich sind.
@@ -216,11 +216,11 @@ Hierzu wird ein Strahl von Silberatomen durch ein inhomogenes Magnetfeld geschic
 
 Das Experiment ergab, dass es genau zwei Punkte gab, an denen Silberatome gemessen werden konnten. Dies zeigte, dass das magnetische Moment gequantelt ist.
 
-In weiteren Messungen wurde festgestellt, dass die Zustände $\ket{z\uparrow}$ und $\ket{z\downarrow}$ senkrecht zueinander sind, selbiges gilt jeweils in $x$- und $y$-Richtung. Die Zustände der Achsen $x$, $y$ und $z$ sind unternander jedoch nicht rechtwinklig, sondern in einem Winkel von jeweils $45\degree$.
+In weiteren Messungen wurde festgestellt, dass die Zustände $\ket{z\uparrow}$ und $\ket{z\downarrow}$ senkrecht zueinander sind, selbiges gilt jeweils in $x$- und $y$-Richtung. Die Zustände der Achsen $x$, $y$ und $z$ sind unternander jedoch nicht rechtwinklig, sondern in einem Winkel von jeweils $45^\circ$.
 
 Deswegen wählt man oft folgende Ortonormalbasis:
 $$
-\begin{align*}
+\begin{aligned}
     \varphi_{z+}
         &\ \ \land\ \ \varphi_{z-} \\
     \varphi_{x+} = \frac{1}{\sqrt{2}} (\varphi_{z+} + \varphi_{z-})
@@ -229,8 +229,9 @@ $$
     \varphi_{y+} = \frac{1}{\sqrt{2}} (\varphi_{z+} + \mathcal i\varphi_{z-})
         &\ \ \land\ \ \varphi_{x-}
         = \frac{1}{\sqrt{2}} (\varphi_{z+} - \mathcal i\varphi_{z-})
-\end{align*}
+\end{aligned}
 $$
+
 #### Observable
 Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen Moments. Die gemessenen Werte sind $\pm \mu_0$.
 
