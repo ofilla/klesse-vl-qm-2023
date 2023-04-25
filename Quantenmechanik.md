@@ -31,25 +31,25 @@ Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, di
 
 Die meisten quantenmechanischen Operatoren sind _selbstadjungiert_ bzw. _hermitesch_.
 
-##### Hermitesche Operatoren
+#### Hermitesche Operatoren
 Ein Operator $\widehat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\widehat{A}^\dagger=\widehat{A}$. Daraus folgt, dass die Adjungierte $\widehat{A}^\dagger = \widehat{A}^{-1}$ auch die Inverse ist.
 
-* Quantenmechanisch wird die Adjunktion eines Operators durch $\braket{\varphi|A\psi} = \braket{A^\dagger\varphi|\psi}$ definiert.
+* Quantenmechanisch wird die Adjunktion eines Operators durch $\braket{\varphi|A\psi}=\braket{A^\dagger\varphi|\psi}$ definiert.
 * Ein hermitescher Operator besitzt eine orthonormale Basis $\{\varphi_i\}$.
-* Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\widehat{A}\ket{\varphi_i} = a_i \ket{\varphi_i}$
+* Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\widehat{A}\ket{\varphi_i}=a_i\ket{\varphi_i}$
     * Dadurch kann die Matrix $A$ in der Spektraldarstellung diagonalisiert werden.
     * Der Erwartungswert $\braket{\widehat{A}}_\Psi$ ist das Skalarprodukt $\braket{\Psi|A|\Psi}$.
 
-##### Adjunktion
-Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger = (A^*)^\mathrm T$.
+#### Adjunktion
+Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger=(A^*)^\mathrm T$.
 
-##### Spektraldarstellung Hermitescher Operatoren
+#### Spektraldarstellung Hermitescher Operatoren
 Die Spektraldarstellung nutzt den Projektionsoperator $P_\chi$. $\sum_i \ket{\varphi_i}\bra{\varphi_i}$ ist dabei die Einheitsmatrix, $a_i\in\mathbb R$ sind reelle Eigenwerte. Daher sind $\{\varphi_i\}$ eine orthonormale Eigenbasis.
 $$
     \widehat{A} = \sum_i a_i P_{\varphi_i} = \sum_i a_i \ket{\varphi_i}\bra{\varphi_i}
 $$
 
-##### Erwartungswert Hermitescher Operatoren
+#### Erwartungswert Hermitescher Operatoren
 Der Erwartungswert $\braket{\widehat{A}}_\Psi$ eines Hermiteschen Operators $\widehat{A}$ ist für ein System im Zustand $\Psi$ durch das Skalarprodukt $\braket{\Psi|A|\Psi}$ definiert. Durch die Spektraldarstellung kann die Matrix $A$ als reellwertige Diagonalmatrix dargestellt werden, daher spielt es keine Rolle, ob $A$ auf den Ket-Vektor oder den Bra-Vektor angewendet wird.
 
 #### Projektionsoperator
@@ -120,6 +120,7 @@ $$
         = (\Psi_1^*,\ldots,\Psi_n^*)
            \cdot \begin{pmatrix}\varphi_1\\\vdots\\\varphi_n\end{pmatrix}
 $$
+
 * Vertauschung der Parameter erzeugt das komplex Konjugierte des Skalarprodukts: $\braket{\varphi|\psi} = \braket{\psi|\varphi}^*$
 * positiv semi-definit: $\forall \varphi \in V\backslash \{0\}: \braket{\varphi|\varphi} > 0$
     * $\forall \varphi \ne 0: \braket{\varphi|\varphi} > 0$

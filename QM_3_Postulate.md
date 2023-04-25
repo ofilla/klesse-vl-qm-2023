@@ -20,6 +20,7 @@ $$
         = (\Psi_1^*,\ldots,\Psi_n^*)
            \cdot \begin{pmatrix}\varphi_1\\\vdots\\\varphi_n\end{pmatrix}
 $$
+
 * Vertauschung der Parameter erzeugt das komplex Konjugierte des Skalarprodukts: $\braket{\varphi|\psi} = \braket{\psi|\varphi}^*$
 * positiv semi-definit: $\forall \varphi \in V\backslash \{0\}: \braket{\varphi|\varphi} > 0$
     * $\forall \varphi \ne 0: \braket{\varphi|\varphi} > 0$
@@ -35,7 +36,7 @@ $$
     p = |\braket{\varphi, \psi}|^2 = [\cos(\alpha)]^2 \in [0,1] \\
     \Rightarrow p =
         \begin{cases}
-            1 \Leftrightarrow \varphi \bot \psi \\
+            0 \Leftrightarrow \varphi \bot \psi \\
             1 \Leftrightarrow \varphi \parallel \psi
         \end{cases}
 $$
@@ -43,7 +44,7 @@ $$
 Nur wenn $p\neq 0 \lor p\neq 1$ gelten, kann man das Ergebnis einer Messung $M_\varphi$ vorhersagen.
 Das bedeutet, wenn $\varphi \bot \psi \lor \varphi \parallel \psi$ ist die Messung $M_\varphi$ deterministisch, ansonsten ist sie indeterministisch.
 
-### Superpositionsprinzip
+### Superposition
 Superposition ist ein universell gültiges Prinzip, das besagt, dass sich ein Quantenteilchen zugleich in mehreren Zuständen befinden kann.
 
 Ein berühmtes Beispiel ist das Gedankenexperiment von Schrödingers Katze. Heute verstehen wir, dass Superposition auch hier gilt, aber trotzdem in diesem Fall praktisch nicht beobachtbar ist. Dies ist ein Problem der Dekohärenz.
