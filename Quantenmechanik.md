@@ -65,6 +65,13 @@ P_\chi \ket{\Psi} = (\braket{\chi|\Psi})\ket{\chi} = \ket{\chi}(\braket{\chi|\Ps
 $$
 Da $\braket{\chi|\Psi}\in\mathbb C$ kann das Kommutativgesetz angewendet werden. $\ket{\chi}\bra{\chi}$ ist eine $n\times n$-dimensionale Matrix.
 
+#### Kommutator
+Der Kommutator ist definiert als $[A, B] = AB - BA$.
+
+Wenn $A$ eine Erhaltungsgröße und $H$ der Hamiltionoperator ist, gilt $[H, A]=0$.
+
+Die klassische Entsprechung des Kommutators ist die Poisson-Klammer.
+
 ### Observable
 Eine beobachtbare Größe wird in der Quantenmechanik _Observable_ genannt.
 
@@ -105,7 +112,6 @@ $$
 Der Dualraum $\mathcal H^*$ zu dem Hilbertraum $\mathcal H$ ist der Vektorraum der linearen Abbildungen (_Linearformen_) von $\mathcal H \rightarrow \mathbb C$.
 
 Es gibt einen Isomorphismus, der einem Zustand $\psi\in\mathcal H$ den _Dualvektor_ $\psi^\dagger \in\mathcal H^*$ zuordnet. Es gilt $\varphi^\dagger\psi = \braket{\varphi|\psi}$. Hierbei sind $\psi$ als $n$-dimensionaler Vektor und $\varphi^\dagger$ als $1\times n$-dimensionale Matrix darstellbar.
-
 
 ## Postulate
 ### 1. Postulat: Der Hilbertraum
@@ -177,8 +183,8 @@ $$
 $$
 
 1. Die gemessenen Werte sind reell, daher kann ein hermitescher Operator durch die Eigenwerte $\{a_i\}$ und Eigenzustände $\{\ket{\varphi_i}\}$ dargestellt werden.
-2. Bornsche Regel: $p=|\braket{\varphi|\Psi}|^2$
-3. Eine _ideale_ Messung $M_\Psi$ präperiert das System in Zustand $\Psi$.
+2. Bornsche Regel: $p=|\braket{\varphi|\Psi}|^2$, der Eigenwert $a_i$ wird mit der Wahrscheinlichkeit $p=|\braket{\varphi_1|\Psi}|^2$ gemessen. Erwartungswert $\braket{A}_\Psi=\braket{\Psi|A|\Psi}$.
+3. Eine _ideale_ Messung $M_{\varphi_i}$ präperiert das System in Zustand $\varphi_i$ durch einen Kollaps der Wellenfunktion $\Psi$.
 
 #### 1. Messung von Zuständen
 Die Messwerte $a_i$, die die Zustände $\varphi_i\in\mathcal H$ im Hilbertraum messen, sind reellwertig $a_i\in \mathbb R^n$.
@@ -193,6 +199,12 @@ Eine Messung nennt man ideal, wenn sich das System nach der Messung $M_\Psi$ im 
 
 ### Indeterminismus
 Es gibt nur zwei Fälle in denen man das Ergebnis vorhersagen kann. Dazu muss ein Zustand $\psi$ gemessen worden sein, nun wird der der Zustand $\varphi$ gemessen. Diese zweite Messung kann man genau dann vorhersagen, wenn $\varphi \bot \psi$ oder $\varphi \parallel \psi$ gelten, ansonsten kann man das Ergebnis nicht vorhersagen.
+
+### 3. Postulat: Dynamik
+Die zeitliche Entwicklung eines Zustands $\Psi(t)$ eines abgeschlossenen, unbeobachteten Systems genügt der Schrödingergleichung mit dem Hermiteschen Operator $H$, dem sogenannten Hamiltonoperator des Systems.
+$$
+    \dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)\ ,
+$$
 
 ## Zweizustandssysteme
 ### Bohr-Sommerfeldsches Atommodell
@@ -237,14 +249,86 @@ Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen M
 
 Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+}, \Psi}|^2$ und $p_-=|\braket{\varphi_{z-}, \Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte. Damit hat $\mu_z$ den Erwartungswert $\braket{\mu_z}_\Psi$ für Messungen an Atomen mit dem Zustand $\Psi$. Es gilt daher $\braket{\mu_z}_{\Psi} = p_{+}\cdot\mu_0+p_{-}\cdot(-\mu_0)$.
 
-<!--
-### Spin $\frac{1}{2}$
-
 ## Quantenmechanik eines Punktteilchens
+### Schrödingergleichung
+Die zeitliche Entwicklung eines Zustands $\Psi(t)$ eines abgeschlossenen, unbeobachteten Systems genügt der Schrödingergleichung mit dem Hermiteschen Operator $H$, dem sogenannten Hamiltonoperator des Systems. Der Faktor $\hbar^{-1}$ sorgt dafür, dass die Einheit der Eigenwerte eine Energie ist.
+$$
+    \dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)\ ,
+$$
+Die Schrödingergleichung beschreibt eine _lineare_ Dynamik. Nicht-lineare Dynamik verstößt gegen die Spezielle Relativitätstheorie.
+
+Mit dem Kommutator lässt folgt für eine Observable $A$:
+$$
+    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} = \braket{\frac{i}{\hbar}[H, A]}_{\Psi(t)}
+$$
+
+#### Hamiltonfunktion
+In der Klassischen Mechanik werden Zustände durch den Hamiltonian $H(H(\vec{x}, t))$ beschrieben, wobei $\vec{x}(t) = \left(\begin{smallmatrix}\vec{q}(t)\\\vec{p}(t)\end{smallmatrix}\right)\in\Gamma(\mathbb R^{2n})$ einen Punkt im Phasenraum $\Gamma$ beschreibt. Die Bewegungsgleichung lautet:
+$$
+    \dot{\vec{x}}(t) =
+        \begin{pmatrix}
+            \dot{\vec{q}}(t)\\
+            \dot{\vec{p}}(t)
+        \end{pmatrix} \overset{!}{=}
+        \begin{pmatrix}
+            \frac{\partial H(\vec{x}, t)}{\partial \vec{p}} \\
+            -\frac{\partial H(\vec{x}, t)}{\partial \vec{q}} \\
+        \end{pmatrix}
+$$
+
+Dies führt zu einer Differentialgleichung 1. Ordnung. Es gilt mit den Poisson-Klammern:
+$$
+    \frac{\mathrm d}{\mathrm d t} A(\vec{x}, t) = \{H, A\}_{\vec{x}(t)}
+$$
+
+Die Entsprechung in der Quantenmechanik ist der Hamiltonoperator.
+
+#### Poisson-Klammer
+$$
+    \{A, B\} = \sum_i \frac{\partial A}{\partial p_i}\frac{\partial B}{\partial q_i}
+        - \frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i}
+$$
+
+Die quantenmechanische Entsprechung der Poisson-Klammer ist der Kommutator.
+
+#### Herleitung der Schrödingergleichung
+In der Quantenmechanik gilt eine ähnliche Zustandsgleichung: $\dot{\Psi}(t) \overset{!}{=} F\Psi(t)$, wobei $F$ ein linearer Operator sein muss. Aus der Normierung der Zustände $|\Psi|^2=1$ folgt, dass $\frac{\mathrm d}{\mathrm d t}|\Psi|^2=0$. Rechnung führt zu der Identität $\frac{\mathrm d}{\mathrm d t}|\Psi|^2 = \braket{\Psi|(F^\dagger+F)\Psi}$, woraus folgt dass $F^\dagger+F=0$ gelten muss.
+
+Die übliche Wahl fällt auf $F=-\frac{i}{\hbar} H$, wobei $H$ der Hamiltonoperator ist. Daraus folgt
+$$
+    \dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)\ ,
+$$
+sowie $H^\dagger=H$. $H$ ist also ein Hermitescher Oparator.
+
+### Hamiltonoperator
+* Der Hamiltonoperator $H$ ist ein Hermitescher Operator. Er wird in der Schrödingergleichung verwendet.
+* Er entspricht der Hamiltonfunktion in der Klassischen Mechanik.
+* Die zugehörige Observable ist die Energie des Systems
+* Spektraldarstellung: $H = \sum_{i=0}^n E_i \ket{\varphi_i}\bra{\varphi_i}$
+    * $E_i$ sind die Eigenenergien bzw. Energieniveaus
+    * $\varphi_i$ sind die Eigenenergiezustände bzw Eigenzustände
+
+Der Kommutator $[H, H]$ ist immer $0$, daher ist die Energie immer eine Erhaltungsgröße.
+
+### Erhaltungsgrößen
+Die Observable $A$ ist genau dann eine Erhaltungsgröße, wenn $\braket{A}_{\Psi(t)}$ für alle Lösungen der Schrödingergleichung $\dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)$ konstant ist.
+
+Daraus folgt, dass $A$ genau dann eine Erhaltungsgröße ist, wenn für die Operatoren $HA=AH$ gilt, bzw. der Kommutator $[H, A]=0$ ist. Insbesondere gilt:
+$$
+    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} = \braket{\frac{i}{\hbar}[H, A]}_{\Psi(t)}
+$$
+
+Die Energie immer eine Erhaltungsgröße, da $[H, H]=0$.
+
+### Lamorpräzession
+#### Klassische Präzession
+Ein symmetrischer Kreisel mit einer Winkelgeschwindigkeit $\vec{\omega} = \omega\hat{n}$ und der Länge $l$ hat ein Drehmoment von $\vec{M} = -ml\vec{g}\times \vec{n}$, wobei das Drehmoment die Änderung des Drehimpulses darstellt ($\vec{M}=\dot{\vec{L}}$ ).
+
+Ein Spin im Magnetfeld $\vec{B}$ hat mit einem magnetischen Moment $\vec{\mu}$ ein Drehmoment von $\vec{M} = \vec{B} \times \vec{\mu}$, da $\vec{\mu}\parallel\vec{L}$.
+
+<!--
 ### Impuls
 ### Drehimpuls
-### Schrödinger-Gleichung
-
 ## Harmonischer Oszillator
 
 ## Zentralpotential
@@ -260,8 +344,7 @@ Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+
 ## Messprozess
 ### Dekohärenz
 "QM -> klassische Physik"
-
+-->
 
 # Literatur
-1. Vorlesung: Quantenmechanik [[20230408120804]]
--->
+1. [@Sakurai2020]
