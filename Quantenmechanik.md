@@ -113,6 +113,48 @@ Der Dualraum $\mathcal H^*$ zu dem Hilbertraum $\mathcal H$ ist der Vektorraum d
 
 Es gibt einen Isomorphismus, der einem Zustand $\psi\in\mathcal H$ den _Dualvektor_ $\psi^\dagger \in\mathcal H^*$ zuordnet. Es gilt $\varphi^\dagger\psi = \braket{\varphi|\psi}$. Hierbei sind $\psi$ als $n$-dimensionaler Vektor und $\varphi^\dagger$ als $1\times n$-dimensionale Matrix darstellbar.
 
+### Pauli-Matrizen
+$$
+\begin{aligned}
+    \sigma_1 = \sigma_x =\ &
+        \begin{pmatrix}
+            0 & 1\\
+            1 & 0
+        \end{pmatrix} \\
+    \sigma_2 = \sigma_y =\ &
+        \begin{pmatrix}
+            0 & -i\\
+            i & 0
+        \end{pmatrix}\\
+    \sigma_3 = \sigma_z =\ &
+        \begin{pmatrix}
+            1 & 0\\
+            0 & -1
+        \end{pmatrix}
+\end{aligned}
+$$
+#### Euler-Identität
+$$
+    \mathrm e^{i\varphi \sigma_i} = \cos(\varphi)\mathbb 1 + i\sigma_i\sin(\varphi)
+$$
+
+### Exponentialfunktion
+#### Reihendarstellung
+$$
+    \mathrm e^x = \sum_{n=0}^\infty\frac{x^n}{n!}
+$$
+
+#### Grenzwertdarstellung
+$$
+    \mathrm e^x = \lim_{n\rightarrow \infty} \left(1+\frac{x}{n}\right)^n
+$$
+
+### Euler-Identität
+$$
+    \mathrm e^{i\varphi} = \cos(\varphi) + i\sin(\varphi) \\
+    \Rightarrow \mathrm e^{i\pi} = 1
+$$
+
 ## Postulate
 ### 1. Postulat: Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.
@@ -249,6 +291,28 @@ Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen M
 
 Nach dem Messpostulat hat sie die Wahrscheinlichkeiten $p_+=|\braket{\varphi_{z+}, \Psi}|^2$ und $p_-=|\braket{\varphi_{z-}, \Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte. Damit hat $\mu_z$ den Erwartungswert $\braket{\mu_z}_\Psi$ für Messungen an Atomen mit dem Zustand $\Psi$. Es gilt daher $\braket{\mu_z}_{\Psi} = p_{+}\cdot\mu_0+p_{-}\cdot(-\mu_0)$.
 
+Die Operatoren $\{\mu_i\}$ sind proportional zu den Paulimatrizen $\sigma_i$:
+$$
+\begin{aligned}
+    \mu_x = \mu_0 \sigma_1 =\ & \mu_0
+        \begin{pmatrix}
+            0 & 1\\
+            1 & 0
+        \end{pmatrix} \\
+    \mu_y = \mu_0 \sigma_2 =\ & \mu_0
+        \begin{pmatrix}
+            0 & -i\\
+            i & 0
+        \end{pmatrix}\\
+    \mu_z = \mu_0 \sigma_3 =\ & \mu_0
+        \begin{pmatrix}
+            1 & 0\\
+            0 & -1
+        \end{pmatrix}
+\end{aligned}
+$$
+
+
 ## Quantenmechanik eines Punktteilchens
 ### Schrödingergleichung
 Die zeitliche Entwicklung eines Zustands $\Psi(t)$ eines abgeschlossenen, unbeobachteten Systems genügt der Schrödingergleichung mit dem Hermiteschen Operator $H$, dem sogenannten Hamiltonoperator des Systems. Der Faktor $\hbar^{-1}$ sorgt dafür, dass die Einheit der Eigenwerte eine Energie ist.
@@ -325,6 +389,28 @@ Die Energie immer eine Erhaltungsgröße, da $[H, H]=0$.
 Ein symmetrischer Kreisel mit einer Winkelgeschwindigkeit $\vec{\omega} = \omega\hat{n}$ und der Länge $l$ hat ein Drehmoment von $\vec{M} = -ml\vec{g}\times \vec{n}$, wobei das Drehmoment die Änderung des Drehimpulses darstellt ($\vec{M}=\dot{\vec{L}}$ ).
 
 Ein Spin im Magnetfeld $\vec{B}$ hat mit einem magnetischen Moment $\vec{\mu}$ ein Drehmoment von $\vec{M} = \vec{B} \times \vec{\mu}$, da $\vec{\mu}\parallel\vec{L}$.
+
+#### Lamorpräzession: Präzession des magnetischem Moments
+Betrachtet wird die Präzession des magnetischem Moments $\vec{\mu}$ in einem Magnetfeld $\vec{B}$, wenn das magnetische Moment entlang der $z$-Achse ausgerichtet ist. Die Energie ist $E=-\vec{B}\vec{\mu}=-B\mu_z$. Daher ist der Hamiltonoperator $H=-B\widehat{\mu}_z=-B\mu_0\sigma_3$.
+
+Aus der Schrödingergleichung folgt dann die Bewegungsgleichung $\dot{\Psi}(t) = i\omega\sigma_3\Psi(t)$. Diese wird durch  $\Psi(t)= \exp[i\omega t\sigma_3] \Psi(0)$ gelöst. Nach der Euler-Identität für Pauli-Matrizen wird dies durch $\Psi(t) = \mathrm e^{i\omega t\sigma_3}\Psi_0$ gelöst.
+
+Wird $\Psi_0=\varphi_{x+}$ gewählt, so folgt $\Psi(t) = \frac{1}{\sqrt 2} \left(\begin{smallmatrix}\mathrm e^{i\omega t}\\\mathrm e^{-i\omega t}\end{smallmatrix}\right)$. Es folgt für die Erwartungswerte der Komponenten von $\vec{\mu}$:
+$$
+    \braket{\mu}_{\Psi(t)} =
+        \begin{pmatrix}
+            \braket{\mu_x}_{\Psi(t)} \\
+            \braket{\mu_y}_{\Psi(t)} \\
+            \braket{\mu_z}_{\Psi(t)} \\
+        \end{pmatrix}
+        = \mu_0
+        \begin{pmatrix}
+            \cos[2\omega t] \\
+            - \sin[2\omega t] \\
+            0
+        \end{pmatrix}
+$$
+Dies ist eine **Lamorpräzession** mit der Frequenz $\omega_L=2\omega=\frac{2B\mu_0}{\hbar}$.
 
 <!--
 ### Impuls
