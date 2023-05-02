@@ -25,20 +25,20 @@ Wesentliche Merkmale der Quantenmechanik sind das _Superpositionsprinzip_ und de
 
 ## Prinzipien
 ### Operatoren
-Ein Operator $\widehat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\widehat{A}\varphi$ abbildet.
+Ein Operator $\hat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\hat{A}\varphi$ abbildet.
 
-Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, die er erzeugt. Daher kann er als Matrix dargestellt werden. Er kann einer Observablen zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
+Ein Operator ist vollständig beschrieben durch die Bilder der Basisvektoren, die er erzeugt. Daher kann er als Matrix dargestellt werden. Er kann einer Observablen zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\hat{O}\Psi}$.
 
 Die meisten quantenmechanischen Operatoren sind _selbstadjungiert_ bzw. _hermitesch_.
 
 #### Hermitesche Operatoren
-Ein Operator $\widehat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\widehat{A}^\dagger=\widehat{A}$. Daraus folgt, dass die Adjungierte $\widehat{A}^\dagger = \widehat{A}^{-1}$ auch die Inverse ist.
+Ein Operator $\hat{A}$ ist hermitesch bzw. selbstadjungiert, wenn $\hat{A}^\dagger=\hat{A}$. Daraus folgt, dass die Adjungierte $\hat{A}^\dagger = \hat{A}^{-1}$ auch die Inverse ist.
 
 * Quantenmechanisch wird die Adjunktion eines Operators durch $\braket{\varphi|A\psi}=\braket{A^\dagger\varphi|\psi}$ definiert.
 * Ein hermitescher Operator besitzt eine orthonormale Basis $\{\varphi_i\}$.
-* Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\widehat{A}\ket{\varphi_i}=a_i\ket{\varphi_i}$
+* Die Eigenwerte $a_i$ eines hermiteschen Operators sind _reell_: $\hat{A}\ket{\varphi_i}=a_i\ket{\varphi_i}$
     * Dadurch kann die Matrix $A$ in der Spektraldarstellung diagonalisiert werden.
-    * Der Erwartungswert $\braket{\widehat{A}}_\Psi$ ist das Skalarprodukt $\braket{\Psi|A|\Psi}$.
+    * Der Erwartungswert $\braket{\hat{A}}_\Psi$ ist das Skalarprodukt $\braket{\Psi|A|\Psi}$.
 
 #### Adjunktion
 Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ und Transponation $A^\mathrm T$. Es gilt $A^\dagger=(A^*)^\mathrm T$.
@@ -46,11 +46,11 @@ Die Adjunktion $A^\dagger$ ist die Verkettung von komplexer Konjugation $A^*$ un
 #### Spektraldarstellung Hermitescher Operatoren
 Die Spektraldarstellung nutzt den Projektionsoperator $P_\chi$. $\sum_i \ket{\varphi_i}\bra{\varphi_i}$ ist dabei die Einheitsmatrix, $a_i\in\mathbb R$ sind reelle Eigenwerte. Daher sind $\{\varphi_i\}$ eine orthonormale Eigenbasis.
 $$
-    \widehat{A} = \sum_i a_i P_{\varphi_i} = \sum_i a_i \ket{\varphi_i}\bra{\varphi_i}
+    \hat{A} = \sum_i a_i P_{\varphi_i} = \sum_i a_i \ket{\varphi_i}\bra{\varphi_i}
 $$
 
 #### Erwartungswert Hermitescher Operatoren
-Der Erwartungswert $\braket{\widehat{A}}_\Psi$ eines Hermiteschen Operators $\widehat{A}$ ist für ein System im Zustand $\Psi$ durch das Skalarprodukt $\braket{\Psi|A|\Psi}$ definiert. Durch die Spektraldarstellung kann die Matrix $A$ als reellwertige Diagonalmatrix dargestellt werden, daher spielt es keine Rolle, ob $A$ auf den Ket-Vektor oder den Bra-Vektor angewendet wird.
+Der Erwartungswert $\braket{\hat{A}}_\Psi$ eines Hermiteschen Operators $\hat{A}$ ist für ein System im Zustand $\Psi$ durch das Skalarprodukt $\braket{\Psi|A|\Psi}$ definiert. Durch die Spektraldarstellung kann die Matrix $A$ als reellwertige Diagonalmatrix dargestellt werden, daher spielt es keine Rolle, ob $A$ auf den Ket-Vektor oder den Bra-Vektor angewendet wird.
 
 #### Projektionsoperator
 Der Operator $P_\chi$ projiziert einen Vektor $\Psi$ auf den Vektor $\chi$. Dies ergibt einen Vektor mit Richtung und Orientierung des Vektors $\chi$. Die Länge des Vektors $P_\chi\Psi$ entspricht dem "Schatten", den der Vektor $\Psi$ werfen würde. Dieser wird durch das Skalarprodukt $\braket{\chi, \Psi}$ beschrieben.
@@ -75,7 +75,7 @@ Die klassische Entsprechung des Kommutators ist die Poisson-Klammer.
 ### Observable
 Eine beobachtbare Größe wird in der Quantenmechanik _Observable_ genannt.
 
-Sie hat konkrete Werte, die gemessen werden. Für Messungen einem Systemen im Zustand $\Psi$ wird der Erwartungswert der Observable $O$ als $\braket{O}_\Psi$ geschrieben. Einer Observable $O$ kann ein zugehöriger Operator $\widehat{O}$ zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\widehat{O}\Psi}$.
+Sie hat konkrete Werte, die gemessen werden. Für Messungen einem Systemen im Zustand $\Psi$ wird der Erwartungswert der Observable $O$ als $\braket{O}_\Psi$ geschrieben. Einer Observable $O$ kann ein zugehöriger Operator $\hat{O}$ zugeordnet werden. Es gilt $\braket{O}_\Psi = \braket{\Psi|\hat{O}\Psi}$.
 
 Im Fall des Stern-Gerlach-Experimentes ist die Observable die $z$-Komponente $\mu_z$ des magnetischen Moments.
 
@@ -135,7 +135,7 @@ $$
 $$
 #### Euler-Identität
 $$
-    \mathrm e^{i\varphi \sigma_i} = \cos(\varphi)\mathbb 1 + i\sigma_i\sin(\varphi)
+    \mathrm e^{i\varphi \sigma_i} = \cos(\varphi)\mathds 1 + i\sigma_i\sin(\varphi)
 $$
 
 ### Exponentialfunktion
@@ -382,7 +382,7 @@ $$
 $U(t)$ ist die Lösung der Schrödingergleichung zu dem Anfangswert $U(0)$. Da $U(t_1)\cdot U(t_2) = U(t_1+t_2)$ gilt, folgt $U(t)U(-t)=0$, wodurch folgt dass $U$ _unitär_ ist: $U^\dagger=U^{-1}$.
 
 * $\Psi(t) = U(t)\Psi(0)$
-* $U(0) = \mathbb 1$
+* $U(0) = \mathds 1$
 * $\dot{U}(t) = -\frac{i}{\hbar} H\cdot U(t)$
 * Der Kommutator verschwindet: $[U(t), H] = 0$
 
@@ -418,7 +418,7 @@ Ein symmetrischer Kreisel mit einer Winkelgeschwindigkeit $\vec{\omega} = \omega
 Ein Spin im Magnetfeld $\vec{B}$ hat mit einem magnetischen Moment $\vec{\mu}$ ein Drehmoment von $\vec{M} = \vec{B} \times \vec{\mu}$, da $\vec{\mu}\parallel\vec{L}$.
 
 #### Lamorpräzession: Präzession des magnetischem Moments
-Betrachtet wird die Präzession des magnetischem Moments $\vec{\mu}$ in einem Magnetfeld $\vec{B}$, wenn das magnetische Moment entlang der $z$-Achse ausgerichtet ist. Die Energie ist $E=-\vec{B}\vec{\mu}=-B\mu_z$. Daher ist der Hamiltonoperator $H=-B\widehat{\mu}_z=-B\mu_0\sigma_3$.
+Betrachtet wird die Präzession des magnetischem Moments $\vec{\mu}$ in einem Magnetfeld $\vec{B}$, wenn das magnetische Moment entlang der $z$-Achse ausgerichtet ist. Die Energie ist $E=-\vec{B}\vec{\mu}=-B\mu_z$. Daher ist der Hamiltonoperator $H=-B\hat{\mu}_z=-B\mu_0\sigma_3$.
 
 Aus der Schrödingergleichung folgt dann die Bewegungsgleichung $\dot{\Psi}(t) = i\omega\sigma_3\Psi(t)$. Diese wird durch  $\Psi(t)= \exp[i\omega t\sigma_3] \Psi(0)$ gelöst. Nach der Euler-Identität für Pauli-Matrizen wird dies durch $\Psi(t) = \mathrm e^{i\omega t\sigma_3}\Psi_0$ gelöst.
 
@@ -437,9 +437,72 @@ $$
             0
         \end{pmatrix}
 $$
+
 Dies ist eine **Lamorpräzession** mit der Frequenz $\omega_L=2\omega=\frac{2B\mu_0}{\hbar}$.
 
 ## Quantenmechanik eines Punktteilchens
+### Ortsoperator
+Im Folgenden betrachten wir ein Teilchen im Eindimensionalen Raum.
+
+Die Observable $x\in\mathbb R$ beschreibt den Ort, der dazugehörige hermitesche Operator $\hat{x}$ hat daher reelle Eigenwerte. Daher wird das Eigensystem durch die Menge der Zustände $\{\ket{\varphi_x}\}_{x\in\mathbb R}$ beschrieben.
+
+### Kontinuitätsübergang
+Üblicherweise wird der Ort als diskret betrachten, daher wird meist Lineare Algebra verwendet, um Orte zu beschreiben. Die Menge  $\{\ket{\varphi_x}\}_{x\in\mathbb R}$ hat jedoch unendlich viele Basisvektoren, daher ist die Dimension des Hilbertraumes $\dim{\mathcal H} = \infty$. Deswegen muss statt der Linearen Algebra die Funktionsanalysis verwendet werden, um Quantenzustände zu beschreiben.
+
+$$
+\begin{aligned}
+    && \text{diskret} && \text{kontinuierlich} \\
+    \text{Kronecker-Delta} &&
+        \delta_{ij} && \text{Deltafunktion } \delta(x) \\
+    &&
+        \delta_{ij} = 0 \Leftrightarrow i=j &&
+        \delta(x-y) = 0 \Leftrightarrow x=y \\
+    \text{Normierung} &&
+        \sum_i \delta_{ij} = 1 &&
+        \int_{\mathbb R} \delta(x-x^\prime) \mathrm dx = 1 \\
+    \text{Orthonormale Eigenbasis} &&
+        \{\ket{\varphi_i}\} &&
+        \{\ket{\varphi_x}\} \text{ Eigensystem} \\
+    \text{Orthonormalität} &&
+        \braket{\varphi_i|\varphi_j} = \delta_{ij} &&
+        \braket{\varphi_x|\varphi_{x^\prime}} = \delta(x-x^\prime) \\
+    \text{Vollständigkeit} &&
+        \mathds 1_{\mathcal H} = \sum_i\ket{\varphi_i}\bra{\varphi_i} &&
+        \mathds 1_{\mathcal H} = \int_{\mathbb R} \ket{\varphi_x}\bra{\varphi_x} \mathbb dx \\
+    \text{Spektraldarstellung} &&
+        A = \sum_i a_i\ket{\varphi_i}\bra{\varphi_i} &&
+        A = \int_{\mathbb R} x \ket{\varphi_x}\bra{\varphi_x} \mathbb dx \\
+    \text{Komponentendarstellung} &&
+        \sum_i \Psi_i \ket{\varphi_i} &&
+        \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx \\
+    \text{Skalarprodukt} &&
+        \braket{\Psi|\chi} = \sum_i \Psi_i^*\chi_i &&
+        \braket{\Psi|\chi} = \int_{\mathbb R} \Psi^*(x)\chi(x) \mathrm dx
+\end{aligned}
+$$
+
+#### Komponentendarstellung
+
+$$
+    \mathcal H \ni \ket{\Psi} = \mathds 1 \ket{\Psi} = \sum_i \ket{\varphi_i}\braket{\varphi_i|\Psi} \\
+    \Psi_i = \braket{\varphi_i|\Psi}
+        \Rightarrow \ket{\Psi} = \sum_i \Psi_i \ket{\varphi_i} \\
+    \Psi(x) = \braket{\varphi_x|\Psi}
+        \Rightarrow \ket{\Psi} = \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
+$$
+
+$\Psi(x)$ ist die Wellenfunktion des Zustands $\Psi(x)$.
+
+##### Skalarprodukt in Komponentendarstellung
+Dadurch sieht das Skalarprodukt in Komponentendarstellung folgendermaßen aus:
+
+$$
+    \braket{\Psi|\chi} =
+        \bra{\Psi}\mathds 1 \ket{\chi}
+        = \bra{\Psi}\left(\sum_i \ket{\varphi_i}\bra{\varphi_i}\right)\ket{\chi}
+        = \sum_i \Psi_i^*\chi_i\\
+    \braket{\Psi|\chi} = \int_{\mathbb R} \Psi^*(x)\chi(x) \mathrm dx
+$$
 
 <!--
 ### Impuls
