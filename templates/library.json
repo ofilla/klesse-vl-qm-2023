@@ -104,30 +104,6 @@
         "isbn": "978-0-43402-036-2"
     },
     {
-        "id": "wiki:Pomodoro_Technique",
-        "type": "article",
-        "title": "Pomodoro Technique",
-        "publisher": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Pomodoro_Technique",
-        "issued": {
-            "date-parts": [
-                [ 2023, 2, 8 ]
-            ]
-        }
-    },
-    {
-        "id": "wiki:52/17_rule",
-        "type": "article",
-        "title": "52/17 rule",
-        "publisher": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/52/17_rule",
-        "issued": {
-            "date-parts": [
-                [ 2023, 2, 8 ]
-            ]
-        }
-    },
-    {
         "id": "AlgorithmsCormen2022",
         "type": "book",
         "title": "Introduction to Algorithms",
