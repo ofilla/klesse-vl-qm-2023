@@ -3,7 +3,40 @@
 ## Ortsoperator
 Im Folgenden betrachten wir ein Teilchen im Eindimensionalen Raum.
 
-Die Observable $x\in\mathbb R$ beschreibt den Ort, der dazugehörige hermitesche Operator $\hat{x}$ hat daher reelle Eigenwerte. Daher wird das Eigensystem durch die Menge der Zustände $\{\ket{\varphi_x}\}_{x\in\mathbb R}$ beschrieben.
+Die Observable $x\in\mathbb R$ beschreibt den Ort, der dazugehörige hermitesche Operator $\hat{X}$ hat daher reelle Eigenwerte. Daher wird das Eigensystem durch die Menge der Zustände $\{\ket{\varphi_x}\}_{x\in\mathbb R}$ beschrieben, es gilt $\hat{x}\ket{\varphi_x}=x\ket{\varphi_x}$.
+
+## Impulsoperator
+Der Impulsoperator $\hat{p}$ ist der Erzeuger von Translationen und kann durch den Translationsoperator $\hat{T}$ dargestellt werden. Dies ist analog zu der Darstellung des Hamiltonoperators mithilfe des Zeitentwicklungsoperators.
+$$
+    \hat{p} = \left.i\hbar\frac{\mathrm d}{\mathrm ds}\hat{T}(s)\right|_{s=0}
+$$
+
+Es folgt daraus:
+$$
+\begin{aligned}
+    \hat{p}\ket{\varphi_p} &= p\ket{\varphi_p} \\
+    \hat{p}\Psi(x) &= -i\hbar\frac{\partial}{\partial x}\Psi(x) \overset{!}{=} p\Psi(x)
+\end{aligned}
+$$
+
+* $P=P^\dagger$
+* $[\hat{X}, \hat{P}]=i\hbar\mathds 1$
+    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
+    * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
+
+### Spektraldarstellung
+Eigenzustände $\ket{\tilde{\varphi}_p}$ mit $\tilde{\varphi}_p(x) = \exp[i\frac{P}{\hbar}x]$. $\tilde{\varphi}_p$ ist eine ebene Welle mit der Wellenzahl $k=\frac{P}{t}$.
+
+Daraus folgt für die Orthonormalität $\braket{\tilde{\varphi} _p | \tilde{\varphi}_{p^\prime}} = 2\pi\hbar\delta(p-p^\prime)$.
+
+### Translationsoperator
+Der Translationsoperator $\hat{T}(s)$ verschiebt den Ort eines Objektes um $s$. Es gelten $\hat{T}(0)=\mathds 1$ und $\hat{T}(s)\ket{\varphi_x} = \ket{\varphi_{x+s}}$. Er ist analog zum Zeitentwicklungsoperator.
+
+$$
+    \hat{T}(s) = \exp\left[-\frac{i}{\hbar}\hat{p}s\right]
+$$
+
+Daraus folgt $\hat{T}^\dagger(s) = \hat{T}(-s)$.
 
 ## Kontinuitätsübergang
 Üblicherweise wird der Ort als diskret betrachten, daher wird meist Lineare Algebra verwendet, um Orte zu beschreiben. Die Menge  $\{\ket{\varphi_x}\}_{x\in\mathbb R}$ hat jedoch unendlich viele Basisvektoren, daher ist die Dimension des Hilbertraumes $\dim{\mathcal H} = \infty$. Deswegen muss statt der Linearen Algebra die Funktionsanalysis verwendet werden, um Quantenzustände zu beschreiben.
@@ -62,3 +95,4 @@ $$
         = \sum_i \Psi_i^*\chi_i\\
     \braket{\Psi|\chi} = \int_{\mathbb R} \Psi^*(x)\chi(x) \mathrm dx
 $$
+

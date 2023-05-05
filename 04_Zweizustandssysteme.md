@@ -74,7 +74,8 @@ Die Schrödingergleichung beschreibt eine _lineare_ Dynamik. Nicht-lineare Dynam
 Mit dem Kommutator lässt folgt für eine Observable $A$:
 
 $$
-    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} = \braket{\frac{i}{\hbar}[H, A]}_{\Psi(t)}
+    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
+        \left<\frac{i}{\hbar} [H, A]\right>_{\Psi(t)}
 $$
 
 ### Hamiltonfunktion
@@ -94,7 +95,6 @@ $$
 $$
 
 Dies führt zu einer Differentialgleichung 1. Ordnung. Es gilt mit den Poisson-Klammern:
-
 
 Die Entsprechung in der Quantenmechanik ist der Hamiltonoperator.
 
@@ -125,6 +125,12 @@ sowie $H^\dagger=H$. $H$ ist also ein Hermitescher Oparator.
 
 Der Kommutator $[H, H]$ ist immer $0$, daher ist die Energie immer eine Erhaltungsgröße.
 
+Mithilfe des Zeitentwicklungsoperators $U(t)$ kann $H$ folgendermassen dargestellt werden:
+$$
+    H = \left.i\hbar\frac{\mathrm d}{\mathrm dt}U(t)\right|_{t=0}
+$$
+Dies ist analog zu der Darstellung des Impulsoperators mithilfe des Translationsoperators.
+
 ## Zeitentwicklungsoperator
 Da die Schrödingergleichung $\dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)$ durch die allgemeine Lösung $\Psi(t) = \exp[-\frac{i}{\hbar}Ht] \Psi(0)$ gelöst wird, ist es sinnvoll, dies durch einen Operator auszudrücken. Der Zeitentwicklungsoperator $U(t)$ ist wie folgt definiert:
 $$
@@ -136,16 +142,27 @@ $U(t)$ ist die Lösung der Schrödingergleichung zu dem Anfangswert $U(0)$. Da $
 * $U(0) = \mathds 1$
 * $\dot{U}(t) = -\frac{i}{\hbar} H\cdot U(t)$
 * Der Kommutator verschwindet: $[U(t), H] = 0$
+* $\braket{A}_{\ket{\Psi(t)}}=\braket{\Psi(0)|U^\dagger(t)AU(t)|\Psi(0)}$
+* $\dot{A}(t) = \frac{\mathrm d}{\mathrm dt}A(t) = \frac{i}{\hbar}[H, A(t)]$
+
+Der Zeitentwicklungsoperator ist analog zum Translationsoperator.
 
 ### Spektraldarstellung / Energiedarstellung
 Aus $H = \sum_{i=0}^N E_i \ket{\varphi_i}\bra{\varphi_i}$ folgt $U(t) = \sum_{i=0}^N \exp\left[-\frac{i}{\hbar} E_n t \right]\ket{\varphi_i}\bra{\varphi_i}$, wodurch $U(t)$ dieselben Eigenzustände wie $H$ hat.
+
+### Operatoren
+Für zeitabhängige Operatoren $\hat{A}(t)$ mit $\hat{A}(0)=A$ gilt:
+$$
+    \hat{A}(t) = U^\dagger(t)AU(t) \\
+    \braket{A}_{\Psi(t)} = \braket{\hat{A}(t)}_{\Psi(0)}
+$$
 
 ## Erhaltungsgrößen
 Die Observable $A$ ist genau dann eine Erhaltungsgröße, wenn $\braket{A}_{\Psi(t)}$ für alle Lösungen der Schrödingergleichung $\dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)$ konstant ist.
 
 Daraus folgt, dass $A$ genau dann eine Erhaltungsgröße ist, wenn für die Operatoren $HA=AH$ gilt, bzw. der Kommutator $[H, A]=0$ ist. Insbesondere gilt:
 $$
-    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} = 
+    \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
         \left<\frac{i}{\hbar} [H, A]\right>_{\Psi(t)}
 $$
 
