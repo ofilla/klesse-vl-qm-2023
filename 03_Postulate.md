@@ -79,6 +79,7 @@ Die Zustände werden durch hermitesche Operatoren beschrieben, die in der Spektr
 
 ### 2. Bornsche Regel
 Sei das System in einem Zustand $\Psi\in\mathcal H$. Dann ist Messung $M_\varphi$ mit der Wahrscheinlichkeit $p=|\braket{\varphi|\Psi}|^2$ positiv.
+In der kontinuierlichen Darstellung kann man auch $p=|\Psi(x)|^2$ schreiben.
 
 ### 3. ideale Messung
 Eine Messung nennt man ideal, wenn sich das System nach der Messung $M_\Psi$ im Zustand $\Psi$ befindet. Dann spricht man von einem _Kollaps der Wellenfunktion_. Dies ermöglicht eine Präperation des Systems mit dem Zustand $\Psi$.

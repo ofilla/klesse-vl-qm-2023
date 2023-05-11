@@ -77,6 +77,8 @@ $$
     \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
         \left<\frac{i}{\hbar} [H, A]\right>_{\Psi(t)}
 $$
+### Schrödingergleichung eines Punktteilchens
+siehe unten: _Quantenmechanik eines Punktteilchens_ -> _Schrödingergleichung eines Punktteilchens_.
 
 ### Hamiltonfunktion
 In der Klassischen Mechanik werden Zustände durch den Hamiltonian $H(H(\vec{x}, t))$ beschrieben, wobei $\vec{x}(t) = \left(\begin{smallmatrix}\vec{q}(t)\\\vec{p}(t)\end{smallmatrix}\right)\in\Gamma(\mathbb R^{2n})$ einen Punkt im Phasenraum $\Gamma$ beschreibt. Die Bewegungsgleichung lautet:
@@ -130,6 +132,14 @@ $$
     H = \left.i\hbar\frac{\mathrm d}{\mathrm dt}U(t)\right|_{t=0}
 $$
 Dies ist analog zu der Darstellung des Impulsoperators mithilfe des Translationsoperators.
+
+### Hamiltonoperator eines freien Punktteilchens
+siehe unten: _Quantenmechanik eines Punktteilchens_ -> _Hamiltonoperator eines Punktteilchens_.
+
+#### Energie-Impuls-Relation
+$$
+    \braket{H}_\Psi = \frac{1}{2m}\braket{p}_\Psi
+$$
 
 ## Zeitentwicklungsoperator
 Da die Schrödingergleichung $\dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)$ durch die allgemeine Lösung $\Psi(t) = \exp[-\frac{i}{\hbar}Ht] \Psi(0)$ gelöst wird, ist es sinnvoll, dies durch einen Operator auszudrücken. Der Zeitentwicklungsoperator $U(t)$ ist wie folgt definiert:

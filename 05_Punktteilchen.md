@@ -1,5 +1,4 @@
 # Quantenmechanik eines Punktteilchens
-
 ## Ortsoperator
 Im Folgenden betrachten wir ein Teilchen im Eindimensionalen Raum.
 
@@ -19,15 +18,27 @@ $$
 \end{aligned}
 $$
 
-* $P=P^\dagger$
-* $[\hat{X}, \hat{P}]=i\hbar\mathds 1$
+* $p=p^\dagger$
+* $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
     * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
 
-### Spektraldarstellung
-Eigenzustände $\ket{\tilde{\varphi}_p}$ mit $\tilde{\varphi}_p(x) = \exp[i\frac{P}{\hbar}x]$. $\tilde{\varphi}_p$ ist eine ebene Welle mit der Wellenzahl $k=\frac{P}{t}$.
+### Ortsdarstellung und Impulsdarstellung
+Wenn ein Ort gemessen wird, muss die Ortsdarstellung verwendet werden; wird ein Impuls gemessen, muss die Impulsdarstellung verwendet werden. Durch eine Fouriertransformation kann zwischen Ortsdarstellung und Impulsdarstellung gewechselt werden.
 
-Daraus folgt für die Orthonormalität $\braket{\tilde{\varphi} _p | \tilde{\varphi}_{p^\prime}} = 2\pi\hbar\delta(p-p^\prime)$.
+Im Impulsraum hat der Impulsoperator die Eigenzustände $\ket{\tilde{\varphi}_p}$ mit $\tilde{\varphi}_p(x) = \exp[i\frac{p}{\hbar}x]$. $\tilde{\varphi}_p$ ist eine ebene Welle mit der Wellenzahl $k=\frac{P}{t}$.
+
+Daraus folgt für die Orthonormalität $\braket{\tilde{\varphi} _p | \tilde{\varphi} _{p^\prime}} = 2\pi\hbar\delta(p-p^\prime)$ bzw. mit den Wellenzahlen $\braket{\tilde{\varphi} _{\hbar k} | \tilde{\varphi} _{\hbar k^\prime}} = 2\pi\delta(k-k^\prime)$.
+
+Die Impulswellenfunktion $\tilde{\Psi}(k)$ wird als Fouriertransformierte der Ortswellenfunktion $\Psi(x)$ bestimmt.
+$$
+\begin{aligned}
+    \ket{\Psi} &= \int \frac{\mathrm dk}{2\pi} \tilde{\Psi}(k) \ket{\tilde{\varphi}_{\hbar k}} \\
+    \ket{\Psi} &= \int \mathrm dx \Psi(x) \ket{\varphi_x} \\
+    \Rightarrow \tilde{\Psi}(k) &= \mathcal{F}(\Psi(x))
+\end{aligned}
+$$
+
 
 ### Translationsoperator
 Der Translationsoperator $\hat{T}(s)$ verschiebt den Ort eines Objektes um $s$. Es gelten $\hat{T}(0)=\mathds 1$ und $\hat{T}(s)\ket{\varphi_x} = \ket{\varphi_{x+s}}$. Er ist analog zum Zeitentwicklungsoperator.
@@ -83,7 +94,7 @@ $$
         \Rightarrow \ket{\Psi} = \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
 $$
 
-$\Psi(x)$ ist die Wellenfunktion des Zustands $\Psi(x)$.
+$\Psi(x)$ ist die Wellenfunktion des Zustands $\ket{\Psi}$, $\Psi_i$ eine Komponente von $\ket{\Psi}$.
 
 #### Skalarprodukt in Komponentendarstellung
 Dadurch sieht das Skalarprodukt in Komponentendarstellung folgendermaßen aus:
@@ -95,4 +106,103 @@ $$
         = \sum_i \Psi_i^*\chi_i\\
     \braket{\Psi|\chi} = \int_{\mathbb R} \Psi^*(x)\chi(x) \mathrm dx
 $$
+
+## Translationssymmetrie und Impulserhaltung
+Ein System ist genau denn symmetrisch bezüglich Translation, wenn der Impuls $p$ eine Erhaltungsgröße ist.
+Dies ist genau dann der Fall, wenn der Kommutator $[T(s), U(t)]$ verschwindet. Dies wiederum ist äquivalent dazu, dass der Kommutator $[H,p]$ verschwindet.
+
+## Hamiltonoperator eines Punktteilchens
+### Hamiltonoperator eines freien Punktteilchens
+Aus der Energie-Impuls-Reaktion folgt der Hamiltonoperator eines freien Punktteilchens:
+$$
+    H = \frac{p^2}{2m}
+$$
+
+### Hamiltonoperator eines Punktteilchens
+Sei das Teilchen in einem Potential $U(x)$.
+$$
+    H = \frac{p^2}{2m} + U(x)
+$$
+
+## Schrödingergleichung eines Punktteilchens
+### Schrödingergleichung eines freien Punktteilchens
+Ein freies Teilchen ist symmetrisch bezüglich Translation, daher gilt $[H, p]=0$. Der Hamiltonoperator eines freien Punktteilchens wird in die Schrödingergleichung eingesetzt.
+
+$$
+    i\hbar \frac{\partial}{\partial t} \Psi(x, t)
+        = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi(x, t)
+$$
+
+Dies ist eine partielle Differentialgleichung 2. Ordnung, die eine nicht-triviale Dynamik erzeugt.
+
+### allgemeine Schrödingergleichung eines Punktteilchens
+Der Hamiltonoperator eines Punktteilchens $H = \frac{p^2}{2m}$ wird in die Schrödingergleichung eingesetzt.
+
+$$
+    i\hbar \frac{\partial}{\partial t} \Psi(x, t) =
+        \left(
+            -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x)
+        \right)\Psi(x, t)
+$$
+
+### Stationäre Schrödingergleichung
+Die stationäre Schrödingergleichung gilt, wenn die Wellenfunktion $\Psi(x)$ nur vom Ort, aber nicht von der Zeit abhängt. Hierbei sind die normierten Eigenenergiezustände $\ket{\Psi_n}$ und die Eigenenergien $E_n$ wichtig. Es gilt $H\ket{\Psi_n}=E_n\ket{\Psi_n}$, daraus folgt die stationäre Schrödingergleichung.
+
+$$
+    E_n\Psi(x) =
+        \left(
+            -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x)
+        \right)\Psi_n(x)
+$$
+
+Daraus folgt die Dynamik des Teilchens. <!-- was ist c_n? -->
+
+$$
+\begin{aligned}
+    \ket{\Psi(0)} &= \sum_n c_n \ket{\Psi_n} \\
+    \Rightarrow \ket{\Psi(t)} &= \sum_n c_n \exp[-\frac{i}{\hbar}E_n t] \ket{\Psi_n}
+\end{aligned}
+$$
+
+## Modellsysteme
+### Potentialkasten
+Sei das Potential $U$ überall $V$ außer in dem Bereich von $0$ bis $a$.
+$$
+    U(x) =
+        \begin{cases}
+            V & x \notin [0, a] \\
+            0 & x \in [0, a]
+        \end{cases}
+$$
+
+Dann gilt die stationäre Schrödingergleichung:
+$$
+\begin{aligned}
+    E\Psi_E(x) &=
+        \left(
+            -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x)
+        \right)\Psi_E(x) \\
+    \Leftrightarrow \Psi^{\prime\prime}(x) &=
+        \frac{2m}{\hbar}\left(
+            U(x) - E
+        \right)\Psi_E(x)
+\end{aligned}
+$$
+
+In Bereichen, in denen $U(x)>E$, folgt $\Psi_E^{\prime\prime}(x)=c\cdot \Psi_E(x)$, wobei $c$ eine positive Konstante ist. In Bereichen, in denen $U(x)<E$, folgt $\Psi_E^{\prime\prime}(x)=-c\cdot \Psi_E(x)$.
+
+$$
+    \Psi_E(x) =
+        \begin{cases}
+            \text{konvex} & U(x) > E \\
+            \text{konkav} & U(x) < E \\
+        \end{cases}
+$$
+
+<!--
+### Potentialbarriere
+### harmonischer Oszillator
+### Doppelmuldenpotential
+### Doppelkastenpotential
+-->
 
