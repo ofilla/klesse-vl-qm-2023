@@ -68,7 +68,7 @@ Zudem werden oft nur Indizes in Ket/Bra eingetragen. So wird aus $\ket{\varphi_{
 
 #### Bra
 * $\bra{\varphi + \psi} = \bra{\varphi} + \bra{\psi}$
-* $\ket{\lambda\psi} = \lambda^*\ket{\psi}$
+* $\bra{\lambda\psi} = \lambda^*\bra{\psi}$
 
 #### Operator / Matrix
 $$
