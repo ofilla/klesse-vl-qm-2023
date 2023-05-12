@@ -23,12 +23,12 @@ $$
     * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
 
-### Ortsdarstellung und Impulsdarstellung
+## Ortsdarstellung und Impulsdarstellung
 Wenn ein Ort gemessen wird, muss die Ortsdarstellung verwendet werden; wird ein Impuls gemessen, muss die Impulsdarstellung verwendet werden. Durch eine Fouriertransformation kann zwischen Ortsdarstellung und Impulsdarstellung gewechselt werden.
 
 Im Impulsraum hat der Impulsoperator die Eigenzustände $\ket{\tilde{\varphi}_p}$ mit $\tilde{\varphi}_p(x) = \exp[i\frac{p}{\hbar}x]$. $\tilde{\varphi}_p$ ist eine ebene Welle mit der Wellenzahl $k=\frac{P}{t}$.
 
-Daraus folgt für die Orthonormalität $\braket{\tilde{\varphi} _p | \tilde{\varphi} _{p^\prime}} = 2\pi\hbar\delta(p-p^\prime)$ bzw. mit den Wellenzahlen $\braket{\tilde{\varphi} _{\hbar k} | \tilde{\varphi} _{\hbar k^\prime}} = 2\pi\delta(k-k^\prime)$.
+Daraus folgt für die Orthonormalität $\braket{\tilde{\varphi} _ p | \tilde{\varphi} _ {p^\prime}} = 2\pi\hbar\delta(p-p^\prime)$ bzw. mit den Wellenzahlen $\braket{\tilde{\varphi} _ {\hbar k} | \tilde{\varphi} _ {\hbar k^\prime}} = 2\pi\delta(k-k^\prime)$.
 
 Die Impulswellenfunktion $\tilde{\Psi}(k)$ wird als Fouriertransformierte der Ortswellenfunktion $\Psi(x)$ bestimmt.
 $$
@@ -40,7 +40,7 @@ $$
 $$
 
 
-### Translationsoperator
+## Translationsoperator
 Der Translationsoperator $\hat{T}(s)$ verschiebt den Ort eines Objektes um $s$. Es gelten $\hat{T}(0)=\mathds 1$ und $\hat{T}(s)\ket{\varphi_x} = \ket{\varphi_{x+s}}$. Er ist analog zum Zeitentwicklungsoperator.
 
 $$
@@ -155,7 +155,7 @@ $$
         \right)\Psi_n(x)
 $$
 
-Daraus folgt die Dynamik des Teilchens. <!-- was ist c_n? -->
+Daraus folgt die Dynamik des Teilchens. Hierbei sind $c_n$ Koeffizienten, die bestimmt werden müssen.
 
 $$
 \begin{aligned}
@@ -189,20 +189,69 @@ $$
 \end{aligned}
 $$
 
-In Bereichen, in denen $U(x)>E$, folgt $\Psi_E^{\prime\prime}(x)=c\cdot \Psi_E(x)$, wobei $c$ eine positive Konstante ist. In Bereichen, in denen $U(x)<E$, folgt $\Psi_E^{\prime\prime}(x)=-c\cdot \Psi_E(x)$.
+In Bereichen, in denen $U(x)>E$, folgt $\Psi_E^{\prime\prime}(x) = c\cdot \Psi_E(x)$, wobei $c$ eine positive Konstante ist. In Bereichen, in denen $U(x)<E$, folgt $\Psi_E^{\prime\prime}(x)=-c\cdot \Psi_E(x)$. Daher ist $\Psi_E(x)$ in Bereichen mit $U(x)>E$ konvex und in Bereichen mit $U(x)<E$ konkav.
+
+Falls $x\notin[0,a]$, dann gilt $\Psi_E^{\prime\prime}(x) = \chi^2\Psi_E(x)$, wobei $\chi^2=\frac{2m}{\hbar}\left(V - E \right)$ eine verkürzte Schreibweise darstellt.
+Falls $x\in[0,a]$, dann gilt $\Psi_E^{\prime\prime}(x) = k^2 \Psi_E(x)$, da $E=\frac{\hbar^2k^2}{2m}$. Dann folgt $\Psi _ \pm(x) = \ket{\tilde{\varphi} _ {\pm\hbar k}}$
 
 $$
-    \Psi_E(x) =
+    \Rightarrow \Psi_E(x) =
         \begin{cases}
-            \text{konvex} & U(x) > E \\
-            \text{konkav} & U(x) < E \\
+            x<0: & \alpha \exp[\chi x] + \beta_2 \exp[-\chi x] \\
+            x>a: & \alpha_2 \exp[\chi x] + \beta \exp[-\chi x] \\
+            x\in[0,a]: & r\sin(kx) + s\cos(kx)
         \end{cases}
 $$
+
+Hierbei muss $\alpha_2=\beta_2=0$ gelten, da die entsprechenden Exponentialterme divergieren.
+
+Zudem muss die Funktion auch an den Stellen $0$ und $a$ stetig sein. Daraus folgen 5 Bedingungen. Daraus erhalten wir die $5$ freien Parameter $\alpha, \beta, r, s$ und $E$.
+
+$$
+\begin{aligned}
+    \Psi(0_-) &= \Psi(0_+) \\
+    \Psi^\prime(0_-) &= \Psi^\prime(0_+) \\
+    \Psi(a_-) &= \Psi(a_+) \\
+    \Psi^\prime(a_-) &= \Psi^\prime(a_+) \\
+    \text{Normierung: } 1 &= \int_{-\infty}^\infty |\Psi(x)|^2 \mathrm dx
+\end{aligned}
+$$
+
+#### Unendlicher Potentialkasten
+Eine Vereinfachung ist, $V\rightarrow\infty$ zu schicken. Dann gilt auch $\chi^2\rightarrow\infty$ und damit gilt $\forall x\notin[0,a]: \Psi(x)=0$. Dadurch gibt es die Randbedingungen $\Psi(0)=\Psi(a)=0$, woraus $\Psi(x) = r\sin(kx)$ für $x\in[0,a]$ folgt. Daher muss $ka=n\pi$ (mit $n\in\mathbb N$) sein.
+
+$$
+\begin{aligned}
+    \Psi_n(x) &= \sqrt(\frac{2}{a}) \sin(k_nx) \\
+    k_n &= \frac{\pi}{a}\cdot n \text{ mit } n\in\mathbb N \\
+    E_n &= \frac{(\hbar k_n)^2}{2m} = \frac{\hbar^2 \pi^2}{2ma^2} \cdot n^2
+\end{aligned}
+$$
+
+Die Schwingung $\Psi_n$ besitzt $n-1$ Nullstellen bzw. Knoten.
+
+### Doppelkastenpotential
+Sei das Potential $U(x)$ ein Potentialkasten im Bereich $[-a, a]$, der bei $x=0$ eine Potentialbarriere in der Höhe von $u$ hat. Zur Vereinfachung nehmen wir an, dass das Potential außerhalb des Kastens unendlich hoch ist.
+
+$$
+    U(x) =
+        \begin{cases}
+            u\delta(x) & |x| < a \\
+            \infty & |x| > a
+        \end{cases}
+$$
+
+Dieses Potential ist ein einfaches Modell für Teilchen im Doppelmuldenpotential.
+
+
+## Quanten-Zeno-Effekt
+Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^2]
+
+[^2]: Benannt nach _Zenon von Elea_, von dem das [Pfeil-Paradoxon](https://de.wikipedia.org/wiki/Pfeil-Paradoxon) stammt.
 
 <!--
 ### Potentialbarriere
 ### harmonischer Oszillator
 ### Doppelmuldenpotential
-### Doppelkastenpotential
 -->
 
