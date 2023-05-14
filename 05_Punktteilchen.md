@@ -182,7 +182,7 @@ $$
         \left(
             -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x)
         \right)\Psi_E(x) \\
-    \Leftrightarrow \Psi^{\prime\prime}(x) &=
+    \Leftrightarrow \Psi_E^{\prime\prime}(x) &=
         \frac{2m}{\hbar}\left(
             U(x) - E
         \right)\Psi_E(x)
@@ -231,7 +231,7 @@ $$
 Die Schwingung $\Psi_n$ besitzt $n-1$ Nullstellen bzw. Knoten.
 
 ### Doppelkastenpotential
-Sei das Potential $U(x)$ ein Potentialkasten im Bereich $[-a, a]$, der bei $x=0$ eine Potentialbarriere in der Höhe von $u$ hat. Zur Vereinfachung nehmen wir an, dass das Potential außerhalb des Kastens unendlich hoch ist.
+Sei das Potential $U(x)$ ein Potentialkasten im Bereich $[-a, a]$, der bei $x=0$ eine Potentialbarriere in der Höhe von $u$ hat. Zur Vereinfachung nehmen wir an, dass das Potential außerhalb des Kastens unendlich hoch ist und $u$ groß ist. Dieses Potential ist ein einfaches Modell für Teilchen im Doppelmuldenpotential.
 
 $$
     U(x) =
@@ -241,8 +241,41 @@ $$
         \end{cases}
 $$
 
-Dieses Potential ist ein einfaches Modell für Teilchen im Doppelmuldenpotential.
+Nun sei $\Psi$ ein Eigenenergiezustand zur Energie $E$. Dann wird die stationäre Schrödingergleichung durch folgende Differentialgleichung für $x\in(-a, a)$ gelöst. Hierbei gelten die Randbedingungen $\Psi_E(\pm a)=0$.
 
+$$
+    \Psi_E^{\prime\prime}(x) = \frac{2m}{\hbar}(u\delta(x) - E)\Psi_E(x)
+$$
+
+Für $x\neq0$ erhält man wie beim Potentialkasten $\Psi_E=r\sin(kx)+s\cos(kx)$ mit $k=\frac{2mE}{\hbar^2}$. Das Verhalten bei $x=0$ ist dagegen anders zu bestimmen.
+
+Da die $\delta$-Funktion keinen exakten Wert angibt, sondern nur über eine Integration sinnvoll interpretiert werden kann, muss die Differentialgleichung integriert werden. Sei $\varepsilon\rightarrow 0$ klein. Zudem ist $\Psi_E(x)$ innerhalb des Potentialkastens symmetrisch.
+
+$$
+\begin{aligned}
+    \int_{-\varepsilon}^\varepsilon \Psi_E^{\prime\prime}(x) \mathrm dx
+        &=
+            \frac{2mu}{\hbar^2} \int_{-\varepsilon}^\varepsilon \delta(x) \Psi_E(x) \mathrm dx
+            &-& k^2\int_{-\varepsilon}^\varepsilon \Psi_E(x)\mathrm dx \\
+    \Leftrightarrow \Psi_E^\prime(\varepsilon) - \Psi_E^\prime(-\varepsilon)
+        &=
+            \frac{2mu}{\hbar^2} \Psi_E(0)
+            &-& 0 \\
+    \Rightarrow \Delta \Psi_E^\prime(x) &= \frac{2mu}{\hbar^2} \Psi_E(0)
+\end{aligned}
+$$
+
+Als Ansatz kann man $\Psi_E(x)=c\sin(k|x|+b)$ wählen. Dann erhält man aus der obigen Gleichung $\tan(kb)=\frac{k\hbar^2}{mu}$. Da $u$ groß ist, ist der Tangens klein und es gilt $\tan(kb)\approx kb$. Damit erhält man die Relation $b=\frac{\hbar^2}{mu}$.
+
+Die Randbedingungen $\Psi_E(\pm a)=0$ liefern uns die Gleichung $\sin(k(a+b))=0$, woraus $k(a+b)=\pi n$ (mit $n\in\mathbb N$) gefordert wird. Daraus erhalten wir die Energieeigenfunktionen.
+
+$$
+\begin{aligned}
+    \Psi_n(x) &= c_n \sin(k_n(|x|+b)) \\
+    k_n &= \frac{\pi}{a+b}\cdot n \\
+    E_n &= \frac{\hbar^2k^2}{2m} = \frac{\hbar^2\pi}{2m}\frac{k^2}{(a+b)^2}
+\end{aligned}
+$$
 
 ## Quanten-Zeno-Effekt
 Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^2]
