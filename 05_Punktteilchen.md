@@ -247,9 +247,10 @@ $$
     \Psi_E^{\prime\prime}(x) = \frac{2m}{\hbar}(u\delta(x) - E)\Psi_E(x)
 $$
 
+#### symmetrische Zustände
 Für $x\neq0$ erhält man wie beim Potentialkasten $\Psi_E=r\sin(kx)+s\cos(kx)$ mit $k=\frac{2mE}{\hbar^2}$. Das Verhalten bei $x=0$ ist dagegen anders zu bestimmen.
 
-Da die $\delta$-Funktion keinen exakten Wert angibt, sondern nur über eine Integration sinnvoll interpretiert werden kann, muss die Differentialgleichung integriert werden. Sei $\varepsilon\rightarrow 0$ klein. Zudem ist $\Psi_E(x)$ innerhalb des Potentialkastens symmetrisch.
+Da die $\delta$-Funktion keinen exakten Wert angibt, sondern nur über eine Integration sinnvoll interpretiert werden kann, muss die Differentialgleichung integriert werden. Sei $\varepsilon\rightarrow 0$ klein. Zudem sei $\Psi_E(x)$ innerhalb des Potentialkastens symmetrisch.
 
 $$
 \begin{aligned}
@@ -273,14 +274,54 @@ $$
 \begin{aligned}
     \Psi_n(x) &= c_n \sin(k_n(|x|+b)) \\
     k_n &= \frac{\pi}{a+b}\cdot n \\
-    E_n &= \frac{\hbar^2k^2}{2m} = \frac{\hbar^2\pi}{2m}\frac{k^2}{(a+b)^2}
+    E_n &= \frac{\hbar^2k^2}{2m} = \frac{\hbar^2\pi^2}{2m}\frac{k^2}{(a+b)^2}
 \end{aligned}
 $$
 
+#### antisymmerische Zustände
+Mit einer ähnlichen Rechnung wie bei den symmetrischen Zuständen erhält man für ungerade Wellenzahlen $k$ folgendes.
+
+$$
+\begin{aligned}
+    \tilde{\Psi}_n(x) &= \frac{1}{\sqrt{a}} \sin(\tilde{k}x) \\
+    \tilde{k}_n &= \frac{\pi}{a}\cdot n \\
+    \tilde{E}_n &= \frac{\hbar^2\tilde{k}^2}{2m} = \frac{\hbar^2\pi^2}{2m}\frac{n^2}{a^2}
+\end{aligned}
+$$
+
+Hier gibt es neben den Randbedingungen $\tilde{\Psi}_ n(\pm a)=0$ und der Lösung der Schrödingergleichung bei $x=0$ noch eine weitere Bedingung, die eingehalten werden muss, nämlich die _Anschlussbedingung_. Diese fordert die Stetigkeit der Wellenfunktion, also dass für $\varepsilon\rightarrow0$ der gleiche Wert $\tilde{\Psi}_ n(-\varepsilon)=\tilde{\Psi}_ n(\varepsilon)$ gilt. Dies ist erfüllt, da $\tilde{\Psi}_ n(0)=0$.
+
+#### Niveauaufspaltung
+Die symmetrischen Eigenenergien $E_n$ sind kleiner als die antisymmetrischen Eigenenergien $\tilde{E}_n$, da $\Delta E_n=\tilde{E}_ n - E_n > 0$ positiv ist. Allerdings ist $\Delta E_n=\tilde{E}_n\frac{2b}{a} \ll \tilde{E}_ n$ sehr klein. Daher ist $\Psi_n$ jeweils der $n$-te Grundzustand, $\tilde{\Psi}_n$ ist der $n$-te angeregte Zustand.
+
+Die Oszillation zwischen den Kästen wird durch die Frequenz $\omega_n = \frac{\Delta E_n}{\hbar}$ beschrieben, die von der Niveauaufspaltung abhängt. Die Oszillation in den jeweiligen Kästen wird durch die Frequenz $\Omega_n=\frac{\tilde{E}_n}{\hbar}$ dargestellt, die von der Eigenenergie im angeregten Zustand abhängt.
+
+#### Superposition
+Als Basis wählt man den $n$-ten Grundzustand und den $n$-ten angeregten Zustand. $\Psi_+$ beschreibt hier ein Teilchen im rechten Kasten, $\Psi_-$ ein Teilchen im linken Kasten.
+
+$$
+    \ket{\Psi_\pm} = \frac{1}{\sqrt{2}}(\ket{\Psi_n} \pm \ket{\tilde{\Psi}_n})
+$$
+
+#### Dipolmoment
+Beispielsweise bei Ammioniak befinden sich Bindungselektronen in einem Doppelmuldenpotential. Durch den Wechsel von der einen in die andere Mulde induzieren sie ein magnetisches Dipolmoment $\vec{\mu}$.
+
+$$
+    \mu_x = \mu_0 \left(
+            \ket{\Psi_+}\bra{\Psi_+}
+            - \ket{\Psi_-}\bra{\Psi_-}
+        \right)
+$$
+
 ## Quanten-Zeno-Effekt
-Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^2]
+Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^2] Durch die Messung eines Zustand $\phi$ wird das System diesem Zustand $\phi$ präperiert. Wird dies häufig gemacht, so kann das System in $\phi$ fixiert werden.
+
+Die Wahrscheinlichkeit, dass $N$ Messungen $M_\phi$ im zeitlichen Abstand $\tau$ das selbe Ergebnis liefern, ist nach der Bornschen Regel $P_N = |\braket{\phi|\Psi}|^2$, wenn vorher der Zustand $\Psi$ vorherrschte.
 
 [^2]: Benannt nach _Zenon von Elea_, von dem das [Pfeil-Paradoxon](https://de.wikipedia.org/wiki/Pfeil-Paradoxon) stammt.
+
+## Gebundene Eigenenergiezustände
+Eigenzustände sind gebunden, wenn die Eigenenergiezustände normierbar sind.
 
 <!--
 ### Potentialbarriere
