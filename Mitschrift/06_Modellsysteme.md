@@ -151,6 +151,3 @@ $$
 $$
 
 ## Reflektion und Transmission an einer Potentialbarriere
-
-
-<!--  -->
