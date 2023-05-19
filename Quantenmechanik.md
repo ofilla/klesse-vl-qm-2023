@@ -788,8 +788,10 @@ Die symmetrischen Eigenenergien $E_n$ sind kleiner als die antisymmetrischen Eig
 
 Die Oszillation zwischen den Kästen wird durch die Frequenz $\omega_n = \frac{\Delta E_n}{\hbar}$ beschrieben, die von der Niveauaufspaltung abhängt. Die Oszillation in den jeweiligen Kästen wird durch die Frequenz $\Omega_n=\frac{\tilde{E}_n}{\hbar}$ dargestellt, die von der Eigenenergie im angeregten Zustand abhängt und $\omega_n \ll \Omega_n$.
 
+Dies kommt daher, dass der Hamiltonoperator in Spektraldarstellung durch $H=\mathds 1 \frac{E_n+\tilde{E} _ n}{2} + \sigma_z\frac{E_n-\tilde{E} _ n}{2}$ darstellen kann. Der erste Term ist konstant, der zweite erzeugt die Dynamik. Durch diese Seperation kann der Zeitentwicklungsoperator $U(t)$ in eine global wirkende Phase und einen Schwingungsterm mit $\sigma_z$ seperiert werden, also $U(t)=\exp[i\frac{i}{hbar}\Omega t]\cdot\exp[-\frac{i}{hbar}\sigma_z\omega t]$. Nur der Term $\exp[-\frac{i}{hbar}\sigma_\omega t]$ erzeugt die Dynamik.
+
 ### Superposition
-Als Basis wählt man den $n$-ten Grundzustand und den $n$-ten angeregten Zustand. $\Psi_+$ beschreibt hier ein Teilchen im rechten Kasten, $\Psi_-$ ein Teilchen im linken Kasten.
+Als Basis wählt man den $n$-ten Grundzustand und den $n$-ten angeregten Zustand. $\Psi_+$ beschreibt hier ein Teilchen im rechten Kasten, $\Psi_-$ ein Teilchen im linken Kasten. So kann man aus beiden Zuständen ein Teilchen beschreiben, dass sich nur auf einer Seite im Kasten befindet.
 
 $$
     \ket{\Psi_\pm} = \frac{1}{\sqrt{2}}(\ket{\Psi_n} \pm \ket{\tilde{\Psi}_n})
@@ -855,7 +857,7 @@ $$
 ### Wahrscheinlichkeitsstromdichte
 Initial ist die gesamte Aufenthaltswahrscheinlichkeit der Welle im Bereich um $-l$, später ist die Aufenthaltswahrscheinlichkeit deutlich verteilt. Man es daher von "fließenden" Wahrscheinlichkeiten sprechen, ähnlich wie von fließenden Ladungen.
 
-Die Wahrscheinlichkeitsdichte $|\Psi(x, t)|^2$ ist normiert ($\int_\mathbb{R} |\Psi(x, t)|^2=1$).
+Die Wahrscheinlichkeitsdichte $|\Psi(x, t)|^2$ ist normiert ($\int_{\mathbb{R}} |\Psi(x, t)|^2=1$).
 
 Die zeitliche Änderung der Wahrscheinlichkeitsdichte ist $\frac{\mathrm d}{\mathrm dt}|\Psi(x, t)|^2=\frac{\mathrm d}{\mathrm dt}(\Psi^*\Psi)^2$. Die Wahrscheinlichkeitsstromdichte $j(x, t)$ wird aus diesem Ausdruck hergeleitet, sodass folgende Gleichung erfüllt ist:
 
