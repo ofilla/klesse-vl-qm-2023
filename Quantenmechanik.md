@@ -806,6 +806,72 @@ $$
 $$
 
 ## Reflektion und Transmission an einer Potentialbarriere
+### Tunneleffekt
+Wenn eine Potentialbarriere ein höher ist als die Energie, die ein Teilchen hat, würde man klassisch $100$% Reflektion erwarten. In der Quantenmechanik gibt es allerdings Fälle von Transmission. Man spricht davon, dass das Teilchen durch die Potentialbarriere tunnelt.
+
+Dies ist beispielsweise für den $\alpha$-Zerfall relevant. Nur durch den Tunneleffekt ist es möglich, dass die $\alpha$-Teilchen die Bindungsenergie überwinden können.
+
+### Potentialbarriere
+Sei eine Potentialbarriere $U(x)>0$ der Dicke $a$. im Intervall $(0, a)$ gegeben. Sei $\ket{\Psi}_{t_0}$ die einlaufende Welle zum Zeitpunkt $t_0$ Position $\braket{x}_{t_0}=-l$. Der initale Abstand zur Barriere soll sehr viel größer sein als die Dicke, also $l\gg a$, die initiale Breite $b$ der Welle mit $a\ll b\ll l$ sei sehr viel kleiner als der Abstand zur Barriere, aber deutlich größer als die Dicke der Barriere. Es gilt also $\braket{\Delta x}_{t_0}=b$. Die Welle habe einen Impuls $p=\hbar k =\braket{p}_{t_0}$ und damit eine Energie $E=\braket{H}_{t_0}=\frac{p^2}{2m}$.
+
+Die Wellenfunktion der einlaufenden Welle lautet zu Beginn folgendermaßen:
+
+$$
+    \Psi(x, t_0)
+        = \frac{1}{ \sqrt[4]{2\pi b^2} }
+            \exp\left[
+                    -\frac{(x+l)^2}{4b^2}
+                \right]
+            \exp[ikx]
+$$
+
+### Streuansatz
+Zunächst soll das stationäre Problem betrachtet werden. Um die Wellenfunktion zu beschreiben, wird ein Streuansatz benutzt. Hierbei sind der Reflektionskoeffizient $r$ und der Transmissionskoeffizient $t$ wichtig. Im Bereich vor der Barriere gibt es eine einlaufende und eine reflektierte Welle, hinter der Barriere eine transmittierte Welle. $\Psi_0(x)$ ist die Lösung der stationären Schrödingergleichung für das gegebene Potential.
+
+$$
+    \Psi(x) =
+        \begin{cases}
+            1\exp[ikx] + r\exp[-ikx] & : x<0 \\
+            \Psi_0(x) & : x \in [0, a] \\
+            t \exp[ikx] & : x>a
+        \end{cases}
+$$
+
+$\Psi_0(x)$ kann wie beim Potentialkasten als $\Psi_0(x)=s\sin(kx) + u\cos(kx)$ dargestellt werden.
+
+#### Anschlussbedingungen
+Es ist gefordert, dass $\Psi(x)$ und $\Psi^\prime(x)$ stetig sind. Dies muss an den Stellen $x=0$ und $x=a$ sichergestellt werden, dadurch ergeben sich $4$ Bedingungen, die erfüllt werden müssen. Dadurch werden die freien Parameter $r, t, s, u$ bestimmt.
+
+#### Reflektions- und Transmissionswahrscheinlichkeit
+Insbesondere ergibt sich, dass die Reflektionswahrscheinlichkeit $R$ und die Transmissionswahrscheinlichkeit $T$ von den Parametern $r, t$ abhängen:
+
+$$
+\begin{aligned}
+    R &= |r|^2 \\
+    T &= |t|^2
+\end{aligned}
+$$
+
+### Wahrscheinlichkeitsstromdichte
+Initial ist die gesamte Aufenthaltswahrscheinlichkeit der Welle im Bereich um $-l$, später ist die Aufenthaltswahrscheinlichkeit deutlich verteilt. Man es daher von "fließenden" Wahrscheinlichkeiten sprechen, ähnlich wie von fließenden Ladungen.
+
+Die Wahrscheinlichkeitsdichte $|\Psi(x, t)|^2$ ist normiert ($\int_\mathbb{R} |\Psi(x, t)|^2=1$).
+
+Die zeitliche Änderung der Wahrscheinlichkeitsdichte ist $\frac{\mathrm d}{\mathrm dt}|\Psi(x, t)|^2=\frac{\mathrm d}{\mathrm dt}(\Psi^*\Psi)^2$. Die Wahrscheinlichkeitsstromdichte $j(x, t)$ wird aus diesem Ausdruck hergeleitet, sodass folgende Gleichung erfüllt ist:
+
+$$
+    \frac{\mathrm d}{\mathrm dt}|\Psi(x, t)|^2 + \frac{\partial}{\partial x} j(x, t) \overset{!}{=} 0
+$$
+
+Daraus folgt die Definition der Wahrscheinlichkeitsstromdichte als Imaginärteil von $\Psi^* \partial_ x\Psi$.
+
+$$
+    j(x, t) = \frac{\hbar}{m}\Im
+        {\Large(}
+            \Psi^*(x, t) \frac{\partial}{\partial x} \Psi(x, t)
+        {\Large)}
+$$
+
 
 <!--
 ## Impuls
