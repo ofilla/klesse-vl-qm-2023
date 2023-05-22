@@ -186,10 +186,10 @@ $$
 
 $\Psi_0(x)$ kann wie beim Potentialkasten als $\Psi_0(x)=s\sin(kx) + u\cos(kx)$ dargestellt werden.
 
-#### Anschlussbedingungen
+### Anschlussbedingungen
 Es ist gefordert, dass $\Psi(x)$ und $\Psi^\prime(x)$ stetig sind. Dies muss an den Stellen $x=0$ und $x=a$ sichergestellt werden, dadurch ergeben sich $4$ Bedingungen, die erfüllt werden müssen. Dadurch werden die freien Parameter $r, t, s, u$ bestimmt.
 
-#### Reflektions- und Transmissionswahrscheinlichkeit
+### Reflektions- und Transmissionswahrscheinlichkeit
 Insbesondere ergibt sich, dass die Reflektionswahrscheinlichkeit $R$ und die Transmissionswahrscheinlichkeit $T$ von den Parametern $r, t$ abhängen:
 
 $$
@@ -218,4 +218,98 @@ $$
             \Psi^*(x, t) \frac{\partial}{\partial x} \Psi(x, t)
         {\Large)}
 $$
+
+### Kastenförmige Potentialbarriere
+Für eine Kastenförmige Potentialbarriere erhält man folgende Tunnelwahrscheinlichkeit:
+
+$$
+    T^{-1} = 1 + \left(1 + \frac{1}{4}
+        \left( \frac{q}{k} - \frac{k}{q}\right)^2\right) \sinh^2[qa]
+$$
+
+Im Grenzfall $qd\gg 1$ folgt $\sinh[qa]\approx \frac{1}{2} exp[qd]$. Damit folgt $T\approx \frac{1}{4(\dots)} \exp[-2qd]\approx  \exp[-2qd]$. Mit $\lambda=\frac{2}{q}=\hbar(\sqrt{8m(V-E)})^{-1}$ folgt $T\approx \exp[-\frac{d}{\lambda}]$.
+
+#### Lösung der Anschlussbedingungen
+$$
+    \Psi(x) =
+        \begin{cases}
+            1\exp[ikx] + r\exp[-ikx] & : x<0 \\
+            s\exp[qx] + u\exp[-qx] & : x \in [0, d] \\
+            t \exp[ikx] & : x>a
+        \end{cases}
+$$
+
+Die Anschlussbedingungen liefern das folgende lineare Gleichungssystem:
+
+$$
+\begin{aligned}
+    1+r &= s+u \\
+    ik-ikr &= -qs + qu \\
+    s\exp[-qd] + u\exp[qd] &= t \\
+    -qs\exp[-qd] + qu\exp[-qd] &= ikt
+\end{aligned}
+$$
+
+Dies kann auch in Matrixform dargestellt werden.
+
+$$
+\begin{aligned}
+    A &= \begin{pmatrix}1 & 1 \\ ik & - ik\end{pmatrix} \\
+    B &= \begin{pmatrix}1 & 1 \\ -q & q\end{pmatrix} \\
+    C &= \begin{pmatrix}\exp[-qd] & \exp[qd] \\ -q\exp[-qd] & \exp[qd]\end{pmatrix} \\
+    v &= \begin{pmatrix}1 \\ ik\end{pmatrix} \\
+    \Rightarrow \frac{1}{t}\cdot \begin{pmatrix}1 \\ r\end{pmatrix}
+        &= A^{-1} B C^{-1} v
+\end{aligned}
+$$
+
+Computerprogramme können folgende Lösung liefern.
+
+$$
+    \frac{1}{t} = \cosh[qd] + \frac{i}{2} \left(\frac{q}{\hbar} - \frac{k}{q}\right)\sinh[qd] \\
+$$
+
+Aus $T=|t|^2$ folgt der oben genannte Zusammenhang.
+
+### Gamow-Näherung
+Nähere eine beliebige Potentialbarriere durch eine Kombination von mehreren rechteckigen Potentialbarrieren an. Barrieren, die geringer als die Energie der einlaufenden Welle sind, können vernachlässigt werden. Die WKB-Methode ist genauer, wird aber hier nicht besprochen.
+
+Sei eine Potentialbarriere im Bereich $[a,b]$ durch $n$ kastenförmige Potentialbarrieren der Breite $d$ darstellbar. Die Höhe der $i$-ten Potentialbarriere sein $V_j$ im Bereich $q_j=\sqrt{2m(U(x_j)-E)}\hbar^{-1}$. Dann ist $T_j=\exp[-2q_jd]$.
+
+Die Wahrscheinlichkeit, dass alle Barrieren durchtunnelt werden, ist $T=\prod_j T_j = \exp\left[\sum_{j=1}{d} 2q_jd\right]$.
+
+Wähle nun $d$ klein, ohne dass $qd\gg 1$ verletzt wird. Dies geht, wenn $U$ hinreichend glatt ist. Damit kann man $T$ im Kontinuumsübergang durch ein Integral bestimmen.
+
+$$
+    T \approx \exp\left[\frac{1}{\hbar}\int_a^b \sqrt{8m(U(x)-E)} \mathrm dx \right]
+$$
+
+### Streuung an einem Potentialtopf
+Sei $U(x)=-V$ im Interval $[0,d]$ und $U(x)=0$ außerhalb dieses Intervals.
+
+$$
+    \Psi(x) =
+        \begin{cases}
+            \exp[ikx] + r\exp[-ikx] & : x<0 \\
+            s\exp[i\kappa x] + u\exp[-i\kappa x] & : x \in [0, a] \\
+            t \exp[ikx] & : x>a
+        \end{cases}
+$$
+
+Das Ergebnis der Streuung an einer kastenförmigen Potentialbarriere kann man verwenden, wenn man $q$ durch $i\kappa$ ersetzt. Daraus folgt:
+
+$$
+    \frac{1}{t} = \cosh[i\kappa d] + \frac{i}{2} \left(\frac{i\kappa}{\hbar} + \frac{ik}{\kappa}\right)\sinh[i\kappa d] \\
+$$
+Es gilt $\cosh[i\alpha]=\cos[\alpha]$ und $\sinh[i\alpha]=i\sin[\alpha]$. Daraus folgt die Tunnelwahrscheinlichkeit.
+
+$$
+\begin{aligned}
+    T^{-1} &= 1 + \left(1 + \frac{1}{4}
+        \left( \frac{\kappa}{k} + \frac{k}{\kappa}\right)^2\right) \sinh^2[qa] \\
+        &= 1 + \left(\frac{\kappa^2-k^2}{2k\kappa}\right)^2 \sin^2[\kappa d]
+\end{aligned}
+$$
+
+Für $\kappa d = n\pi$ folgt $T=1$. Für $\kappa d=\frac{\pi}{2}(2n+1)$ ist $T$ minimal.
 

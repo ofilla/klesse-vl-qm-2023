@@ -128,10 +128,17 @@ $$
     \mathrm e^x = \lim_{n\rightarrow \infty} \left(1+\frac{x}{n}\right)^n
 $$
 
-## Euler-Identität
+## Trigonometrie
+$$
+\begin{aligned}
+    \sinh[i\alpha] &= i\sin[\alpha] \\
+    \cosh[i\alpha] &= \cos[\alpha]
+\end{aligned}
+$$
+
+### Euler-Identität
 $$
     \mathrm e^{i\varphi} = \cos(\varphi) + i\sin(\varphi) \\
     \Rightarrow \mathrm e^{i\pi} = 1
 $$
-
 
