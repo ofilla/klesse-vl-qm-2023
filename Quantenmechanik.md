@@ -507,7 +507,7 @@ $$
 
 * $p=p^\dagger$
 * $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
-    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
+    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$. <!-- Erwähne dies bei Kommutator -->
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
 
 ## Ortsdarstellung und Impulsdarstellung
@@ -522,10 +522,10 @@ $$
 \begin{aligned}
     \ket{\Psi} &= \int \frac{\mathrm dk}{2\pi} \tilde{\Psi}(k) \ket{\tilde{\varphi}_{\hbar k}} \\
     \ket{\Psi} &= \int \mathrm dx \Psi(x) \ket{\varphi_x} \\
-    \Rightarrow \tilde{\Psi}(k) &= \mathcal{F}(\Psi(x))
+    \Rightarrow \tilde{\Psi}(k) &= \mathcal{F}(\Psi(x)) \\
+    \mathcal{F}(\Psi(x)) &= \int \frac{\mathrm dx}{2\pi} \Psi(x)\exp[-ikx]
 \end{aligned}
 $$
-
 
 ## Translationsoperator
 Der Translationsoperator $\hat{T}(s)$ verschiebt den Ort eines Objektes um $s$. Es gelten $\hat{T}(0)=\mathds 1$ und $\hat{T}(s)\ket{\varphi_x} = \ket{\varphi_{x+s}}$. Er ist analog zum Zeitentwicklungsoperator.
@@ -869,7 +869,7 @@ Die Wahrscheinlichkeitsdichte $|\Psi(x, t)|^2$ ist normiert ($\int_{\mathbb{R}} 
 Die zeitliche Änderung der Wahrscheinlichkeitsdichte ist $\frac{\mathrm d}{\mathrm dt}|\Psi(x, t)|^2=\frac{\mathrm d}{\mathrm dt}(\Psi^*\Psi)^2$. Die Wahrscheinlichkeitsstromdichte $j(x, t)$ wird aus diesem Ausdruck hergeleitet, sodass folgende Gleichung erfüllt ist:
 
 $$
-    \frac{\mathrm d}{\mathrm dt}|\Psi(x, t)|^2 + \frac{\partial}{\partial x} j(x, t) \overset{!}{=} 0
+    \frac{\mathrm d}{\mathrm dt}\left|\Psi(x, t)\right|^2 + \frac{\partial}{\partial x} j(x, t) \overset{!}{=} 0
 $$
 
 Daraus folgt die Definition der Wahrscheinlichkeitsstromdichte als Imaginärteil von $\Psi^* \partial_ x\Psi$.
@@ -879,6 +879,13 @@ $$
         {\Large(}
             \Psi^*(x, t) \frac{\partial}{\partial x} \Psi(x, t)
         {\Large)}
+$$
+
+### Kontinuitätsgleichung
+Die Kontinuitätsgleichung für die Erhaltungsgröße der Aufenthaltswahrscheinlichkeit sieht folgendermaßen aus. Hierbei ist $\rho(x, t)=|\Psi(x, t)|^2$ die Wahrscheinlichkeitsdichte. Kontinuitätsgleichungen kann ganz allgemein für Erhaltungsgrößen definieren, wenn diese sich im Raum verteilen können.
+
+$$
+    \frac{\mathrm d}{\mathrm dt}\rho(x, t) + \frac{\partial}{\partial x} j(x, t) \overset{!}{=} 0
 $$
 
 ### Kastenförmige Potentialbarriere

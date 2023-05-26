@@ -20,7 +20,7 @@ $$
 
 * $p=p^\dagger$
 * $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
-    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
+    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$. <!-- Erwähne dies bei Kommutator -->
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
 
 ## Ortsdarstellung und Impulsdarstellung
@@ -35,10 +35,10 @@ $$
 \begin{aligned}
     \ket{\Psi} &= \int \frac{\mathrm dk}{2\pi} \tilde{\Psi}(k) \ket{\tilde{\varphi}_{\hbar k}} \\
     \ket{\Psi} &= \int \mathrm dx \Psi(x) \ket{\varphi_x} \\
-    \Rightarrow \tilde{\Psi}(k) &= \mathcal{F}(\Psi(x))
+    \Rightarrow \tilde{\Psi}(k) &= \mathcal{F}(\Psi(x)) \\
+    \mathcal{F}(\Psi(x)) &= \int \frac{\mathrm dx}{2\pi} \Psi(x)\exp[-ikx]
 \end{aligned}
 $$
-
 
 ## Translationsoperator
 Der Translationsoperator $\hat{T}(s)$ verschiebt den Ort eines Objektes um $s$. Es gelten $\hat{T}(0)=\mathds 1$ und $\hat{T}(s)\ket{\varphi_x} = \ket{\varphi_{x+s}}$. Er ist analog zum Zeitentwicklungsoperator.
