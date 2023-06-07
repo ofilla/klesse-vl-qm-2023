@@ -22,6 +22,7 @@ $$
 * $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
     * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$. <!-- Erwähne dies bei Kommutator -->
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
+* $p=\hbar k$
 
 ## Ortsdarstellung und Impulsdarstellung
 Wenn ein Ort gemessen wird, muss die Ortsdarstellung verwendet werden; wird ein Impuls gemessen, muss die Impulsdarstellung verwendet werden. Durch eine Fouriertransformation kann zwischen Ortsdarstellung und Impulsdarstellung gewechselt werden.
