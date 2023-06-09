@@ -320,3 +320,78 @@ $$
 
 Für $\kappa d = n\pi$ folgt $T=1$. Für $\kappa d=\frac{\pi}{2}(2n+1)$ ist $T$ minimal.
 
+## Harmonischer Oszillator
+Sei ein Teilchen in einem Potential $U(x) = \frac{1}{2}kx^2$, wobei $k=m\omega^2$ eine Art Federkonstante mit der Masse $m$ und der Frequenz $\omega$ beschreibt. Auch viele reelle Potentiale kann man als harmonisch annähern, wenn die Auslenkung bzw die Energie gering sind. Deswegen ist der harmonische Oszillator in vielen Anwendungsgebieten sehr wichtig.
+
+### Plank'sche Strahlungsformel
+Die Energie $E_k$ ist gequantelt in Vielfachen von $\hbar\omega_k$, wobei $\omega_k=c|\vec{k}|$ die Frequenz zum Wellenvektor $\vec{k}$ mit der Lichtgeschwindigkeit $c$. Mit $n\in\mathbb N_0$ gilt $E_k = n\cdot \hbar\omega_k$. Dadurch kann der Erwartungswert der Energie bei der Temperatur $T$ bestimmt werden. Hierbei ist $\braket{n}$ der Erwartungswert der Phononenzahl im thermischen Gleichgewicht.
+
+$$
+    \braket{E_k}_T = \hbar\omega_k\braket{n}_T = \frac{\hbar\omega_k}{
+        \exp\left[\frac{\hbar\omega_k}{k_bT}\right]  - 1
+        }
+$$
+
+Damit können die Schwingungsmoden abgezählt werden. Damit kann die Intensität $I$ der Strahlung beschrieben werden, wobei $\gamma$ eine beliebige Konstante ist. Dies ist die Plank'sche Strahlungsformel.
+
+$$
+    I(\omega) = \gamma \frac{\hbar\omega^3}{\exp\left[\frac{\hbar\omega_k}{k_bT}\right]  - 1}
+$$
+
+### Eigenenergien
+Seien $E_n$ Eigenenergien zu den Eigenzuständen $\ket{\varphi_n}=\ket{n}$, die mit den Wellenfunktionen $\varphi_n(x)$ beschrieben wird. Hierzu wird die charakteristische Länge $l$ benötigt.
+
+$$
+\begin{aligned}
+    E_n &= \hbar\omega\left(n+\frac{1}{2}\right) \\
+    l &= \sqrt{\frac{\hbar}{m\omega}} \\
+    \varphi_0(x) &= \frac{1}{\sqrt[4]{\pi l^2}} \exp\left[-\frac{x^2}{2l^2}\right] \\
+    \Rightarrow \varphi_{n+1}
+        &= \frac{1}{\sqrt{n+1}} \left(
+            \frac{x}{l} - l\frac{\partial}{\partial x}
+        \right) \varphi_n(x)
+\end{aligned}
+$$
+
+#### Beweisidee: Analytische Methode
+Gesucht werden normierbare Lösungen zu der stationären Schrödingergleichung. Hieraus folgt die Gleichung für die Eigenenergien $E_n$, $\varphi_n(x)$ sind Hermite-Polynome.
+
+#### Beweis: Algebraische Methode
+
+
+### Erzeugeroperator und Vernichteroperator
+Der Erzeugeroperator $a^\dagger$ und der Vernichteroperator $a$ können einen Eigenzustand eines harmonischen Oszillators um ein Energieniveau anheben bzw. senken. Der Kommutator ergibt den Einheitsoperator.
+
+$$
+\begin{aligned}
+    a &= \sqrt{\frac{m\omega}{2\hbar}}
+        \left(
+            \hat{x} + \frac{i\hat{p}}{m\omega}
+        \right) \\
+    a\ket{n} &= \sqrt{n}\ket{n-1} \\
+    a^\dagger\ket{n} &= \sqrt{n+1}\ket{n+1} \\
+    \Rightarrow [a, a^\dagger] &= \mathds 1
+\end{aligned}
+$$
+
+Die Eigenzustände der beiden Operatoren sind kohärente Zustände.
+
+#### Ortsoperator und Impulsoperator
+Damit lassen sich auch Ortsoperator und Impulsoperator durch Erzeugeroperator und Vernichteroperator darstellen.
+
+$$
+\begin{aligned}
+    \hat{x} &= \sqrt{\frac{\hbar}{2m\omega}} \left(a^\dagger + a\right) \\
+    \hat{p} &= i \sqrt{\frac{m\omega k}{2}} \left(a^\dagger - a\right) \\
+\end{aligned}
+$$
+
+#### Hamiltonoperator
+Setzt man diese Darstellungen in den Hamiltonoperator $H$ harmonischen Oszillators ein, erhält man eine Darstellung durch Erzeugeroperator und Vernichteroperator.
+
+$$
+    H= \hbar\omega\left(a^\dagger a + \frac{1}{2}\right)
+$$
+
+Aus der Darstellung des Hamiltonoperators mit Erzeuger und Vernichter folgt $a^\dagger a\ket{n}=n\ket{n}$, $a^\dagger a$ hat als dieselben Eigenzustände wie der Hamiltonoperator. auch $aa^\dagger$ hat dieselben Eigenzustände. Da aus dem Kommutator $aa^\dagger = \mathds 1 + a^\dagger a$ folgt, gilt $aa^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist also um $1$ erhöht.
+
