@@ -86,13 +86,18 @@ $$
 $$
 
 ### Komponentendarstellung
-
 $$
-    \mathcal H \ni \ket{\Psi} = \mathds 1 \ket{\Psi} = \sum_i \ket{\varphi_i}\braket{\varphi_i|\Psi} \\
-    \Psi_i = \braket{\varphi_i|\Psi}
-        \Rightarrow \ket{\Psi} = \sum_i \Psi_i \ket{\varphi_i} \\
-    \Psi(x) = \braket{\varphi_x|\Psi}
-        \Rightarrow \ket{\Psi} = \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
+\begin{aligned}
+    \mathcal H \ni \ket{\Psi} &= \mathds 1\ket{\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \sum_i \ket{\varphi_i}\braket{\varphi_i|\Psi} \\
+    \Psi_i &= \braket{\varphi_i|\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \sum_i \Psi_i \ket{\varphi_i} \\
+    \Psi(x) &= \braket{\varphi_x|\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
+\end{aligned}
 $$
 
 $\Psi(x)$ ist die Wellenfunktion des Zustands $\ket{\Psi}$, $\Psi_i$ eine Komponente von $\ket{\Psi}$.

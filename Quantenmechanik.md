@@ -509,6 +509,7 @@ $$
 * $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
     * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$. <!-- Erwähne dies bei Kommutator -->
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
+* $p=\hbar k$
 
 ## Ortsdarstellung und Impulsdarstellung
 Wenn ein Ort gemessen wird, muss die Ortsdarstellung verwendet werden; wird ein Impuls gemessen, muss die Impulsdarstellung verwendet werden. Durch eine Fouriertransformation kann zwischen Ortsdarstellung und Impulsdarstellung gewechselt werden.
@@ -572,13 +573,18 @@ $$
 $$
 
 ### Komponentendarstellung
-
 $$
-    \mathcal H \ni \ket{\Psi} = \mathds 1 \ket{\Psi} = \sum_i \ket{\varphi_i}\braket{\varphi_i|\Psi} \\
-    \Psi_i = \braket{\varphi_i|\Psi}
-        \Rightarrow \ket{\Psi} = \sum_i \Psi_i \ket{\varphi_i} \\
-    \Psi(x) = \braket{\varphi_x|\Psi}
-        \Rightarrow \ket{\Psi} = \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
+\begin{aligned}
+    \mathcal H \ni \ket{\Psi} &= \mathds 1\ket{\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \sum_i \ket{\varphi_i}\braket{\varphi_i|\Psi} \\
+    \Psi_i &= \braket{\varphi_i|\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \sum_i \Psi_i \ket{\varphi_i} \\
+    \Psi(x) &= \braket{\varphi_x|\Psi}
+        &&\Rightarrow&&
+        \ket{\Psi}~= \int_{\mathbb R} \Psi(x) \ket{\varphi_x} \mathbb dx
+\end{aligned}
 $$
 
 $\Psi(x)$ ist die Wellenfunktion des Zustands $\ket{\Psi}$, $\Psi_i$ eine Komponente von $\ket{\Psi}$.
@@ -981,6 +987,94 @@ $$
 $$
 
 Für $\kappa d = n\pi$ folgt $T=1$. Für $\kappa d=\frac{\pi}{2}(2n+1)$ ist $T$ minimal.
+
+## Harmonischer Oszillator
+Sei ein Teilchen in einem Potential $U(x) = \frac{1}{2}kx^2$, wobei $k=m\omega^2$ eine Art Federkonstante mit der Masse $m$ und der Frequenz $\omega$ beschreibt. Auch viele reelle Potentiale kann man als harmonisch annähern, wenn die Auslenkung bzw die Energie gering sind. Deswegen ist der harmonische Oszillator in vielen Anwendungsgebieten sehr wichtig.
+
+### Plank'sche Strahlungsformel
+Die Energie $E_k$ ist gequantelt in Vielfachen von $\hbar\omega_k$, wobei $\omega_k=c|\vec{k}|$ die Frequenz zum Wellenvektor $\vec{k}$ mit der Lichtgeschwindigkeit $c$. Mit $n\in\mathbb N_0$ gilt $E_k = n\cdot \hbar\omega_k$. Dadurch kann der Erwartungswert der Energie bei der Temperatur $T$ bestimmt werden. Hierbei ist $\braket{n}$ der Erwartungswert der Phononenzahl im thermischen Gleichgewicht.
+
+$$
+    \braket{E_k}_T = \hbar\omega_k\braket{n}_T = \frac{\hbar\omega_k}{
+        \exp\left[\frac{\hbar\omega_k}{k_bT}\right]  - 1
+        }
+$$
+
+Damit können die Schwingungsmoden abgezählt werden. Damit kann die Intensität $I$ der Strahlung beschrieben werden, wobei $\gamma$ eine beliebige Konstante ist. Dies ist die Plank'sche Strahlungsformel.
+
+$$
+    I(\omega) = \gamma \frac{\hbar\omega^3}{\exp\left[\frac{\hbar\omega_k}{k_bT}\right]  - 1}
+$$
+
+### Eigenenergien
+Seien $E_n$ Eigenenergien zu den Eigenzuständen $\ket{\varphi_n}=\ket{n}$, die mit den Wellenfunktionen $\varphi_n(x)$ beschrieben wird. Hierzu wird $l$ als charakteristische Länge bezeichnet.
+
+$$
+\begin{aligned}
+    E_n &= \hbar\omega\left(n+\frac{1}{2}\right) \\
+    l &= \sqrt{\frac{\hbar}{m\omega}} \\
+    \varphi_0(x) &= \frac{1}{\sqrt[4]{\pi l^2}} \exp\left[-\frac{x^2}{2l^2}\right] \\
+    \Rightarrow \varphi_{n+1}
+        &= \frac{1}{\sqrt{n+1}} \left(
+            \frac{x}{l} - l\frac{\partial}{\partial x}
+        \right) \varphi_n(x)
+\end{aligned}
+$$
+
+#### Beweisidee: Analytische Methode
+Gesucht werden normierbare Lösungen zu der stationären Schrödingergleichung. Hieraus folgt die Gleichung für die Eigenenergien $E_n$, $\varphi_n(x)$ sind Hermite-Polynome.
+
+#### Beweis: Algebraische Methode
+Die Leiteroperatoren erzeugen Eigenzustände, die um $1$ verschoben sind. Eigenwerte des Hamiltonoperators bzw. des Operators $N=a^\dagger a$ müssen nicht-negativ sein. Damit dies keinen Widerspruch erzeugt, müssen alle Eigenwerte natürliche Zahlen $\nu\in\mathbb N_0$ sein. Daraus folgt, dass $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)=E_n$ die Eigenwerte des Hamiltonoperators sein müssen.
+
+Da $\ket{\nu}$ normierte Eigenzustände sind, muss auch $a^\dagger\ket{\nu}$ ein normierter Eigenzustand sein. Da $||a^\dagger\ket{\nu}||^2=\nu+1$, muss $\ket{\nu+1}=\frac{1}{\sqrt{\nu+1}}a^\dagger\ket{nu}$ ein normierter Eigenzustand zum Eigenwert $\nu+1$ sein. Analog folgt, dass $\ket{\nu-1}=\frac{1}{\sqrt{n}}a\ket{\nu}$ der Eigenzustand zum Eigenwert $\nu-1$ sein muss.
+
+### Die Leiteroperatoren
+Der Erzeugeroperator $a^\dagger$ und der Vernichteroperator $a$ können einen Eigenzustand eines harmonischen Oszillators um ein Energieniveau anheben bzw. senken. Der Kommutator ergibt den Einheitsoperator.
+
+$$
+\begin{aligned}
+    a &= \sqrt{\frac{m\omega}{2\hbar}}
+        \left(
+            \hat{x} + \frac{i\hat{p}}{m\omega}
+        \right) \\
+    a^\dagger\ket{n} &= \sqrt{n+1}\ket{n+1} \\
+    a\ket{n} &= \sqrt{n}\ket{n-1} \\
+    \Rightarrow [a, a^\dagger] &= \mathds 1
+\end{aligned}
+$$
+
+Sei $\ket{\nu}$ ein Eigenzustand des harmonischen Oszillators. Dann sind $a^\dagger\ket{\nu}$ ein Eigenzustand zum Eigenwert $\nu+1$ und $a\ket{\nu}$ ein Eigenzustand zum Eigenwert $\nu-1$. Deswegen nennt man diese beiden Operatoren auch Leiteroperatoren.
+
+Die Eigenzustände der beiden Leiteroperatoren sind kohärente Zustände.
+
+#### Darstellung des Ortsoperators und des Impulsoperators
+Damit lassen sich auch Ortsoperator und Impulsoperator durch Erzeugeroperator und Vernichteroperator darstellen.
+
+$$
+\begin{aligned}
+    \hat{x} &= \sqrt{\frac{\hbar}{2m\omega}} \left(a^\dagger + a\right) \\
+    \hat{p} &= i \sqrt{\frac{m\omega k}{2}} \left(a^\dagger - a\right) \\
+\end{aligned}
+$$
+
+#### Darstellung des Hamiltonoperators
+Setzt man diese Darstellungen in den Hamiltonoperator $H$ harmonischen Oszillators ein, erhält man eine Darstellung durch Erzeugeroperator und Vernichteroperator. Dadurch hat der Operator $a^\dagger a$ dasselbe Spektrum wie der Hamiltonoperator.
+
+$$
+    H= \hbar\omega\left(a^\dagger a + \frac{1}{2}\right)
+$$
+
+Wenn $\nu$ ein Eigenwert von $a^\dagger a$ ist, dann ist $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)$ ein Eigenwert zum Hamiltonoperator.
+
+Daher gilt $a^\dagger a\ket{n}=n\ket{n}$, $a^\dagger a$ hat als dieselben Eigenzustände wie der Hamiltonoperator mit den Eigenwerten $n$. auch $aa^\dagger$ hat dieselben Eigenzustände. Da aus dem Kommutator $aa^\dagger = \mathds 1 + a^\dagger a$ folgt, gilt $aa^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist also um $1$ erhöht.
+
+#### Eigenschaften von $N=a^\dagger a$
+$N$ ist hermitesch, also selbstadungiert, daher hat $N$ reelle Eigenwerte.
+
+Weiterhin ist $N$ positiv-semidefinit. Ähnlich wie beim Skalarprodukt bedeutet dies, dass der Eigenwert von $N$ nicht-negativ ist. Ist der betreffende Eigenzustand $\ket{\nu}=0$, so ist der Eigenwert $\nu>0$. Falls der Eigenwert $\nu=0$ verschwindet, ist der Eigenzustand $\ket{\nu}=0$ ebenfalls verschwunden.
+
+Zudem ist gelten die Kommutatoren $[N, a]=-a$ und $[N, a^\dagger]=a^\dagger$.
 
 
 <!--

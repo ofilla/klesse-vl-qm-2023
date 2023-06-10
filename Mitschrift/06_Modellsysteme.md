@@ -339,7 +339,7 @@ $$
 $$
 
 ### Eigenenergien
-Seien $E_n$ Eigenenergien zu den Eigenzuständen $\ket{\varphi_n}=\ket{n}$, die mit den Wellenfunktionen $\varphi_n(x)$ beschrieben wird. Hierzu wird die charakteristische Länge $l$ benötigt.
+Seien $E_n$ Eigenenergien zu den Eigenzuständen $\ket{\varphi_n}=\ket{n}$, die mit den Wellenfunktionen $\varphi_n(x)$ beschrieben wird. Hierzu wird $l$ als charakteristische Länge bezeichnet.
 
 $$
 \begin{aligned}
@@ -357,9 +357,11 @@ $$
 Gesucht werden normierbare Lösungen zu der stationären Schrödingergleichung. Hieraus folgt die Gleichung für die Eigenenergien $E_n$, $\varphi_n(x)$ sind Hermite-Polynome.
 
 #### Beweis: Algebraische Methode
+Die Leiteroperatoren erzeugen Eigenzustände, die um $1$ verschoben sind. Eigenwerte des Hamiltonoperators bzw. des Operators $N=a^\dagger a$ müssen nicht-negativ sein. Damit dies keinen Widerspruch erzeugt, müssen alle Eigenwerte natürliche Zahlen $\nu\in\mathbb N_0$ sein. Daraus folgt, dass $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)=E_n$ die Eigenwerte des Hamiltonoperators sein müssen.
 
+Da $\ket{\nu}$ normierte Eigenzustände sind, muss auch $a^\dagger\ket{\nu}$ ein normierter Eigenzustand sein. Da $||a^\dagger\ket{\nu}||^2=\nu+1$, muss $\ket{\nu+1}=\frac{1}{\sqrt{\nu+1}}a^\dagger\ket{nu}$ ein normierter Eigenzustand zum Eigenwert $\nu+1$ sein. Analog folgt, dass $\ket{\nu-1}=\frac{1}{\sqrt{n}}a\ket{\nu}$ der Eigenzustand zum Eigenwert $\nu-1$ sein muss.
 
-### Erzeugeroperator und Vernichteroperator
+### Die Leiteroperatoren
 Der Erzeugeroperator $a^\dagger$ und der Vernichteroperator $a$ können einen Eigenzustand eines harmonischen Oszillators um ein Energieniveau anheben bzw. senken. Der Kommutator ergibt den Einheitsoperator.
 
 $$
@@ -368,15 +370,17 @@ $$
         \left(
             \hat{x} + \frac{i\hat{p}}{m\omega}
         \right) \\
-    a\ket{n} &= \sqrt{n}\ket{n-1} \\
     a^\dagger\ket{n} &= \sqrt{n+1}\ket{n+1} \\
+    a\ket{n} &= \sqrt{n}\ket{n-1} \\
     \Rightarrow [a, a^\dagger] &= \mathds 1
 \end{aligned}
 $$
 
-Die Eigenzustände der beiden Operatoren sind kohärente Zustände.
+Sei $\ket{\nu}$ ein Eigenzustand des harmonischen Oszillators. Dann sind $a^\dagger\ket{\nu}$ ein Eigenzustand zum Eigenwert $\nu+1$ und $a\ket{\nu}$ ein Eigenzustand zum Eigenwert $\nu-1$. Deswegen nennt man diese beiden Operatoren auch Leiteroperatoren.
 
-#### Ortsoperator und Impulsoperator
+Die Eigenzustände der beiden Leiteroperatoren sind kohärente Zustände.
+
+#### Darstellung des Ortsoperators und des Impulsoperators
 Damit lassen sich auch Ortsoperator und Impulsoperator durch Erzeugeroperator und Vernichteroperator darstellen.
 
 $$
@@ -386,12 +390,21 @@ $$
 \end{aligned}
 $$
 
-#### Hamiltonoperator
-Setzt man diese Darstellungen in den Hamiltonoperator $H$ harmonischen Oszillators ein, erhält man eine Darstellung durch Erzeugeroperator und Vernichteroperator.
+#### Darstellung des Hamiltonoperators
+Setzt man diese Darstellungen in den Hamiltonoperator $H$ harmonischen Oszillators ein, erhält man eine Darstellung durch Erzeugeroperator und Vernichteroperator. Dadurch hat der Operator $a^\dagger a$ dasselbe Spektrum wie der Hamiltonoperator.
 
 $$
     H= \hbar\omega\left(a^\dagger a + \frac{1}{2}\right)
 $$
 
-Aus der Darstellung des Hamiltonoperators mit Erzeuger und Vernichter folgt $a^\dagger a\ket{n}=n\ket{n}$, $a^\dagger a$ hat als dieselben Eigenzustände wie der Hamiltonoperator. auch $aa^\dagger$ hat dieselben Eigenzustände. Da aus dem Kommutator $aa^\dagger = \mathds 1 + a^\dagger a$ folgt, gilt $aa^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist also um $1$ erhöht.
+Wenn $\nu$ ein Eigenwert von $a^\dagger a$ ist, dann ist $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)$ ein Eigenwert zum Hamiltonoperator.
+
+Daher gilt $a^\dagger a\ket{n}=n\ket{n}$, $a^\dagger a$ hat als dieselben Eigenzustände wie der Hamiltonoperator mit den Eigenwerten $n$. auch $aa^\dagger$ hat dieselben Eigenzustände. Da aus dem Kommutator $aa^\dagger = \mathds 1 + a^\dagger a$ folgt, gilt $aa^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist also um $1$ erhöht.
+
+#### Eigenschaften von $N=a^\dagger a$
+$N$ ist hermitesch, also selbstadungiert, daher hat $N$ reelle Eigenwerte.
+
+Weiterhin ist $N$ positiv-semidefinit. Ähnlich wie beim Skalarprodukt bedeutet dies, dass der Eigenwert von $N$ nicht-negativ ist. Ist der betreffende Eigenzustand $\ket{\nu}=0$, so ist der Eigenwert $\nu>0$. Falls der Eigenwert $\nu=0$ verschwindet, ist der Eigenzustand $\ket{\nu}=0$ ebenfalls verschwunden.
+
+Zudem ist gelten die Kommutatoren $[N, a]=-a$ und $[N, a^\dagger]=a^\dagger$.
 
