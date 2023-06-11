@@ -1017,9 +1017,12 @@ $$
     \Rightarrow \varphi_{n+1}
         &= \frac{1}{\sqrt{n+1}} \left(
             \frac{x}{l} - l\frac{\partial}{\partial x}
-        \right) \varphi_n(x)
+        \right) \varphi_n(x) \\
+    \Rightarrow \ket{n} &= \frac{1}{\sqrt{n!}}(a^\dagger)^n \ket{0}
 \end{aligned}
 $$
+
+$\ket{0}$ hat eine gaußverteilte Wahrscheinlichkeitsdichte mit der Standardabweichung $l$.
 
 #### Beweisidee: Analytische Methode
 Gesucht werden normierbare Lösungen zu der stationären Schrödingergleichung. Hieraus folgt die Gleichung für die Eigenenergien $E_n$, $\varphi_n(x)$ sind Hermite-Polynome.
@@ -1058,6 +1061,27 @@ $$
 \end{aligned}
 $$
 
+##### Erwartungswerte
+Die Erwartungswerte von $x$ und $p$ sind $0$. Dies bedeutet, dass das Teilchen in der Ruhelage am Wahrscheinlichsten ist, ebenso wie es am Wahrscheinlichsten ist, dass das Teilchen sich in Ruhe befindet. Dies bedeutet jedoch nicht, dass es sich in Ruhe _und_ in der Ruhelage gleichzeitig befindet.
+
+$$
+\begin{aligned}
+    \braket{x}_{\ket{n}} &= 0\\
+    \braket{p}_{\ket{n}} &= 0\\
+\end{aligned}
+$$
+
+Die zweiten statistischem Momente $x^2$ und $p^2$ sind dagengegen abhängig von der charakteristischen Länge $l$. Dies bedeutet, dass die Standardabweichung von $x$ proportional zu $l$ ist, weshalb der Begriff der charakteristischen Länge sinnvoll ist. Die Standardabweichung von $p$ ist dagegen umgekehrt proportional zu $l$, daher ist sorgt eine kurze charakteristische Länge für hohe Impulsfluktuationen. Dies ist der Heisenberg'schen Unschärferelation ähnlich.
+
+$$
+\begin{aligned}
+    \braket{x^2}_{\ket{n}} &= l^2\left(n+\frac{1}{2}\right)
+        &&\Rightarrow&& \braket{x^2}_{\ket{0}} = \frac{l^2}{2} \\
+    \braket{p^2}_{\ket{n}} &= \frac{\hbar^2}{l^2}\left(n+\frac{1}{2}\right)
+        &&\Rightarrow&& \braket{p^2}_{\ket{n}} = \frac{\hbar^2}{2l^2}
+\end{aligned}
+$$
+
 #### Darstellung des Hamiltonoperators
 Setzt man diese Darstellungen in den Hamiltonoperator $H$ harmonischen Oszillators ein, erhält man eine Darstellung durch Erzeugeroperator und Vernichteroperator. Dadurch hat der Operator $a^\dagger a$ dasselbe Spektrum wie der Hamiltonoperator.
 
@@ -1075,6 +1099,65 @@ $N$ ist hermitesch, also selbstadungiert, daher hat $N$ reelle Eigenwerte.
 Weiterhin ist $N$ positiv-semidefinit. Ähnlich wie beim Skalarprodukt bedeutet dies, dass der Eigenwert von $N$ nicht-negativ ist. Ist der betreffende Eigenzustand $\ket{\nu}=0$, so ist der Eigenwert $\nu>0$. Falls der Eigenwert $\nu=0$ verschwindet, ist der Eigenzustand $\ket{\nu}=0$ ebenfalls verschwunden.
 
 Zudem ist gelten die Kommutatoren $[N, a]=-a$ und $[N, a^\dagger]=a^\dagger$.
+
+# Kohärente Zustände
+Kohärente Zustände sind quasi-klassische Zustände.
+
+Für große $n\gg 1$ sind die Eigenenergiezustände $\ket{n}$ delokalisiert, aber stationäre Lösungen $\varphi_n(x)$. Klassische Zustände sind stattdessen lokal und nicht-stationär, beispielsweise als $\rho_t(x)=\delta(x-x_0)$.
+
+## Verschiebungsoperator
+Es werden Zustände $\ket{\Psi(x)}$ gesucht, die möglichst lokale Zustände beschrieben. Dies kann dadurch ermöglicht werden, dass der Erwartungswert der Varianz $\braket{\Delta x}$ klein im Vergleich zum zweiten statistischen Moment $\braket{x^2}$ sein soll, also $\braket{(\Delta x)^2}_t\ll \braket{x^2}_t$.
+
+Dies kann auf zwei Arten erfolgen: Man kann das Teilchen auslenken, was durch eine Translation $\ket{\Psi_0}=T(x_0)\ket{0}$ dargestellt wird, oder es anstoßen, was durch eine Impulstranslation $\ket{\Psi_0}=\tilde{T}(p_0)\ket{0}$ beschrieben wird. Man kann auch beide Methoden kombinieren, dies wird durch den unitären Verschiebungsoperator $D(\alpha) := \tilde{T}(\alpha)T(\alpha)$ dargestellt, wobei $\alpha\in\mathbb C$ komplexwertig ist.
+
+$$
+\begin{aligned}
+    D(\alpha) &\equiv \tilde{T}(\alpha)T(\alpha)
+        = \exp\left[\alpha a^\dagger - \alpha^* a\right] \\
+    D(\alpha) &=
+        \mathrm e^{i\varphi}
+        \tilde{T}\left(\frac{\sqrt{2}\hbar}{l} \Im(\alpha) \right)
+    T\left(\sqrt{2}l\Re(\alpha)\right)
+\end{aligned}
+$$
+
+Sei $\alpha=u + iv$ mit $u,v\in\mathbb R$.  Falls $\alpha$ reell ist ($\Im(\alpha)=v= 0$), beschreibt $D(\alpha)=T(\sqrt{2}l u)$ eine reine Translation. Falls $\alpha$ imaginär ist ($\Re(\alpha)=u=0$), beschreibt $D(\alpha)=\tilde{T}(\frac{\sqrt{2}\hbar}{l} \alpha)$ eine reine Impulstranslation.
+
+Im allgemeinen Fall kann man $D(\alpha)$ folgendermaßen darstellen. Hierzu sind $A$ und $B$ die Operatoren, die in den Exponenten der (Impuls-)Translationsoperatoren auftauchen.
+
+$$
+\begin{aligned}
+    A &:= i\sqrt{2}v\frac{\hat{x}}{l} \\
+    B &:= -i\sqrt{2}lu\frac{\hat{p}}{\hbar} \\
+    D(\alpha) &= \mathrm{e}^A \mathrm{e}^B \\
+\end{aligned}
+$$
+
+## Baker-Campbell-Hausdorff-Identität
+Für Operatoren $A, B$, die mit $[A, B]$ vertauschen, gilt folgende Identität.
+
+$$
+    \mathrm{e}^A \mathrm{e}^B = \mathrm{e}^{[A,B]} \mathrm{e}^{A+B}
+$$
+
+## Kohärente Zustände
+Wird die Baker-Campbell-Hausdorff-Identität auf den Verschiebungsoperator $D(\alpha)$ angewendet, ergibt sich folgende Relation.
+
+$$
+\begin{aligned}
+    D(\alpha) &= \exp\left[\alpha a^\dagger - \alpha^* a\right] \\
+    D(\alpha) &=
+        \mathrm e^{iuv}
+        \tilde{T}\left(\frac{\sqrt{2}\hbar}{l} \Im(\alpha) \right)
+    T\left(\sqrt{2}l\Re(\alpha)\right)
+\end{aligned}
+$$
+
+Damit können kohärente Zustände $\ket{c(\alpha)}$ definiert werden. Diese ergeben sich aus einer Impuls- und Ortstranslation des Grundzustandes $\ket{0}$, die durch den Verschiebungsoperator mit komplexvertigem $\alpha\in\mathbb C$ dargestellt wird.
+
+$$
+    \ket{c(\alpha)} = D(\alpha)\ket{0}
+$$
 
 
 <!--

@@ -349,9 +349,12 @@ $$
     \Rightarrow \varphi_{n+1}
         &= \frac{1}{\sqrt{n+1}} \left(
             \frac{x}{l} - l\frac{\partial}{\partial x}
-        \right) \varphi_n(x)
+        \right) \varphi_n(x) \\
+    \Rightarrow \ket{n} &= \frac{1}{\sqrt{n!}}(a^\dagger)^n \ket{0}
 \end{aligned}
 $$
+
+$\ket{0}$ hat eine gaußverteilte Wahrscheinlichkeitsdichte mit der Standardabweichung $l$.
 
 #### Beweisidee: Analytische Methode
 Gesucht werden normierbare Lösungen zu der stationären Schrödingergleichung. Hieraus folgt die Gleichung für die Eigenenergien $E_n$, $\varphi_n(x)$ sind Hermite-Polynome.
@@ -387,6 +390,27 @@ $$
 \begin{aligned}
     \hat{x} &= \sqrt{\frac{\hbar}{2m\omega}} \left(a^\dagger + a\right) \\
     \hat{p} &= i \sqrt{\frac{m\omega k}{2}} \left(a^\dagger - a\right) \\
+\end{aligned}
+$$
+
+##### Erwartungswerte
+Die Erwartungswerte von $x$ und $p$ sind $0$. Dies bedeutet, dass das Teilchen in der Ruhelage am Wahrscheinlichsten ist, ebenso wie es am Wahrscheinlichsten ist, dass das Teilchen sich in Ruhe befindet. Dies bedeutet jedoch nicht, dass es sich in Ruhe _und_ in der Ruhelage gleichzeitig befindet.
+
+$$
+\begin{aligned}
+    \braket{x}_{\ket{n}} &= 0\\
+    \braket{p}_{\ket{n}} &= 0\\
+\end{aligned}
+$$
+
+Die zweiten statistischem Momente $x^2$ und $p^2$ sind dagengegen abhängig von der charakteristischen Länge $l$. Dies bedeutet, dass die Standardabweichung von $x$ proportional zu $l$ ist, weshalb der Begriff der charakteristischen Länge sinnvoll ist. Die Standardabweichung von $p$ ist dagegen umgekehrt proportional zu $l$, daher ist sorgt eine kurze charakteristische Länge für hohe Impulsfluktuationen. Dies ist der Heisenberg'schen Unschärferelation ähnlich.
+
+$$
+\begin{aligned}
+    \braket{x^2}_{\ket{n}} &= l^2\left(n+\frac{1}{2}\right)
+        &&\Rightarrow&& \braket{x^2}_{\ket{0}} = \frac{l^2}{2} \\
+    \braket{p^2}_{\ket{n}} &= \frac{\hbar^2}{l^2}\left(n+\frac{1}{2}\right)
+        &&\Rightarrow&& \braket{p^2}_{\ket{n}} = \frac{\hbar^2}{2l^2}
 \end{aligned}
 $$
 
