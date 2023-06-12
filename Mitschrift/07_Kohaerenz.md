@@ -1,5 +1,5 @@
 # Kohärente Zustände
-Kohärente Zustände sind quasi-klassische Zustände.
+Kohärente Zustände sind quasi-klassische Zustände. Sie sind in der Quantenoptik besonders interessant, da optische Wellen in einem begrenzten Raum durch stehende Wellen eines harmonischen Oszillators beschrieben werden.
 
 Für große $n\gg 1$ sind die Eigenenergiezustände $\ket{n}$ delokalisiert, aber stationäre Lösungen $\varphi_n(x)$. Klassische Zustände sind stattdessen lokal und nicht-stationär, beispielsweise als $\rho_t(x)=\delta(x-x_0)$.
 
@@ -51,9 +51,16 @@ $$
 \end{aligned}
 $$
 
-Damit können kohärente Zustände $\ket{c(\alpha)}$ definiert werden. Diese ergeben sich aus einer Impuls- und Ortstranslation des Grundzustandes $\ket{0}$, die durch den Verschiebungsoperator mit komplexvertigem $\alpha\in\mathbb C$ dargestellt wird.
+Damit können kohärente Zustände $\ket{c(\alpha)}$ definiert werden. Diese ergeben sich aus einer Impuls- und Ortstranslation des Grundzustandes $\ket{0}$, die durch den Verschiebungsoperator mit komplexvertigem $\alpha\in\mathbb C$ dargestellt wird. Der zeitentwickelte Zustand $U(t)\ket{c(\alpha)}$ bewegt sich ähnlich zum klassischen Fall auf einer Ellipse im Phasenraum.
 
 $$
-    \ket{c(\alpha)} = D(\alpha)\ket{0}
+\begin{aligned}
+    \ket{c(\alpha)} &= D(\alpha)\ket{0} \\
+    U(t)\ket{c(\alpha)}
+        &= \exp\left[-i\omega \frac{t}{2}\right]
+            {\Large \ket{
+                {\normalsize c{\large (}\exp[-i\omega t]\alpha{\large )}}}
+            }
+\end{aligned}
 $$
 
