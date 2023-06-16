@@ -64,3 +64,5 @@ $$
 \end{aligned}
 $$
 
+Zum konkreten Rechnen kann man die Definitionen von $\tilde{T}$ und $T$ einsetzen und erhält eine strukturell einfache Gleichung für $D(\alpha)$.
+
