@@ -1,4 +1,4 @@
-# Zweizustandssysteme
+# 4. Zweizustandssysteme
 
 ## Bohr-Sommerfeldsches Atommodell
 Das Bohr-Sommerfeldsche Atommodell ist eine Erweiterung des Bohrschen Atommodells, das klassische Mechanik annimmt, um die Bewegung der Elektronen um den Atomkern zu beschreiben. Es wird um Quantisierungsbedingungen ergänzt.

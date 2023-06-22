@@ -1,4 +1,4 @@
-# Kohärente Zustände
+# 7. Kohärente Zustände
 Kohärente Zustände sind quasi-klassische Zustände. Sie sind in der Quantenoptik besonders interessant, da optische Wellen in einem begrenzten Raum durch stehende Wellen eines harmonischen Oszillators beschrieben werden.
 
 Für große $n\gg 1$ sind die Eigenenergiezustände $\ket{n}$ delokalisiert, aber stationäre Lösungen $\varphi_n(x)$. Klassische Zustände sind stattdessen lokal und nicht-stationär, beispielsweise als $\rho_t(x)=\delta(x-x_0)$.

@@ -1,4 +1,4 @@
-# Prinzipien
+# 2. Prinzipien
 
 ## Operatoren
 Ein Operator $\hat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\hat{A}\varphi$ abbildet.

@@ -1,4 +1,4 @@
-# Postulate
+# 3. Postulate
 
 ## 1. Postulat: Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.

@@ -1,8 +1,8 @@
-# Störungstheorie
+# 8. Störungstheorie
 ## Zeitunabhängige Störungstheorie
 Im Allgemeinen wird ein reales System durch einen Hamiltonoperator $H$ beschrieben. Dieses soll kein ideales System sein, sondern geringfügig von einem idealen System abweichen. Dies kann ein näherungsweise harmonischer Oszillator sein, oft wird auch das Wasserstoffatom als ideales System verwendet.
 
-Der Hamiltonoperator des idealen Systems sei $H_0$, $H_1$ sei eine Korrektur. Sei $|\lambda|\ll 1$ ein dimensionsloser Faktor, der die Störung klein hält. Wird diese Störung zu groß, kann man die Störungstheorie nicht mehr anwenden. <!-- Lagrange-Multiplikator? -->
+Der Hamiltonoperator des idealen Systems sei $H_0$, $H_1$ sei eine Korrektur. Sei $|\lambda|\ll 1$ ein dimensionsloser Faktor, der die Störung klein hält. Wird diese Störung zu groß, kann man die Störungstheorie nicht mehr anwenden.
 
 Dann gilt $H = H_0 + \lambda H_1$. Damit kann die Energie $E_n(\lambda) = E_n + \Delta E(\lambda)$ als Abweichung der idealen Eigenenergie $E_n$ bestimmt werden, ebenso ist $\ket{n(\lambda)}=\ket{n}+\ket{\Delta n(\lambda)}$ abweichend vom idealen Eigenzustand $\ket{n}$.
 
@@ -101,6 +101,8 @@ $$
 \end{aligned}
 $$
 
+Der Zeemann-Effekt ist ein Beispiel für Störungen mit entarteten Zuständen.
+
 ## Zeitabhängige Störungstheorie
 ### Zeitabhängige Störungen
 Im Unterschied zur zeitunabhängigen Störungstheorie wird nun angekommen, dass die Störung in der Zeit variabel ist. Dies wird durch ein zeitabhängiges Potential $V(t)$ beschrieben. Die Dynamik des gestörten Systems soll nun in Bezug auf die ungestörte Dynamik von $H_0$ mit den Energieeigenwerten $E_n$ und Zuständen $\ket{n}$ bestimmt werden.
@@ -108,11 +110,17 @@ Im Unterschied zur zeitunabhängigen Störungstheorie wird nun angekommen, dass 
 $$
     H(t) = H_0 + V(t)
 $$
+#### Zeitentwicklungsoperator $U_0(t)$
+Der Zeitentwicklungsoperator $U_0(t)$ für das ungestörte System mit dem Hamiltonoperator $H_0$ lautet folgendermaßen.
+
+$$
+    U_0(t) = \exp\left[-\frac{i}{\hbar}H_0t\right]
+$$
 
 ### Übergangswahrscheinlichkeit
-Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im Zustand $\ket{m}$ befindet. <!-- m gestörter ZS? -->
+Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im ungestörten Zustand $\ket{m}$ befindet.
 
-Falls $V(t)=0$ verschwindet, ist die Übergangswahrscheinlichkeit $P_{nm}(t)=0$ ebenfalls nichtexistent. Ansonsten muss die folgende Schrödingergleichung gelöst werden, um den Zustand zu bestimmen. Hierbei ist $U_0(t)$ der Zeitentwicklungsoperator des gestörten Systems.<!-- Des gestörten Systems?  -->
+Falls $V(t)=0$ verschwindet, ist die Übergangswahrscheinlichkeit $P_{nm}(t)=0$ ebenfalls nichtexistent. Ansonsten muss die folgende Schrödingergleichung gelöst werden, um den Zustand zu bestimmen. Hierbei ist $U_0(t)$ der Zeitentwicklungsoperator des ungestörten Systems.
 
 $$
 \begin{aligned}
@@ -124,13 +132,15 @@ $$
 ### Wechselwirkungsbild
 Mittels des Wechselwirkungsbildes wird die ungestörte $H_0$-Dynamik von der störenden $V(t)$-Dynamik getrennt.
 
-Hierzu sei $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (H_0+V(t))\ket{\Psi(t)}$ löst. Dann sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild.
+Hierzu sei $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (H_0+V(t))\ket{\Psi(t)}$ löst. Dann sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild, $U_0^\dagger(t)$ ist der adjungierte Zeitentwicklungsoperator des ungestörten Systems.
 
 $$
-    \ket{\Psi(t)}_I = \exp\left[+i\frac{H_0}{\hbar}t\right] \ket{\Psi(t)}
+    \ket{\Psi(t)}_I
+        = U_0^\dagger(t) \ket{\Psi(t)}
+        = \exp\left[+i\frac{H_0}{\hbar}t\right] \ket{\Psi(t)}
 $$
 
-Ohne Störung $(V(t)=0)$ gilt demnach $\ket{\Psi(t)}_I=\ket{\Psi(0)}$.
+Ohne Störung $(V(t)=0)$ gilt mit dem Zeitentwicklungsoperatur $U_0(t)$ die Relation $\ket{\Psi(t)}_I=U_0(t)\ket{\Psi(0)}$.
 
 Die Störungstheorie kann durch iteratives Lösen der Schrödingergleichung im Wechselwirkungsbild gelöst werden.
 
@@ -138,7 +148,10 @@ Die Störungstheorie kann durch iteratives Lösen der Schrödingergleichung im W
 Ein Operator $V(t)$ kann in das Wechselwirkungsbild transformiert werden. Diese Transformation erzeugt $V_I(t)$ und ist folgendermaßen definiert.
 
 $$
-    V_I(t) = \exp\left[+i\frac{H_0}{\hbar}t\right] V_0(t) \exp\left[-i\frac{H_0}{\hbar}t\right]
+\begin{aligned}
+    V_I(t) &= U_0^\dagger(t) V_0(t) U_0(t) \\
+    V_I(t) &= \exp\left[+i\frac{H_0}{\hbar}t\right] V_0(t) \exp\left[-i\frac{H_0}{\hbar}t\right]
+\end{aligned}
 $$
 
 ### Schrödingergleichung im Wechselwirkungsbild
@@ -162,7 +175,7 @@ $$
 \end{aligned}
 $$
 
-### Harmonische Störung $1.$ Ordnung
+### Fermis goldene Regel
 Sei $V(t)$ eine Störung, die mit der Frequenz $\omega$ oszilliert.
 
 $$
@@ -191,5 +204,5 @@ Erst durch die Existenz eines äußeren Feldes wird der Wechsel von Elektronen z
 ##### Laser
 Bei einem Laser werden Zustände erzeugt, bei denen möglichst viele Elektronen in Zuständen $\ket{n}$ sitzen. Dann kann eine passende Elektromagnetische Welle die Elektronen auf Zustände $\ket{m}$ anregen. Dann kann man die Emission von Photonen induzieren.
 
-Man kann auch beweisen, dass auch die Phase der emittierten Photonen gleich ist. Um dies zu erklären benötigt man kohärente Zustände.
+Man kann auch beweisen, dass auch die Phase der emittierten Photonen gleich ist. Dies kann man mit kohärenten Zuständen erklären.
 

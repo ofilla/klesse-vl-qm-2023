@@ -1,4 +1,4 @@
-# Quantenmechanik eines Punktteilchens
+# 5. Quantenmechanik eines Punktteilchens
 ## Ortsoperator
 Im Folgenden betrachten wir ein Teilchen im Eindimensionalen Raum.
 

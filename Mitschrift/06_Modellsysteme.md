@@ -1,4 +1,4 @@
-# Modellsysteme
+# 6. Modellsysteme
 ## Gebundene Eigenenergiezustände
 Eigenzustände sind gebunden, wenn die Eigenenergiezustände normierbar sind.
 
