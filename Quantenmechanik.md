@@ -11,7 +11,7 @@ keywords:
 # Disclaimer
 Dies ist eine _inoffizielle_ Mitschrift aus der Vorlesung zur Quantenmechanik von Dr. Rochus Klesse. Ich habe Dr. Klesses Erlaubnis, dies zu publizieren. Dies bedeutet jedoch nicht, dass irgendjemand Korrekturgelesen hätte. Fehler, Ungenauigkeiten etc. sind demnach zu erwarten und mir zuzuschreiben.
 
-# Einleitung
+# 1. Einleitung
 Die klassische Physik ist schon lange bekannt, zu Teilen schon sehr lange. Hierzu zählen die _klassische Mechanik_, die _Elektrodynamik_ sowie die _spezielle_ und _allgemeine_ _Relativitätstheorie_. Diese Bereiche gelten zwar im makroskopischen Bereich, allerdings nicht im mikroskopischen Bereich! Hierfür benötigt man die Quantenphysik.
 
 Beispielsweise besagt die klassische Vorstellung eines Atoms, ein Elektron kreise auf einer Keplerbahn um den Atomkern. Auf diese Weise wäre es jedoch dauerhaft beschleunigt, daher müsste es elektromagnische Strahlung abstrahlen. Dies würde die Energie des Elektrons reduzieren, was die Kreisbahn instabil machen müsste - das Elektron fiele auf einer spiralförmigen Bahn in den Atomkern. Daher reicht die klassische Theorie nicht aus, um Atome zu erklären.
@@ -25,7 +25,7 @@ Wesentliche Merkmale der Quantenmechanik sind das _Superpositionsprinzip_ und de
 
 [^1]: z.B: elektrische Leitfähigkeit und Wärmekapazität
 
-# Prinzipien
+# 2. Prinzipien
 
 ## Operatoren
 Ein Operator $\hat{A}$ auf dem Hilbertraum $\mathcal H$ ist eine lineare Abbildung, die einen Zustand $\varphi$ auf einen Zustand $\hat{A}\varphi$ abbildet.
@@ -169,7 +169,7 @@ $$
     \Rightarrow \mathrm e^{i\pi} = 1
 $$
 
-# Postulate
+# 3. Postulate
 
 ## 1. Postulat: Der Hilbertraum
 Der Zustandsraum der Quantenmechanik ist der **Hilbertraum** $\mathcal{H}_S$ des Systems, ein unitärer Vektorraum. Dies bedeutet, es gibt ein hermitesches Skalarprodukt.
@@ -264,7 +264,7 @@ $$
     \dot{\Psi}(t) = -\frac{i}{\hbar} H\Psi(t)\ ,
 $$
 
-# Zweizustandssysteme
+# 4. Zweizustandssysteme
 
 ## Bohr-Sommerfeldsches Atommodell
 Das Bohr-Sommerfeldsche Atommodell ist eine Erweiterung des Bohrschen Atommodells, das klassische Mechanik annimmt, um die Bewegung der Elektronen um den Atomkern zu beschreiben. Es wird um Quantisierungsbedingungen ergänzt.
@@ -485,7 +485,7 @@ $$
 
 Dies ist eine **Lamorpräzession** mit der Frequenz $\omega_L=2\omega=\frac{2B\mu_0}{\hbar}$.
 
-# Quantenmechanik eines Punktteilchens
+# 5. Quantenmechanik eines Punktteilchens
 ## Ortsoperator
 Im Folgenden betrachten wir ein Teilchen im Eindimensionalen Raum.
 
@@ -666,7 +666,7 @@ Die Wahrscheinlichkeit, dass $N$ Messungen $M_\phi$ im zeitlichen Abstand $\tau$
 
 [^2]: Benannt nach _Zenon von Elea_, von dem das [Pfeil-Paradoxon](https://de.wikipedia.org/wiki/Pfeil-Paradoxon) stammt.
 
-# Modellsysteme
+# 6. Modellsysteme
 ## Gebundene Eigenenergiezustände
 Eigenzustände sind gebunden, wenn die Eigenenergiezustände normierbar sind.
 
@@ -1100,7 +1100,7 @@ Weiterhin ist $N$ positiv-semidefinit. Ähnlich wie beim Skalarprodukt bedeutet 
 
 Zudem ist gelten die Kommutatoren $[N, a]=-a$ und $[N, a^\dagger]=a^\dagger$.
 
-# Kohärente Zustände
+# 7. Kohärente Zustände
 Kohärente Zustände sind quasi-klassische Zustände. Sie sind in der Quantenoptik besonders interessant, da optische Wellen in einem begrenzten Raum durch stehende Wellen eines harmonischen Oszillators beschrieben werden.
 
 Für große $n\gg 1$ sind die Eigenenergiezustände $\ket{n}$ delokalisiert, aber stationäre Lösungen $\varphi_n(x)$. Klassische Zustände sind stattdessen lokal und nicht-stationär, beispielsweise als $\rho_t(x)=\delta(x-x_0)$.
@@ -1168,11 +1168,11 @@ $$
 
 Zum konkreten Rechnen kann man die Definitionen von $\tilde{T}$ und $T$ einsetzen und erhält eine strukturell einfache Gleichung für $D(\alpha)$.
 
-# Störungstheorie
+# 8. Störungstheorie
 ## Zeitunabhängige Störungstheorie
 Im Allgemeinen wird ein reales System durch einen Hamiltonoperator $H$ beschrieben. Dieses soll kein ideales System sein, sondern geringfügig von einem idealen System abweichen. Dies kann ein näherungsweise harmonischer Oszillator sein, oft wird auch das Wasserstoffatom als ideales System verwendet.
 
-Der Hamiltonoperator des idealen Systems sei $H_0$, $H_1$ sei eine Korrektur. Sei $|\lambda|\ll 1$ ein dimensionsloser Faktor, der die Störung klein hält. Wird diese Störung zu groß, kann man die Störungstheorie nicht mehr anwenden. <!-- Lagrange-Multiplikator? -->
+Der Hamiltonoperator des idealen Systems sei $H_0$, $H_1$ sei eine Korrektur. Sei $|\lambda|\ll 1$ ein dimensionsloser Faktor, der die Störung klein hält. Wird diese Störung zu groß, kann man die Störungstheorie nicht mehr anwenden.
 
 Dann gilt $H = H_0 + \lambda H_1$. Damit kann die Energie $E_n(\lambda) = E_n + \Delta E(\lambda)$ als Abweichung der idealen Eigenenergie $E_n$ bestimmt werden, ebenso ist $\ket{n(\lambda)}=\ket{n}+\ket{\Delta n(\lambda)}$ abweichend vom idealen Eigenzustand $\ket{n}$.
 
@@ -1271,6 +1271,8 @@ $$
 \end{aligned}
 $$
 
+Der Zeemann-Effekt ist ein Beispiel für Störungen mit entarteten Zuständen.
+
 ## Zeitabhängige Störungstheorie
 ### Zeitabhängige Störungen
 Im Unterschied zur zeitunabhängigen Störungstheorie wird nun angekommen, dass die Störung in der Zeit variabel ist. Dies wird durch ein zeitabhängiges Potential $V(t)$ beschrieben. Die Dynamik des gestörten Systems soll nun in Bezug auf die ungestörte Dynamik von $H_0$ mit den Energieeigenwerten $E_n$ und Zuständen $\ket{n}$ bestimmt werden.
@@ -1278,11 +1280,17 @@ Im Unterschied zur zeitunabhängigen Störungstheorie wird nun angekommen, dass 
 $$
     H(t) = H_0 + V(t)
 $$
+#### Zeitentwicklungsoperator $U_0(t)$
+Der Zeitentwicklungsoperator $U_0(t)$ für das ungestörte System mit dem Hamiltonoperator $H_0$ lautet folgendermaßen.
+
+$$
+    U_0(t) = \exp\left[-\frac{i}{\hbar}H_0t\right]
+$$
 
 ### Übergangswahrscheinlichkeit
-Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im Zustand $\ket{m}$ befindet. <!-- m gestörter ZS? -->
+Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im ungestörten Zustand $\ket{m}$ befindet.
 
-Falls $V(t)=0$ verschwindet, ist die Übergangswahrscheinlichkeit $P_{nm}(t)=0$ ebenfalls nichtexistent. Ansonsten muss die folgende Schrödingergleichung gelöst werden, um den Zustand zu bestimmen. Hierbei ist $U_0(t)$ der Zeitentwicklungsoperator des gestörten Systems.<!-- Des gestörten Systems?  -->
+Falls $V(t)=0$ verschwindet, ist die Übergangswahrscheinlichkeit $P_{nm}(t)=0$ ebenfalls nichtexistent. Ansonsten muss die folgende Schrödingergleichung gelöst werden, um den Zustand zu bestimmen. Hierbei ist $U_0(t)$ der Zeitentwicklungsoperator des ungestörten Systems.
 
 $$
 \begin{aligned}
@@ -1294,13 +1302,15 @@ $$
 ### Wechselwirkungsbild
 Mittels des Wechselwirkungsbildes wird die ungestörte $H_0$-Dynamik von der störenden $V(t)$-Dynamik getrennt.
 
-Hierzu sei $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (H_0+V(t))\ket{\Psi(t)}$ löst. Dann sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild.
+Hierzu sei $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (H_0+V(t))\ket{\Psi(t)}$ löst. Dann sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild, $U_0^\dagger(t)$ ist der adjungierte Zeitentwicklungsoperator des ungestörten Systems.
 
 $$
-    \ket{\Psi(t)}_I = \exp\left[+i\frac{H_0}{\hbar}t\right] \ket{\Psi(t)}
+    \ket{\Psi(t)}_I
+        = U_0^\dagger(t) \ket{\Psi(t)}
+        = \exp\left[+i\frac{H_0}{\hbar}t\right] \ket{\Psi(t)}
 $$
 
-Ohne Störung $(V(t)=0)$ gilt demnach $\ket{\Psi(t)}_I=\ket{\Psi(0)}$.
+Ohne Störung $(V(t)=0)$ gilt mit dem Zeitentwicklungsoperatur $U_0(t)$ die Relation $\ket{\Psi(t)}_I=U_0(t)\ket{\Psi(0)}$.
 
 Die Störungstheorie kann durch iteratives Lösen der Schrödingergleichung im Wechselwirkungsbild gelöst werden.
 
@@ -1308,7 +1318,10 @@ Die Störungstheorie kann durch iteratives Lösen der Schrödingergleichung im W
 Ein Operator $V(t)$ kann in das Wechselwirkungsbild transformiert werden. Diese Transformation erzeugt $V_I(t)$ und ist folgendermaßen definiert.
 
 $$
-    V_I(t) = \exp\left[+i\frac{H_0}{\hbar}t\right] V_0(t) \exp\left[-i\frac{H_0}{\hbar}t\right]
+\begin{aligned}
+    V_I(t) &= U_0^\dagger(t) V_0(t) U_0(t) \\
+    V_I(t) &= \exp\left[+i\frac{H_0}{\hbar}t\right] V_0(t) \exp\left[-i\frac{H_0}{\hbar}t\right]
+\end{aligned}
 $$
 
 ### Schrödingergleichung im Wechselwirkungsbild
@@ -1332,7 +1345,7 @@ $$
 \end{aligned}
 $$
 
-### Harmonische Störung $1.$ Ordnung
+### Fermis goldene Regel
 Sei $V(t)$ eine Störung, die mit der Frequenz $\omega$ oszilliert.
 
 $$
@@ -1361,14 +1374,14 @@ Erst durch die Existenz eines äußeren Feldes wird der Wechsel von Elektronen z
 ##### Laser
 Bei einem Laser werden Zustände erzeugt, bei denen möglichst viele Elektronen in Zuständen $\ket{n}$ sitzen. Dann kann eine passende Elektromagnetische Welle die Elektronen auf Zustände $\ket{m}$ anregen. Dann kann man die Emission von Photonen induzieren.
 
-Man kann auch beweisen, dass auch die Phase der emittierten Photonen gleich ist. Um dies zu erklären benötigt man kohärente Zustände.
+Man kann auch beweisen, dass auch die Phase der emittierten Photonen gleich ist. Dies kann man mit kohärenten Zuständen erklären.
 
-# Unbestimmtheitsrelationen
-## Heisenbergs Überlegungen
-Heisenberg hat deutlich kompliziertere Überlegungen als das, was heutzutage normalerweise als Heisenberg'sche Unbestimmtheitsrelationen bezeichnet wird. Es ging darum, Elektronen zu messen. Dazu würden Gamma-Quanten benötigt, aber eine Messung beeinflusst das gemessene Elektron. Je genauer der Ort $x$ bestimmt werden soll, desto größer ist die Impulsungenauigkeit $\Delta p$ des Elektrons _nach_ der Messung.
+# 9. Unbestimmtheitsrelationen
+## Heisenberg'sche Unbestimmtheit
+Heisenberg hat deutlich kompliziertere Überlegungen als das, was heutzutage normalerweise als Heisenberg'sche Unbestimmtheitsrelationen bezeichnet wird. Es ging darum, Elektronen zu messen. Dazu würden Gamma-Quanten benötigt, aber eine Messung beeinflusst das gemessene Elektron durch den Compton-Effekt. Je genauer der Ort $x$ bestimmt werden soll, desto größer ist die Impulsungenauigkeit $\Delta p$ des Elektrons _nach_ der Messung. Hierbei werden $x$ und $p$ nacheinander im selben System gemessen, die Systeme sind demnach nicht unabhängig.
 
 $$
-    \Delta p\Delta x \ge \frac{\hbar}{2}
+    \Delta x\Delta p \ge \frac{\hbar}{2}
 $$
 
 ## Unbestimmtheit von Messungen
@@ -1376,18 +1389,111 @@ Wird eine Observable $A$ im Zustand $\ket{\Psi}$ gemessen, so kann man den Erwar
 
 Nach dem Messpostulat kann man einzelne Zustände mit einer bestimmbaren Wahrscheinlichtkeit messen. Durch wiederholte Messungen kann man den Erwartungswert genauer bestimmen. Allerdings zeigt sich, dass die Varianz nicht beliebig genau gemessen werden kann.
 
-Das Produkt zweier Varianzen $\Delta A_\Psi$ und $\Delta B_\Psi$ von zwei Observablen $A, B$ kann nicht kleiner werden, als der halbe Betrag des Erwartungswertes des Kommutators $[A,B]$ der Operatoren $A$ und $B$.
+Das Produkt zweier Varianzen $\Delta A_\Psi$ und $\Delta B_\Psi$ von zwei Observablen $A$ und $B$ kann nicht kleiner werden, als der halbe Betrag des Erwartungswertes des Kommutators $[A,B]$ der Operatoren $A$ und $B$. Dazu müssen die Messungen von $A$ und $B$ an unabhängigen Systemen im gleichen Zustand $\Psi$ gemessen werden.
 
 $$
     \Delta A_\Psi \Delta B_\Psi \ge \frac{1}{2} |\braket{i[A,B]}_\Psi|
 $$
 
+### Beweis
+Seien $A$ und $B$ Observablen, die durch hermitesche Operatoren dargestellt werden und sei $x\in\mathbb R$. Ohne Beschränkung der Allgemeinheit seien die Erwartungwerte von $A$ und $B$ $\braket{A}_\Psi = \braket{B}_\Psi = 0$. <!-- ziehen nicht-0-EW ab -->
+
+$$
+\begin{aligned}
+    0 &\le ||(A+iBx)\ket{\Psi}||^2 \\
+        &= \bra{\Psi} (A-iBx)(A+iBx) \ket{\Psi} \\
+        &= \braket{A^2}_\Psi + x^2\braket{B^2}_\Psi + ix\braket{AB - BA}_\psi \\
+        &= \Delta A^2_\Psi + \Delta B^2_\Psi + x\braket{i[A,B]} \\
+        &=: a^2 + b^2 + x\cdot c \\
+\end{aligned}
+$$
+
+Da $\braket{A}_\Psi=0$ gilt $\braket{A^2}_\Psi = \Delta A_\Psi^2$. $c\in\mathbb R$ ist genau dann reell, wenn $i[A,B]$ hermitesch ist.
+
+$$
+\begin{aligned}
+    i[A,B] &= (i[A,B])^\dagger \\
+        &= (iAB - iBA)^\dagger \\
+        &= -i(AB)^\dagger +i(BA)^\dagger \\
+        &= -iBA +iAB \\
+        &= i[A,B]
+\end{aligned}
+$$
+
+
+Durch quadratische Ergänzung kann die Gleichung $0\le a^2+b^2+xc$ zu $a^2b^2\ge \frac{c^2}{4}$ umgeformt werden, wenn $x=\frac{c}{2b^2}$  gewählt wird. Durch diese Wahl von $x$ kann es aus der Gleichung eliminiert werden. Daraus folgt die Unschärferelation.
+
 ### Orts- und Impulsungenauigkeit
-In diesem Fall ist $A=\hat{x}$ und $B=\hat{p}$, der Kommutator ist $[x,p]=i\hbar$. Das Ergebnis sieht aus wie Heisenbergs Formulierung, die hiesige Betrachtung hat allerdings nichts mit der Art der Messung zu tun, die ziemlich komplizierte Überlegungen beinhaltet. Der hiesige Weg basiert auf Statistik.
+In diesem Fall ist $A=\hat{x}$ und $B=\hat{p}$, der Kommutator ist $[x,p]=i\hbar$. $A$ und $B$ werden in unabhängigen Systemen im Zustand $\Psi$ gemessen.
 
 $$
     \Delta x_\Psi \Delta p_\Psi \ge \frac{1}{2} \hbar
 $$
+
+Das Ergebnis sieht aus wie Heisenbergs Formulierung, in seiner Betrachtung werden jedoch $x$ und $p$ im selben System nacheinander gemessen, die Messungen sind also nicht unabhängig.
+
+## Beispiele
+Beide Unabhängigkeitsrelationen sind relevant.
+
+### Freies Teilchen in einer Dimension
+Sei ein Teilchen im Zustand $\ket{\Psi}$ in einer Dimension. Im Ortsraum gilt $\Psi(x) = \braket{\varphi_x|\Psi}$.
+
+$$
+\begin{aligned}
+    \Psi(x) &= \frac{1}{\sqrt[4]{\pi\sigma^2}} \exp\left[-\frac{x^2}{2\sigma^2}\right] \\
+    \Rightarrow \braket{x}_\Psi &= 0 \\
+    \Rightarrow \Delta x_\Psi &= \frac{\sigma}{\sqrt{2}}
+\end{aligned}
+$$
+
+Die Unbestimmtheitsrelation fordert, dass $\Delta p_\Psi \ge \frac{\hbar}{2\Delta x_\Psi} = \frac{\hbar}{\sqrt{2} \sigma}$. Im Impulsraum gilt $\tilde{\Psi}(p) = \braket{\tilde{\varphi}_k|\Psi}$.
+
+$$
+\begin{aligned}
+    \tilde{\Psi}(k) &\propto \frac{1}{\sqrt[4]{\pi\sigma^{-2}}} \exp\left[- \frac{k^2\sigma^2}{2} \right] \\
+    \Rightarrow \Delta p_\Psi &= \frac{1}{\sqrt{2}} \frac{\hbar}{\sigma}
+\end{aligned}
+$$
+
+Durch die konkrete Rechnung wurde die untere Grenze von $\Delta p_\Psi$ bestimmt, die von der Unbestimmtheitsrelation gefordert ist.
+
+### Abschätzung der Grundzustandsenergie
+Sei ein Teilchen in einem Potentialkasten der Länge $L$. Nun soll die Grundzustandsenergie $E_0$ durch die Unbestimmtheitsrelation ermittelt werden. <!-- Festkörperphysik -->
+
+Die Unbestimmtheit des Ortes ist ist näherungsweise die Länge des Kastens $(\Delta x_{\Psi_0} \overset{!}{\approx} L)$. Die Unbestimmtheitsrelation fordert  $\Delta p_\Psi \ge \frac{\hbar}{2\Delta x_\Psi} = \frac{\hbar}{2L}$. Damit folgt $E_0=\braket{\frac{p^2}{2m}}_{\Psi_0}$, was $E_0=\frac{1}{2m}(\Delta p_{\Psi_0})^2\ge\frac{\hbar^2}{8mL^2}$ ergibt. Die genaure Rechnung ergibt $E_0=\frac{\pi^2}{2}\frac{\hbar^2}{mL^2}$, was einen Faktor $4\pi^2$ größer als die untere Grenze der Abschätzung ist.
+
+### Bohr-Radius des Wasserstoffatoms
+Der Bohr-Radius $a_0$ eines Wasserstoffatoms im Grundzustand kann ebenfalls mithilfe der Unbestimmtheit abgeschätzt werden. <!-- incomplete -->
+
+### Ideale Messung eines freien Teilchens
+Sei der Ort eines freien Teilchens im Zustand $\ket{\Psi}$ in einer idealen Messung festgestellt worden. Nun soll die Impulsunschärfe abgeschätzt werden. Bei einer idealen Ortsmessung gilt $\Delta x= 0$, da das Teilchen danach im Zustand präperiert ist. Durch die Unschärfe folgt, dass $\Delta p=\infty$ divergiert.
+
+Nach der Ortsmessung ist das Teilchen im Eigenzustand $\ket{\Psi^\prime}=\ket{\varphi_{x_0}}$ mit $\varphi_{x_0}(x)=\delta(x-x_0)$. Um die Unschärfe des Impulses zu bestimmen, muss $\tilde{\Psi}^\prime(k)$ als Fouriertransformierte von $\varphi_{x_0}(x)$ ermittelt werden. Die Fouriertransformierte einer Delta-Funktion ist eine konstante Funktion, demnach ist $\Delta p=\infty$.
+
+### Unscharfe Messung eines freien Teilchens
+Der Ort eines freien Teilchens im Zustand $\ket{\Psi}$ in einer idealen Messung festgestellt werden, die durch die Unschärfe $\Delta x=L$ beschränkt ist. Dies kann man realisieren, indem man im Abstand $L$ Potentialbarrieren errichtet, zwischen denen das Teilchen gefangen wird. Damit kann gemessen werden, in welchem Interval das Teilchen ist.
+
+Nach der Messung ist der Erwartungswert $\braket{x}_\Psi=x_n+\frac{L}{2}$ mit der Unschärfe $\Delta x_\Psi=L$. Der Erwartungswert des Impulses verschwindet $(\braket{p}_\Psi=0)$, dessen Unschärfe ist $\Delta p_\Psi = \frac{\hbar^2\pi^2}{L^2}$. Daraus folgt $\Delta x_\Psi \Delta p_\Psi = \hbar\pi$, was die Unbestimmtheitsrelation erfüllt
+
+### Spezialfall: Kommutierende Observablen
+Seien $A$ und $B$ Observablen, deren Operatoren kommutieren $([A,B]=0)$. Daraus folgt aus der Unschärferelation $\Delta A_\Psi \Delta B_\Psi \ge 0$. Dies ist keine sinnvolle Aussage, da die Standardabweichung immer nicht-negativ ist.
+
+Für beliebige Zustände $\ket{\Psi}$ sind die Unschärfen nicht-null. Dennoch gibt es Zustände, die exakt gemessen werden. Sei $\ket{a_n}$ ein Eigenzustand von $A$, dann ist $\braket{A}_{\ket{a_n}}=a_n$ mit $\Delta A_{\ket{a_n}}=0$.
+
+Es gibt auch Zustände $\ket{\Psi}$, die zeitgleich Eigenzustände von $A$ und $B$ sind.
+
+Seien $A$ und $B$ hermitesche Operatoren. Genau dann, wenn sie kommutieren $([A,B]=0)$, dann gibt es eine gemeinsame Eigenbasis $\ket{\varphi_n}$ für beide Operatoren.
+
+#### Beweis
+##### $\Leftarrow$
+Stelle $A$ und $B$ in der Spektraldarstellung mit denselben Eigenzuständen dar. Dann ist es offensichtlich, dass $A$ und $B$ kommutieren.
+
+##### $\Rightarrow$
+Seien $\ket{a_n}$ und $\ket{b_n}$ eine Eigenbasis von $A$ respektive $B$. Seien weiterhin die Zustände von $B$ nicht entartet $(\forall n\neq m: b_n\neq b_m)$.
+
+Da $[A,B]=0$ gilt $BA\ket{b_n}=AB\ket{b_n}=b_nA\ket{b_n}$. Daher ist $A\ket{b_n}$ ein Eigenvektor von $B$ zum Eigenwert $b_n$ von $B$. Da die Zustände nicht entartet sind, gibt es $\lambda\in\mathbb C$ mit $A\ket{b_n}=\lambda\ket{b_n}$. Damit ist $\ket{b_n}$ auch ein Eigenvektor von $A$. Da dies für alle $\ket{b_n}$ gilt und alle $\ket{b_n}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
+
+Falls $B$ entartete Zustände besitzt $(\exists n\neq m: b_n=b_m)$, kann $\ket{a_n}$ als Linearkombinationen von Vektoren aus dem Spektrum von $B$ dargestellt werden. Auf diese Weise lässt sich der Satz beweisen.
 
 # Literatur
 1. [@Sakurai2020]
