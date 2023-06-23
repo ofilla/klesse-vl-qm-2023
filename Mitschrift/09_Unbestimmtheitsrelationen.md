@@ -54,8 +54,8 @@ $$
 
 Das Ergebnis sieht aus wie Heisenbergs Formulierung, in seiner Betrachtung werden jedoch $x$ und $p$ im selben System nacheinander gemessen, die Messungen sind also nicht unabhängig.
 
-## Beispiele
-Beide Unabhängigkeitsrelationen sind relevant.
+## Das Variationsprinzip
+Mithilfe der Unabhängigkeitsrelationen kann man beispielsweise die Energie eines Zustands abschätzen.
 
 ### Freies Teilchen in einer Dimension
 Sei ein Teilchen im Zustand $\ket{\Psi}$ in einer Dimension. Im Ortsraum gilt $\Psi(x) = \braket{\varphi_x|\Psi}$.

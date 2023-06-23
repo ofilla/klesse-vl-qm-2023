@@ -59,7 +59,7 @@ Eine Vereinfachung ist, $V\rightarrow\infty$ zu schicken. Dann gilt auch $\chi^2
 
 $$
 \begin{aligned}
-    \Psi_n(x) &= \sqrt(\frac{2}{a}) \sin(k_nx) \\
+    \Psi_n(x) &= \sqrt{\frac{2}{a}} \sin(k_nx) \\
     k_n &= \frac{\pi}{a}\cdot n \text{ mit } n\in\mathbb N \\
     E_n &= \frac{(\hbar k_n)^2}{2m} = \frac{\hbar^2 \pi^2}{2ma^2} \cdot n^2
 \end{aligned}

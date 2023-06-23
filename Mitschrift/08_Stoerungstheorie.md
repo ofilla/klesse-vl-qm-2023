@@ -118,7 +118,7 @@ $$
 $$
 
 ### Übergangswahrscheinlichkeit
-Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im ungestörten Zustand $\ket{m}$ befindet.
+Beispielsweise sei ein System zum Zeitpunkt $t=0$ im $H_0$-Eigenzustand $\ket{n}$. Dann gibt die Übergangswahrscheinlichkeit $P_{nm}(t)=|\braket{m|n}|^2$ die Wahrscheinlichkeit an, dass sich das System zum Zeitpunkt $t$ im ungestörten Zustand $\ket{m}$ befindet.
 
 Falls $V(t)=0$ verschwindet, ist die Übergangswahrscheinlichkeit $P_{nm}(t)=0$ ebenfalls nichtexistent. Ansonsten muss die folgende Schrödingergleichung gelöst werden, um den Zustand zu bestimmen. Hierbei ist $U_0(t)$ der Zeitentwicklungsoperator des ungestörten Systems.
 
@@ -126,6 +126,19 @@ $$
 \begin{aligned}
     i\hbar\ket{\dot{\Psi}(t)} &= (H_0+V(t))\ket{\Psi(t)} \\
     \Rightarrow \ket{\Psi(t)} &= U_0(t) \ket{\Psi(0)}
+\end{aligned}
+$$
+
+Den ersten Korrekturterm für die Übergangswahrscheinlichkeit $P_{nm}^{(1)}$ kann man über die Definition $P_{nm}^{(1)}(t)=|\braket{m|\Psi(t)}|^2$ berechnen, wobei $\ket{m}$ ein ungestörter Zustand ist und $\ket{\Psi(t)}_I^{(1)}$ der Störungszustand im Wechselwirkungsbild in erster Ordnung. $U_0(t)$ ist der Zeitentwicklungsoperator des ungestörten Systems.  Da $\ket{\Psi(t)}=U_0(t)\ket{\Psi(t)}_I=\ket{\Psi(t)}_I^{(1)}$ folgt die Relation für die Übergangswahrscheinlichkeit in erster Ordnung.
+
+$$
+\begin{aligned}
+    P_{nm}^{(1)} &= |\braket{m|\Psi(t)}_I^{(1)}|^2 \\
+    P_{nm}^{(1)} &= \frac{1}{\hbar^2}
+        \left|
+            \int_0^t \mathrm dt^\prime \exp\left[\frac{i}{\hbar}(E_m-E_n)t^\prime\right]
+                \braket{m|V(t^\prime)|n}
+        \right|^2
 \end{aligned}
 $$
 
@@ -168,10 +181,12 @@ $$
 \begin{aligned}
     \ket{\Psi(t)}_I^{(0)} &= \ket{\Psi(0)} \\
     \Rightarrow \ket{\Psi(t)}_I^{(1)} &= \ket{\Psi(t)}^{(0)}
-        - \frac{i}{\hbar} \int_0^t \mathrm dt^\prime V_I(t^\prime) \ket{\Psi(0)} \\
+        - \frac{i}{\hbar} \int_{t_0}^t \mathrm dt^\prime V_I(t^\prime) \ket{\Psi(0)} \\
     \Rightarrow \ket{\Psi(t)}_I^{(2)} &= \ket{\Psi(t)}^{(0)}
-        - \frac{i}{\hbar} \int_0^t \mathrm dt^\prime V_I(t^\prime) \ket{\Psi(0)}
-        + \left(-\frac{i}{\hbar}\right)^2 \int_0^t \mathrm dt^\prime \int_0^t \mathrm dt^{\prime\prime}  V_I(t^\prime) V_I(t^{\prime\prime}) \ket{\Psi(0)} \\
+        - \frac{i}{\hbar} \int_{t_0}^t \mathrm dt^\prime V_I(t^\prime) \ket{\Psi(0)}
+        + \left(-\frac{i}{\hbar}\right)^2
+            \int_{t_0}^t \mathrm dt^\prime \int_{t_0}^{t^\prime} \mathrm dt^{\prime\prime}
+                V_I(t^\prime) V_I(t^{\prime\prime}) \ket{\Psi(0)} \\
 \end{aligned}
 $$
 
