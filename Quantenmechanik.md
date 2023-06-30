@@ -1490,7 +1490,7 @@ Der Ort eines freien Teilchens im Zustand $\ket{\Psi}$ in einer idealen Messung 
 
 Nach der Messung ist der Erwartungswert $\braket{x}_\Psi=x_n+\frac{L}{2}$ mit der Unschärfe $\Delta x_\Psi=L$. Der Erwartungswert des Impulses verschwindet $(\braket{p}_\Psi=0)$, dessen Unschärfe ist $\Delta p_\Psi = \frac{\hbar^2\pi^2}{L^2}$. Daraus folgt $\Delta x_\Psi \Delta p_\Psi = \hbar\pi$, was die Unbestimmtheitsrelation erfüllt
 
-### Spezialfall: Kommutierende Observablen
+### Kommutierende Observablen
 Seien $A$ und $B$ Observablen, deren Operatoren kommutieren $([A,B]=0)$. Daraus folgt aus der Unschärferelation $\Delta A_\Psi \Delta B_\Psi \ge 0$. Dies ist keine sinnvolle Aussage, da die Standardabweichung immer nicht-negativ ist.
 
 Für beliebige Zustände $\ket{\Psi}$ sind die Unschärfen nicht-null. Dennoch gibt es Zustände, die exakt gemessen werden. Sei $\ket{a_n}$ ein Eigenzustand von $A$, dann ist $\braket{A}_{\ket{a_n}}=a_n$ mit $\Delta A_{\ket{a_n}}=0$.
@@ -1509,6 +1509,43 @@ Seien $\ket{a_n}$ und $\ket{b_n}$ eine Eigenbasis von $A$ respektive $B$. Seien 
 Da $[A,B]=0$ gilt $BA\ket{b_n}=AB\ket{b_n}=b_nA\ket{b_n}$. Daher ist $A\ket{b_n}$ ein Eigenvektor von $B$ zum Eigenwert $b_n$ von $B$. Da die Zustände nicht entartet sind, gibt es $\lambda\in\mathbb C$ mit $A\ket{b_n}=\lambda\ket{b_n}$. Damit ist $\ket{b_n}$ auch ein Eigenvektor von $A$. Da dies für alle $\ket{b_n}$ gilt und alle $\ket{b_n}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
 
 Falls $B$ entartete Zustände besitzt $(\exists n\neq m: b_n=b_m)$, kann $\ket{a_n}$ als Linearkombinationen von Vektoren aus dem Spektrum von $B$ dargestellt werden. Auf diese Weise lässt sich der Satz beweisen.
+
+# 10. Drehimpuls
+## Quantenmechanischer Drehimpuls
+Ein Drehimpuls ist ein Erzeuger einer Rotation $R_{\vec{n},\varphi}$ um eine Achse $\vec{n}$ und einen Winkel $\varphi$. Sie erfüllen daher die Vertauschungsrelation $[J_i, J_k] = i\hbar\varepsilon_{ikl} J_l$. Dies kann als Operator $U(R_{\vec{n},\varphi})$ repräsentiert werden.
+
+$$
+\begin{aligned}
+    L_i &= i\hbar \left.\frac{\partial}{\partial \varphi} U(R_{i,\varphi}) \right|_{\varphi=0} \\
+    U(R_{\vec{n},\varphi}) &= \exp\left[-\frac{i}{\hbar}(\hat{L}\cdot \vec{n})\varphi\right]
+\end{aligned}
+$$
+
+Daraus folgt, dass der Kommutator von zwei Drehimpulskomponenten die dritte Drehimpulskomponente ergibt, also $[L_1, L_2] = i\hbar L_3$ sowie zyklische Vertauschungen. Da das Betragsquadrat $L^2$ eine Erhaltungsgröße ist, ist es insbesondere invariant unter Rotation um eine Achse $i$. Daher verschwindet der Kommutator $[L^2, L_i]=0$. Dies gilt sowohl für den Bahndrehimpulsoperator $\hat{\vec{L}}$, als auch für den Spinoperator $\hat{\vec{S}}$ und den Gesamtdrehimpulsoperator $\hat{\vec{J}}=\hat{\vec{L}}+\hat{\vec{S}}$.
+
+Der Spin ist der Eigendrehimpuls und kann nur einen von zwei Werten abnehmen. Der Spinhilbertraum $\mathcal H_\mathrm{Spin}$ ist zweidimensional, jeder Spin lässt sich daher durch eine Linearkombination von $\mathrm{up\ }\ket{\uparrow}$ und $\mathrm{down\ }\ket{\downarrow}$ dargestellt werden.
+
+Im Unterschied dazu wird die Basis des Ortshilbertraumes $\mathcal H_\mathrm{Ort}$ durch den gesamten dreidimensionalen Raum aufgespannt. Dadurch wird der Gesamtdrehimpulsoperator auf Zuständen im Hilbertraum $\mathcal H_\mathrm{Ort} \otimes \mathcal H_\mathrm{Spin}$ wirken.
+
+$$
+\begin{aligned}
+    \mathcal H_\mathrm{Spin}
+        &= \mathrm{Span}\{\ket{\uparrow}, \ket{\downarrow}\} \\
+    \mathcal H_\mathrm{Ort}
+        &= \mathrm{Span}\{\ket{\vec{r}}\}_{\vec{r}\in\mathbb R^3} \\
+    \mathcal H_\mathrm{Ort} \otimes \mathcal H_\mathrm{Spin}
+        &= \mathrm{Span}\{\ket{\vec{r},\uparrow}, \ket{\vec{r},\downarrow}\}_{\vec{r}\in\mathbb R^3}
+\end{aligned}
+$$
+
+Die Eigenschaften der drei Impulsoperatoren ergeben sich durch die Eigenschaften der räumlichen Rotation. Dies wird mathematisch durch die spezielle orthogonale Gruppe $\mathrm{SO}(3)$ dargestellt und berechnet.
+
+## Teilchen im dreidimensionalen Raum
+Betrachtet werde ein Teilchen im dreidimensionalen Raum. Damit ist Ortsoperator $\hat{\vec{r}}$ ein dreidimensionaler Vektor mit den Komponenten $\hat{x}_i$, wobei die Achsen miteinander kommutieren $([x_i, x_j]=0)$. Die gemeinsamen Eigenzustände $\ket{\varphi_{\vec{r}}} = \ket{\vec{r}}\in\mathbb R^3$ sind durch die Eigenwertgleichungen $\hat{x}_i\ket{\vec{r}}=x_i\ket{\vec{r}}$ definiert.
+
+Wie auch im eindimensionalen Fall sind verschiedene Eigenzustände orthogonal zueinander $(\braket{\vec{r}^\prime|\vec{r}}=\delta(\vec{r}^\prime-\vec{r}))$. Ebenso ist die Vollständigkeit analog definiert $(\int_{\mathbb R^3} \mathrm d^3\vec{r} \ket{\vec{r}}\bra{\vec{r}}=\mathds 1)$, wie auch die Wellenfunktion $\Psi(\vec{r}) = \braket{\vec{r}|\Psi}$ für einen Zustand $\ket{\Psi}\in\mathcal H$.
+
+Der Drehimpulsoperator wird analog durch $\hat{\vec{p}}=-i\hbar \nabla$ dargestellt.
 
 # Literatur
 1. [@Sakurai2020]

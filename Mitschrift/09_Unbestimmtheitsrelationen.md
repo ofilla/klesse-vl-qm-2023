@@ -97,7 +97,7 @@ Der Ort eines freien Teilchens im Zustand $\ket{\Psi}$ in einer idealen Messung 
 
 Nach der Messung ist der Erwartungswert $\braket{x}_\Psi=x_n+\frac{L}{2}$ mit der Unschärfe $\Delta x_\Psi=L$. Der Erwartungswert des Impulses verschwindet $(\braket{p}_\Psi=0)$, dessen Unschärfe ist $\Delta p_\Psi = \frac{\hbar^2\pi^2}{L^2}$. Daraus folgt $\Delta x_\Psi \Delta p_\Psi = \hbar\pi$, was die Unbestimmtheitsrelation erfüllt
 
-### Spezialfall: Kommutierende Observablen
+### Kommutierende Observablen
 Seien $A$ und $B$ Observablen, deren Operatoren kommutieren $([A,B]=0)$. Daraus folgt aus der Unschärferelation $\Delta A_\Psi \Delta B_\Psi \ge 0$. Dies ist keine sinnvolle Aussage, da die Standardabweichung immer nicht-negativ ist.
 
 Für beliebige Zustände $\ket{\Psi}$ sind die Unschärfen nicht-null. Dennoch gibt es Zustände, die exakt gemessen werden. Sei $\ket{a_n}$ ein Eigenzustand von $A$, dann ist $\braket{A}_{\ket{a_n}}=a_n$ mit $\Delta A_{\ket{a_n}}=0$.
