@@ -23,7 +23,8 @@ Das Experiment ergab, dass es genau zwei Punkte gab, an denen Silberatome gemess
 
 In weiteren Messungen wurde festgestellt, dass die Zustände $\ket{z\uparrow}$ und $\ket{z\downarrow}$ senkrecht zueinander sind, selbiges gilt jeweils in $x$- und $y$-Richtung. Die Zustände der Achsen $x$, $y$ und $z$ sind unternander jedoch nicht rechtwinklig, sondern in einem Winkel von jeweils $45^\circ$.
 
-Deswegen wählt man oft folgende Ortonormalbasis:
+Deswegen wählt man oft folgende Ortonormalbasis. Diese gilt allgemein für Spinzustände.
+
 $$
 \begin{aligned}
     \varphi_{z+}
@@ -36,6 +37,9 @@ $$
         = \frac{1}{\sqrt{2}} (\varphi_{z+} - \mathcal i\varphi_{z-})
 \end{aligned}
 $$
+
+### Rotation im Stern-Gerlach-Experiment
+Sei ein Strahl Silberatome im Stern-Gerlach-Experiment auf den Zustand $\ket{z+}$ präperiert. Sei nun ein zweiter Magnet im Winkel $\varphi$ zum ersten Magneten aufgebaut. Dann ist der finale Up-Zustand $\ket{z+^\prime}=U(R_{2,\varphi})\ket{z+}$. Dann folgt die Wahrscheinlichkeit den Zustand $\ket{z+}$ zu messen $P_+=|\braket{z+^\prime|z+}|^2=|\cos(\frac{\varphi}{2})|^2$. Bei einer Drehung um $30^\circ$ ist $P_+(30^\circ)\approx 93\%$.
 
 ### Observable
 Die Observable ist in diesem Fall $\mu_z$, die $z$-Komponente des magnetischen Moments. Die gemessenen Werte sind $\pm \mu_0$.

@@ -18,7 +18,7 @@ $$
 $$
 
 ### Beweis
-Seien $A$ und $B$ Observablen, die durch hermitesche Operatoren dargestellt werden und sei $x\in\mathbb R$. Ohne Beschränkung der Allgemeinheit seien die Erwartungwerte von $A$ und $B$ $\braket{A}_\Psi = \braket{B}_\Psi = 0$. <!-- ziehen nicht-0-EW ab -->
+Seien $A$ und $B$ Observablen, die durch hermitesche Operatoren dargestellt werden und sei $x\in\mathbb R$. Ohne Beschränkung der Allgemeinheit seien die Erwartungwerte von $A$ und $B$ $\braket{A}_\Psi = \braket{B}_\Psi = 0$.[^91]
 
 $$
 \begin{aligned}
@@ -44,6 +44,8 @@ $$
 
 
 Durch quadratische Ergänzung kann die Gleichung $0\le a^2+b^2+xc$ zu $a^2b^2\ge \frac{c^2}{4}$ umgeformt werden, wenn $x=\frac{c}{2b^2}$  gewählt wird. Durch diese Wahl von $x$ kann es aus der Gleichung eliminiert werden. Daraus folgt die Unschärferelation.
+
+[^91]: Falls dies nicht der Fall ist, kann man Wertebereich um den entsprechenden Erwartungswert verschieben, um diesen Zustand zu erreichen.
 
 ### Orts- und Impulsungenauigkeit
 In diesem Fall ist $A=\hat{x}$ und $B=\hat{p}$, der Kommutator ist $[x,p]=i\hbar$. $A$ und $B$ werden in unabhängigen Systemen im Zustand $\Psi$ gemessen.
@@ -80,12 +82,16 @@ $$
 Durch die konkrete Rechnung wurde die untere Grenze von $\Delta p_\Psi$ bestimmt, die von der Unbestimmtheitsrelation gefordert ist.
 
 ### Abschätzung der Grundzustandsenergie
-Sei ein Teilchen in einem Potentialkasten der Länge $L$. Nun soll die Grundzustandsenergie $E_0$ durch die Unbestimmtheitsrelation ermittelt werden. <!-- Festkörperphysik -->
+Sei ein Teilchen in einem Potentialkasten der Länge $L$. Nun soll die Grundzustandsenergie $E_0$ durch die Unbestimmtheitsrelation ermittelt werden.
 
 Die Unbestimmtheit des Ortes ist ist näherungsweise die Länge des Kastens $(\Delta x_{\Psi_0} \overset{!}{\approx} L)$. Die Unbestimmtheitsrelation fordert  $\Delta p_\Psi \ge \frac{\hbar}{2\Delta x_\Psi} = \frac{\hbar}{2L}$. Damit folgt $E_0=\braket{\frac{p^2}{2m}}_{\Psi_0}$, was $E_0=\frac{1}{2m}(\Delta p_{\Psi_0})^2\ge\frac{\hbar^2}{8mL^2}$ ergibt. Die genaure Rechnung ergibt $E_0=\frac{\pi^2}{2}\frac{\hbar^2}{mL^2}$, was einen Faktor $4\pi^2$ größer als die untere Grenze der Abschätzung ist.
 
+Dies ist in der Festkörperphysik relevant. Beispielsweise erklärt dies, warum die Metallbindung energetisch sinnvoll ist.
+
 ### Bohr-Radius des Wasserstoffatoms
-Der Bohr-Radius $a_0$ eines Wasserstoffatoms im Grundzustand kann ebenfalls mithilfe der Unbestimmtheit abgeschätzt werden. <!-- incomplete -->
+Der Bohr-Radius $a_0$ eines Wasserstoffatoms im Grundzustand kann ebenfalls mithilfe der Unbestimmtheit abgeschätzt werden.
+
+Hierzu wird das Potential $V(x)=-\frac{e^2}{|x|}$ angenommen, was eine Darstellung des Coulomb-Potentials in Einheiten von $4\pi\varepsilon_0=1$ ist. Die Unbestimmtheit des Ortes wird als $\Delta x = a$ definiert. Dadurch ist der Erwartungswert der potentiellen Energie $-\frac{e^2}{a}$. Der Erwartungswert der kinetischen Energie kann durch $\frac{\Delta p}{2m}$ angenähert werden. Aus der Ungenauigkeitsrelation folgt $\Delta p\le \frac{\hbar^2}{a^2}$, was zu einem Gesamtpotential von $E(a) = \frac{\hbar^2}{2ma} - \frac{e^2}{a}$ führt. Wird dieses nach $a$ hin minimiert, erhält man den Bohr-Radius $a_0 = \frac{\hbar^2}{me^2}$.
 
 ### Ideale Messung eines freien Teilchens
 Sei der Ort eines freien Teilchens im Zustand $\ket{\Psi}$ in einer idealen Messung festgestellt worden. Nun soll die Impulsunschärfe abgeschätzt werden. Bei einer idealen Ortsmessung gilt $\Delta x= 0$, da das Teilchen danach im Zustand präperiert ist. Durch die Unschärfe folgt, dass $\Delta p=\infty$ divergiert.

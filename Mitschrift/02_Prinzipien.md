@@ -42,7 +42,7 @@ $$
 Da $\braket{\chi|\Psi}\in\mathbb C$ kann das Kommutativgesetz angewendet werden. $\ket{\chi}\bra{\chi}$ ist eine $n\times n$-dimensionale Matrix.
 
 ### Kommutator
-Der Kommutator ist definiert als $[A, B] = AB - BA$.
+Der Kommutator ist definiert als $[A, B] = AB - BA$, man sagt auch $A$ und $B$ kommutieren. Falls zwei Observablen _nicht_ kommutieren, gibt es eine Unbestimmtheitsrelation zwischen ihnen (siehe Unbestimmtheitsrelationen).
 
 Wenn $A$ eine Erhaltungsgröße und $H$ der Hamiltionoperator ist, gilt $[H, A]=0$.
 
@@ -107,7 +107,8 @@ $$
         \begin{pmatrix}
             1 & 0\\
             0 & -1
-        \end{pmatrix}
+        \end{pmatrix} \\
+    \vec{\sigma} =\ &\begin{pmatrix}\sigma_1\\\sigma_2\\\sigma_3\end{pmatrix}
 \end{aligned}
 $$
 

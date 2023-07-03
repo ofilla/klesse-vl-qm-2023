@@ -20,7 +20,7 @@ $$
 
 * $p=p^\dagger$
 * $[\hat{x}, \hat{p}]=i\hbar\mathds 1$
-    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$. <!-- Erwähne dies bei Kommutator -->
+    * hieraus folgt die Unschärferelation $\Delta x\Delta p\ge \frac{\hbar}{2}$.
     * dies gilt für alle Observablen mit nicht-verschwindendem Kommutator.
 * $p=\hbar k$
 
