@@ -1233,7 +1233,9 @@ $$
 $$
 
 ### Niveauabstoßung
- Existierende Differenzen von Energieniveaus werden immer vergrößert, jedoch nie verringert. Dies geschieht durch die Terme zweiter Ordnung aus der Störungstheorie.
+Existierende Differenzen von Energieniveaus werden immer vergrößert, jedoch nie verringert. Dies geschieht durch die Terme zweiter Ordnung aus der Störungstheorie.
+
+Dieser Effekt sorgt bei Festkörpern dafür, dass es verschiedene getrennte Energieniveaus gibt. Diese getrennten Energieniveaus nennt man in der Festkörperphysik _Bänder_.
 
 ### Grundzustand
 Da die Korrekturterme zweiter Ordnung negativ sind, wird der Grundzustand durch die Störungen abgesenkt.
