@@ -103,3 +103,42 @@ Da $s=\frac{1}{2}$ nennt man Elektronen "Spin-$\frac{1}{2}$-Teilchen" oder Fermi
 ## Bahndrehimpuls
 Für den Bahndrehimpuls gilt die klassische Relation $\hat{\vec{L}}=\hat{\vec{r}}\times \hat{\vec{p}}$, zudem gelten die Relationen des Gesamtdrehimpules $\vec{J}$.
 
+Die Eigenwerte sind für einen Zustand $\ket{j\equiv l, m}$ bekannt. Die Eigenfunktionen sind durch Kugelflächenfunktionen beschrieben, da diese die Differentialgleichung $L_3\Psi(r, \varphi, z) = -i\hbar \frac{\partial}{\partial \varphi} \Psi(r, \varphi, z)$ lösen.
+
+Dadurch werden die Operatoren folgendermaßen in Kugelkoordinaten dargestellt. Diese werden durch die Kugelflächenfunktionen $Y_{l,m}(\vartheta, \varphi)$ gelöst
+
+$$
+\begin{aligned}
+    L^2 &= -\hbar^2\left(
+            \frac{1}{\sin \vartheta} \frac{\partial}{\partial \vartheta} \sin\vartheta \frac{\partial}{\partial \vartheta}
+            +  \frac{1}{\sin \vartheta} \frac{\partial^2}{\partial \vartheta^2}
+        \right) \\
+    L_3 &= -i\hbar \frac{\partial}{\partial \varphi} \\
+    \Rightarrow L^2 Y_{l,m}(\vartheta, \varphi) &= \hbar^2 l(l+1) Y_{l,m}(\vartheta, \varphi) \\
+    \Rightarrow L_3 Y_{l,m}(\vartheta, \varphi) &= \hbar m Y_{l,m}(\vartheta, \varphi)
+\end{aligned}
+$$
+
+Wird der Impulsoperator $\vec{p}$ in Kugelkoordinaten dargestellt, wird dessen Betragsquadrat abhängig vom Dreimpulsoperator. Dies ist für den Hamiltonoperator benötigt.
+
+$$
+    |\vec{p}|^2 = -\frac{\hbar^2}{r^2}
+        \left(
+            \frac{\partial}{\partial r} r^2 \frac{\partial}{\partial r}
+            - \hat{L}^2
+        \right)
+$$
+
+Über den folgenden Ansatz kann die Schrödingergleichung separiert werden. Dadurch kann man die statische Schrödingergleichung im effektiven Potential $V_{\mathrm{eff}, l}$ für eine Dimension lösen.
+
+$$
+\begin{aligned}
+    \Psi_E(r, \vartheta, \varphi) &= \frac{1}{r} u(r) Y_{l,m}(\vartheta, \varphi) \\
+    \Rightarrow E u(r) &= \left(
+            -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial r^2}
+            + \frac{\hbar^2 l(l+1)}{2mr^2} + V(r)
+        \right) u(r) \\
+    V_{\mathrm{eff}, l} &= \frac{\hbar^2l(l+1)}{2mr^2} + V(r)
+\end{aligned}
+$$
+
