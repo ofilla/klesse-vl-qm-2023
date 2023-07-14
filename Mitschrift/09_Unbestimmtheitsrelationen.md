@@ -117,9 +117,9 @@ Seien $A$ und $B$ hermitesche Operatoren. Genau dann, wenn sie kommutieren $([A,
 Stelle $A$ und $B$ in der Spektraldarstellung mit denselben Eigenzuständen dar. Dann ist es offensichtlich, dass $A$ und $B$ kommutieren.
 
 ##### $\Rightarrow$
-Seien $\ket{a_n}$ und $\ket{b_n}$ eine Eigenbasis von $A$ respektive $B$. Seien weiterhin die Zustände von $B$ nicht entartet $(\forall n\neq m: b_n\neq b_m)$.
+Seien $\ket{a}$ und $\ket{b}$ eine Eigenbasis von $A$ respektive $B$. Seien weiterhin die Zustände von $B$ nicht entartet $(\forall n\neq m: b_n\neq b_m)$.
 
-Da $[A,B]=0$ gilt $BA\ket{b_n}=AB\ket{b_n}=b_nA\ket{b_n}$. Daher ist $A\ket{b_n}$ ein Eigenvektor von $B$ zum Eigenwert $b_n$ von $B$. Da die Zustände nicht entartet sind, gibt es $\lambda\in\mathbb C$ mit $A\ket{b_n}=\lambda\ket{b_n}$. Damit ist $\ket{b_n}$ auch ein Eigenvektor von $A$. Da dies für alle $\ket{b_n}$ gilt und alle $\ket{b_n}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
+Da $[A,B]=0$ gilt $BA\ket{b}=AB\ket{b}=bA\ket{b}$. Daher ist $A\ket{b}$ ein Eigenvektor von $B$ zum Eigenwert $b$ von $B$. Da die Zustände nicht entartet sind, muss mit $A\ket{b}$ proportional zu $\ket{b}$ sein, da sonst $A\ket{b}$ ein anderer Eigenzustand wäre. Damit ist $\ket{b}$ auch ein Eigenvektor von $A$. Da dies für alle Eigenzustände $\ket{b}$ gilt und alle $\ket{b}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
 
 Falls $B$ entartete Zustände besitzt $(\exists n\neq m: b_n=b_m)$, kann $\ket{a_n}$ als Linearkombinationen von Vektoren aus dem Spektrum von $B$ dargestellt werden. Auf diese Weise lässt sich der Satz beweisen.
 

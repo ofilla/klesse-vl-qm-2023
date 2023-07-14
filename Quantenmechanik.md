@@ -1517,9 +1517,9 @@ Seien $A$ und $B$ hermitesche Operatoren. Genau dann, wenn sie kommutieren $([A,
 Stelle $A$ und $B$ in der Spektraldarstellung mit denselben Eigenzuständen dar. Dann ist es offensichtlich, dass $A$ und $B$ kommutieren.
 
 ##### $\Rightarrow$
-Seien $\ket{a_n}$ und $\ket{b_n}$ eine Eigenbasis von $A$ respektive $B$. Seien weiterhin die Zustände von $B$ nicht entartet $(\forall n\neq m: b_n\neq b_m)$.
+Seien $\ket{a}$ und $\ket{b}$ eine Eigenbasis von $A$ respektive $B$. Seien weiterhin die Zustände von $B$ nicht entartet $(\forall n\neq m: b_n\neq b_m)$.
 
-Da $[A,B]=0$ gilt $BA\ket{b_n}=AB\ket{b_n}=b_nA\ket{b_n}$. Daher ist $A\ket{b_n}$ ein Eigenvektor von $B$ zum Eigenwert $b_n$ von $B$. Da die Zustände nicht entartet sind, gibt es $\lambda\in\mathbb C$ mit $A\ket{b_n}=\lambda\ket{b_n}$. Damit ist $\ket{b_n}$ auch ein Eigenvektor von $A$. Da dies für alle $\ket{b_n}$ gilt und alle $\ket{b_n}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
+Da $[A,B]=0$ gilt $BA\ket{b}=AB\ket{b}=bA\ket{b}$. Daher ist $A\ket{b}$ ein Eigenvektor von $B$ zum Eigenwert $b$ von $B$. Da die Zustände nicht entartet sind, muss mit $A\ket{b}$ proportional zu $\ket{b}$ sein, da sonst $A\ket{b}$ ein anderer Eigenzustand wäre. Damit ist $\ket{b}$ auch ein Eigenvektor von $A$. Da dies für alle Eigenzustände $\ket{b}$ gilt und alle $\ket{b}$ eine Orthonormalbasis von $B$ bilden, bilden sie auch eine Orthonormalbasis von $A$.
 
 Falls $B$ entartete Zustände besitzt $(\exists n\neq m: b_n=b_m)$, kann $\ket{a_n}$ als Linearkombinationen von Vektoren aus dem Spektrum von $B$ dargestellt werden. Auf diese Weise lässt sich der Satz beweisen.
 
@@ -1669,7 +1669,7 @@ $$
 
 # 11. Dekohärenz
 ## lokal-klassische Theorien
-Eine schöne Theorie sollte lokal sein, d.h. es gibt keine (instantane) langreichweitige Wechselwirkung. Zudem soll sie klassisch sein in dem Sinne, dass es keinen Indeterminismus mehr gibt, wenn man das System vollständig beschrieben hat.
+Es wäre schön, wenn eine Theorie lokal ist, es also keine (instantane) langreichweitige Wechselwirkung gibt. Zudem sollte sie in dem Sinne klassisch sein, dass es keinen Indeterminismus mehr gibt, wenn man das System vollständig beschrieben hat.
 
 Die Bellschen Ungleichungen nutzen eine solche hypothetische Theorie, ohne Details über diese Theorie zu kennen. Experimentell wird gemessen, dass diese Ungleichungen verletzt werden. Damit sind lokal-klassische Theorien nicht haltbar.
 
@@ -1703,7 +1703,7 @@ $$
 #### Tensoren
 Es gibt im Allgemeinen Tensoren $n$-ter Stufe. Tensoren $0$-ter Stufe sind skalare Größen wie Masse oder Ladung. Tensoren $1$-ter Stufe sind vektorielle Größen wie ein Ort $\vec{r}$ oder Impuls $\vec{p}$, die sich unter Rotation wie ein Ortsvektor verhalten.[^111]
 
-[^111]: Literaturempfehlung: Vektoranalysis von Klaus Jänich, sowie Wikipedia
+[^111]: Literaturempfehlung: [@Jänich2013Vektoranalysis], sowie [Wikipedia](https://de.wikipedia.org/wiki/Tensor) (Empfehlungsstand 07/2023)
 
 ## Verschränkung und Seperabilität
 Ein Zustand $\ket{\Psi_{AB}}\in\mathcal H_{AB}$ ist genau dann verschränkt, wenn er sich nicht als Tensorprodukt darstellen lässt, also $\nexists \Psi_A, \Psi_B: \ket{\Psi_{AB}}=\ket{\Psi_A}\otimes \ket{\Psi_B}$. Zustände, die sich als ein solches Tensorprodukt darstellen lassen, nennt man seperabel. Dies gilt auch dann, wenn die Zustände $A$ und $B$ weit voneinander entfernt sind.
@@ -1753,7 +1753,7 @@ $$
 #### Beweis der CHSH-Ungleichung nach Bell
 Angenommen, es gebe eine Theorie mit lokalen verborgenen Variablen $\lambda=(\lambda_1,\lambda_2, \dots)\in \mathbb R^n$. Hierbei soll $Q$ eine Funktion mit Wahrscheinlichkeiten $p$ $Q: \lambda \mapsto \bar{q}(\lambda)=p^{(\lambda)} _ {q=+1} \cdot (+1) + p^{(\lambda)} _ {q=-1} \cdot (-1)$, die indeterministisch sein darf, aber lokal ist. Analog gebe es die Funktionen $R$, $S$ und $T$. Dies erlaubt Indeterminismus, weil Nicht-Lokalität physikalisch das größere Problem ist. Zudem sollen die Messwerte $p,q,r,s=\pm 1$ sein.
 
-Desweiteren gebe es eine Wahrscheinlichkeitsdichte $\rho(\lambda)$. Dann gilt die Relation $\bar{Q} \overset{!}{=} \int \bar{q}(\lambda)\rho(\lambda) \mathrm d^n\lambda$. Weil die Messungen in den verschiedenen Messungen durch die geforderte Lokalität unabhängig sein müssen, müssen die Wahrscheinlichkeiten für die Messung von $q$ und $s$ unabhängig sein, also $p(q,s;\lambda)=p(q;\lambda)\cdot p(s;\lambda)$. Dann muss die Korrelation <!-- missing -->
+Desweiteren gebe es eine Wahrscheinlichkeitsdichte $\rho(\lambda)$. Dann gilt die Relation $\bar{Q} \overset{!}{=} \int \bar{q}(\lambda)\rho(\lambda) \mathrm d^n\lambda$. Weil die Messungen in den verschiedenen Messungen durch die geforderte Lokalität unabhängig sein müssen, müssen die Wahrscheinlichkeiten für die Messung von $q$ und $s$ unabhängig sein, also $p(q,s;\lambda)=p(q;\lambda)\cdot p(s;\lambda)$. Dann kann die Korrelationsdifferenz $|\overline{QS}-\overline{QT}|=|\int \mathrm d\lambda \rho (qs-qt) |$ berechnet werden. Da $|qs|\le 1$ und $|qt|\le 1$ gelten, kommt man auf die Ungleichung $|\overline{QS}-\overline{QT}|\le 2 + |\overline{RT}+\overline{RS}|$, was äquivalent zu der CHSH-Ungleichung ist.
 
 ### Korrelation
 Die Korrelation $\overline{RS}$ zwischen den Eigenschaften $R$ und $S$ mit Messwerten $r_i$ bzw. $s_i$ ist die Summe über das Produkt der einzelnen Messwerte. Dies muss durch die Gesamtzahl der Messungen $N_{RS}$ normiert werden. Im kontinuierlichen Fall steckt die Normierung in der Wahrscheinlichkeitsdichte $\rho(\lambda)$.
@@ -1764,7 +1764,6 @@ $$
 
 ### Quantenmechanik
 Die Quantenmechanik besagt, dass die CHSH-Ungleichung in bestimmten Situationen verletzt werden darf, beispielsweise im untenstehenden Zustand $\ket{\Psi_{AB}}$, wenn die Messeigenschaften $Q=\frac{2}{\hbar}S_3=\sigma_3$, $R=\frac{2}{\hbar}S_1=\sigma_1$, $S=-\frac{1}{\sqrt{2}}(\sigma_1+\sigma_3)$ und $T=\frac{1}{\sqrt{2}}(\sigma_1-\sigma_3)$. Dieser Zustand ist so gewählt, dass der Gesamtdrehimpuls $0$ ist.
-<!-- missing parts in equation -->
 
 $$
 \begin{aligned}
@@ -1772,9 +1771,12 @@ $$
             \ket{\uparrow}_A\ket{\downarrow}_B
             + \ket{\downarrow}_A\ket{\uparrow}_B
         \right) \\
-    \Rightarrow M &= \braket{QS}_{\Psi_{AB}} - \braket{QT}_{\Psi_{AB}} + \braket{RS}_{\Psi_{AB}} + \braket{RT}_{\Psi_{AB}} > 2 \\
+    \Rightarrow M &= \braket{QS}_{\Psi_{AB}} - \braket{QT}_{\Psi_{AB}} + \braket{RS}_{\Psi_{AB}} + \braket{RT}_{\Psi_{AB}} \\
+        &= \frac{1}{\sqrt{2}} - \left(-\frac{1}{\sqrt{2}}\right) + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} = 2\sqrt{2} > 2 \\
 \end{aligned}
 $$
+
+In der Quantenmechanik wird demnach $M\ge 2\sqrt{2}$ gefordert, während lokal-klassische Theorien $M\le 2$ fordern. Da diese Forderungen sich widersprechen, kann man experimentell bestimmen, welche Theorie zutreffend ist.
 
 ### Experimente
 Es ist schwierig, solche Experimente durchzuführen, diese werden auch kritisch betrachtet. Das letzte große Experiment fand $2018$ mit Messungen im Abstand von ca. $1.5\mathrm{km}$ statt. Die Experimente zeigen eine zunehmende Evidenz für die Verletzung der CHSH-Ungleichung in Übereinstimmung mit der Quantenmechanik. Dies zeigt, dass die Theorie der versteckten Variablen vermutlich falsch ist. Für solche Experimente gab es $2022$ den Physik-Nobelpreis.
@@ -1853,3 +1855,4 @@ Wenn $\varphi\in(0,2\pi)$ wird die Interferenz gedämpft. Jedoch kann man sie re
 
 # Literatur
 1. [@Sakurai2020]
+2. [@Jänich2013Vektoranalysis]

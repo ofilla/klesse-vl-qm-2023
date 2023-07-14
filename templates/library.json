@@ -17,5 +17,25 @@
             ]
         },
        "isbn": "978-1-108-47322-4"
+    },
+    {
+        "id": "Jänich2013Vektoranalysis",
+        "type": "book",
+        "title": "Vektoranalysis",
+        "edition": "1",
+        "author": [
+            {
+                "family": "Jänich",
+                "given": "Klaus"
+            }
+        ],
+        "publisher": "Springer-Verlag Berlin Heidelberg",
+        "issued": {
+            "date-parts": [
+                [ 2013, 7, 2 ]
+            ]
+        },
+       "isbn": "978-3-662-10753-9",
+       "doi": "https://doi.org/10.1007/978-3-662-10753-9"
     }
 ]
