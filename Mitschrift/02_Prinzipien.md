@@ -140,6 +140,6 @@ $$
 ### Euler-Identität
 $$
     \mathrm e^{i\varphi} = \cos(\varphi) + i\sin(\varphi) \\
-    \Rightarrow \mathrm e^{i\pi} = 1
+    \Rightarrow \mathrm e^{i\pi} = -1
 $$
 
