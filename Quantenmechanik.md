@@ -24,7 +24,7 @@ Aus diesen Gründen entstand um 1925 die Quantenphysik.
 
 [^1]: z.B: elektrische Leitfähigkeit und Wärmekapazität
 
-Die Quantenphysik ist extrem gut erforscht und scheint allgemeingültig zu sein. Sie basiert auf $3$ Postulaten.
+Die Quantenphysik ist extrem gut erforscht und scheint allgemeingültig zu sein. Sie basiert auf $3$ Postulaten und hat drei Darstellungsformen.[^2]
 
 Wesentliche Merkmale der Quantenmechanik sind das Superpositionsprinzip und der Indeterminismus. Beobachtbare Eigenschaften sind Obervablen, die durch (meist hermitesche) Operatoren beschrieben werden.
 
@@ -35,6 +35,8 @@ Es wird oft zwischen Ortsdarstellung und Impulsdarstellung gewechselt. Meist kan
 Bei zusammengesetzten Systemen können Effekte wie Verschränkung und Dekohärenz auftreten.
 
 Die Quantenmechanik ist nicht-lokal, vermutlich gibt es Fernwirkung. Früher glaubte man, es gebe "versteckte Variablen". Durch Experimente, die die Bell'schen Ungleichungen verletzen, kann dies jedoch praktisch ausgeschlossen werden.
+
+[^2]: Schrödinger-Bild, Heisenberg-Bild und Dirac-Bild
 
 # 2. Prinzipien
 ## Operatoren
@@ -264,6 +266,28 @@ $$
 \end{aligned}
 $$
 
+## Betrachtungsweisen
+### Schrödinger-Bild
+Im Schrödinger-Bild wird die zeitliche Entwicklung der Zustände des Systems von den Zustandsvektoren getragen, die Operatoren ändern sich nicht.[^3] Die Zeitentwicklung von Zuständen wird durch die Schrödingergleichung beschrieben.
+
+Das Schrödinger-Bild unterscheidet sich damit vom Heisenberg-Bild der Quantenmechanik, in dem die Zustände zeitlich konstant sind und die Zeitentwicklung von den Operatoren getragen wird, sowie vom Dirac-Bild, in dem sich sowohl Zustände als auch Operatoren mit der Zeit ändern.
+
+Das Schrödinger-Bild eignet sich vor allem zur Beschreibung von Problemen, in denen der Hamiltonoperator des Systems nicht explizit von der Zeit abhängt.
+
+[^3]: Ausnahme: Die Operatoren sind explizit zeitabhängig.
+
+### Heisenberg-Bild
+Das Heisenberg-Bild ist neben dem Schrödinger-Bild und dem Dirac-Bild eine der grundlegenden Formulierungen für den Umgang mit zeitabhängigen Problemen in der Quantenmechanik.
+
+Im Gegensatz zum öfter verwendeten Schrödinger-Bild steckt im Heisenberg-Bild die Zeitabhängigkeit nicht in den Zuständen, sondern den Observablen. Sind sowohl Zustände als auch Operatoren zeitabhängig, wird oft das Dirac-Bild verwendet.
+
+Anschaulich gesprochen rotieren im Schrödinger-Bild die Zustände im Zustands(vektor)raum, wohingegen sich im Heisenberg-Bild die Operationen auf dem Vektorraum unter den Zuständen hinweg rotieren.
+
+### Dirac-Bild / Wechselwirkungsbild
+Das Wechselwirkungsbild ist in der Quantenmechanik ein Modell für den Umgang mit zeitabhängigen Problemen unter Berücksichtigung von Wechselwirkungen. Dabei sind sowohl die Zustände zeitabhängig, wie es im Schrödinger-Bild der Fall ist, zusätzlich sind auch die Operatoren zeitabhängig, wie es im Heisenberg-Bild der Fall ist.
+
+Es wird insbesondere in der zeitabhängigen Störungstheorie verwendet.
+
 # 3. Postulate
 Die Quantenmechanik basiert auf $3$ Postulaten.
 
@@ -468,7 +492,7 @@ $$
 Sei ein Strahl Silberatome im Stern-Gerlach-Experiment auf den Zustand $\ket{z+}$ präperiert. Sei nun ein zweiter Magnet im Winkel $\varphi$ zum ersten Magneten aufgebaut. Dann ist der finale $\mathrm{up}$-Zustand $\ket{z+^\prime}=\hat U(\hat R_{2,\varphi})\ket{z+}$. Dann folgt die Wahrscheinlichkeit den Zustand $\ket{z+}$ zu messen $P_+=|\braket{z+^\prime|z+}|^2=|\cos(\frac{\varphi}{2})|^2$. Bei einer Drehung um $30^\circ$ ist $P_+(30^\circ)\approx 93\%$.
 
 ## Schrödingergleichung
-Die zeitliche Entwicklung eines Zustands $\Psi(t)$ eines abgeschlossenen, unbeobachteten Systems genügt der Schrödingergleichung mit dem hermiteschen Operator $\hat H$, dem sogenannten Hamiltonoperator des Systems. Der Faktor $\hbar^{-1}$ sorgt dafür, dass die Einheit der Eigenwerte eine Energie ist.
+Die zeitliche Entwicklung eines Zustands[^4] $\Psi(t)$ eines abgeschlossenen, unbeobachteten Systems genügt der Schrödingergleichung mit dem hermiteschen Operator $\hat H$, dem sogenannten Hamiltonoperator des Systems. Der Faktor $\hbar^{-1}$ sorgt dafür, dass die Einheit der Eigenwerte eine Energie ist.
 
 $$
   \dot{\Psi}(t) = -\frac{i}{\hbar} \hat H\Psi(t)
@@ -478,8 +502,12 @@ Die Schrödingergleichung beschreibt eine lineare Dynamik. Nicht-lineare Dynamik
 
 $$
   \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
-  \left<\frac{i}{\hbar} [\hat H, \hat A]\right>_{\Psi(t)}
+  \left<- \frac{i}{\hbar} [\hat A, \hat H]\right>_{\Psi(t)}
 $$
+
+Die Darstellung mit dem Kommutator ist analog zu der Zeitentwicklung eines Operators mithilfe des Zeitentwicklungsoperators.
+
+[^4]: Im Schrödinger-Bild
 
 ### Hamiltonfunktion
 In der klassischen Mechanik werden Zustände durch den Hamiltonian $H(\vec{x}, t)$ beschrieben, wobei $\vec{x}(t) = \left(\begin{smallmatrix}\vec{q}(t)\\\vec{p}(t)\end{smallmatrix}\right)\in\Gamma(\mathbb R^{2n})$ einen Punkt im Phasenraum $\Gamma$ beschreibt.
@@ -583,19 +611,22 @@ $$
 $$
 
 ### Zeitentwicklung von Operatoren
-Für zeitabhängige Operatoren $\hat{A}(t)$ mit $\hat{A}(0)=A$ können mithilfe des Zeitentwicklungsoperators entwickelt werden. Dies kann auch durch den Hamiltonoperator $\hat H$ dargestellt werden.
+Für zeitabhängige Operatoren $\hat{A}(t)$ mit $\hat{A}(0)=A$ können[^5] mithilfe des Zeitentwicklungsoperators entwickelt werden. Dies kann auch durch den Hamiltonoperator $\hat H$ dargestellt werden.
 
 $$
 \begin{aligned}
   \braket{A}_{\ket{\Psi(t)}} &= \braket{\Psi(0)|\hat U^\dagger(t)\hat A\hat U(t)|\Psi(0)} \\
-  \dot{\hat A}(t) &= \frac{i}{\hbar}[\hat H, \hat A(t)] \\
-  \hat{\hat A}(t) &= \hat U^\dagger(t)\hat A\hat U(t) \\
+  \dot{\hat A}(t) &= -\frac{i}{\hbar}[\hat A(t), \hat H]
+  = \frac{i}{\hbar}[\hat H, \hat A(t)] \\
+  \hat A(t) &= \hat U^\dagger(t)\hat A\hat U(t) \\
   \frac{\mathrm d}{\mathrm d t} \braket{\hat A}_{\Psi(t)} &=
   \left<\frac{i}{\hbar} [\hat H, \hat A]\right>_{\Psi(t)} \\
 \end{aligned}
 $$
 
 Hierbei sind $\braket{A}$ der Erwartungswert einer Observablen $A$ mit einem hermiteschen Operator $\hat A$ und $[\hat H, \hat A]$ der Kommutator.
+
+[^5]: im Heisenberg-Bild
 
 ## Erhaltungsgrößen
 Die Observable $A$ ist genau dann eine Erhaltungsgröße, wenn ihr Erwartungswert $\braket{A}_{\Psi(t)}$ für alle Lösungen der Schrödingergleichung konstant ist.
@@ -936,11 +967,11 @@ $$
 $$
 
 ## Quanten-Zeno-Effekt
-Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^2] Durch die Messung eines Zustand $\ket{\phi}$ wird das System diesem Zustand $\ket{\phi}$ präperiert. Wird dies häufig gemacht, so kann das System in $\ket{\phi}$ fixiert werden.
+Der Übergang eines quantenmechanischen Systems von einem Zustand in einen anderen kann durch wiederholte Messungen aufgehalten werden.[^6] Durch die Messung eines Zustand $\ket{\phi}$ wird das System diesem Zustand $\ket{\phi}$ präperiert. Wird dies häufig gemacht, so kann das System in $\ket{\phi}$ fixiert werden.
 
 Die Wahrscheinlichkeit, dass $N$ Messungen $M_\phi$ im zeitlichen Abstand $\tau$ das selbe Ergebnis liefern, ist nach der Bornschen Regel $P_N = |\braket{\phi|\Psi}|^2$, wenn vorher der Zustand $\ket{\Psi}$ vorherrschte. Wird häufig genug gemessen, geht die Wahrscheinlichkeit für den Wechsel in einen anderen Zustand gegen Null.
 
-[^2]: Benannt nach _Zenon von Elea_, von dem das [Pfeil-Paradoxon](https://de.wikipedia.org/wiki/Pfeil-Paradoxon) stammt.
+[^6]: Benannt nach _Zenon von Elea_, von dem das [Pfeil-Paradoxon](https://de.wikipedia.org/wiki/Pfeil-Paradoxon) stammt.
 
 # 6. Modellsysteme
 Zu den zentralen Modellen der Quantenmechanik zählen der Potentialkasten und das Doppelkastenpotential. Anhand des Doppelkastenpotentials kann man die Trennung von symmetrischen und antisymmetrischen Eigenzuständen durch Niveauaufspaltung verstehen.
@@ -1119,13 +1150,13 @@ $$
 Die Berechnung ist analog zu der der symmetrischen Eigenzustände. Hier gibt es neben den Randbedingungen $\tilde{\Psi}_ n(\pm a)=0$ und der Lösung der Schrödingergleichung bei $x=0$ noch eine weitere Bedingung, die eingehalten werden muss, nämlich die Anschlussbedingung. Diese fordert die Stetigkeit der Wellenfunktion, also dass für $\varepsilon\rightarrow0$ der gleiche Wert $\tilde{\Psi}_ n(-\varepsilon)=\tilde{\Psi}_ n(\varepsilon)$ gilt. Dies ist erfüllt, da $\tilde{\Psi}_ n(0)=0$.
 
 ### Niveauaufspaltung
-Die symmetrischen Eigenenergien $E_n$ sind kleiner als die antisymmetrischen Eigenenergien $\tilde{E}_n$, da $\Delta E_n=\tilde{E}_ n - E_n > 0$ positiv ist.[^3] Daher ist der symmetrische Zustand $\ket{\Psi_n}$ jeweils der $n$-te Grundzustand, $\ket{\tilde{\Psi}_n}$ ist der $n$-te angeregte (antisymmetrische) Zustand. Allerdings ist die Energiedifferenz $\Delta E_n$ beim Doppelkastenpotential sehr klein.
+Die symmetrischen Eigenenergien $E_n$ sind kleiner als die antisymmetrischen Eigenenergien $\tilde{E}_n$, da $\Delta E_n=\tilde{E}_ n - E_n > 0$ positiv ist.[^7] Daher ist der symmetrische Zustand $\ket{\Psi_n}$ jeweils der $n$-te Grundzustand, $\ket{\tilde{\Psi}_n}$ ist der $n$-te angeregte (antisymmetrische) Zustand. Allerdings ist die Energiedifferenz $\Delta E_n$ beim Doppelkastenpotential sehr klein.
 
 Die Oszillation zwischen den Kästen wird durch die Frequenz $\omega_n = \frac{\Delta E_n}{\hbar}$ beschrieben, die von der Niveauaufspaltung abhängt. Die Oszillation in den jeweiligen Kästen wird durch die Frequenz $\Omega_n=\frac{\tilde{E}_n}{\hbar}$ dargestellt, die von der Eigenenergie im angeregten Zustand abhängt. Die Frequenz der Quantenschwebung $\omega_n$ ist dabei deutlich kleiner als die Oszillation in den Potentialkästen $(\omega_n \ll \Omega_n)$.
 
 Dies kommt daher, dass der Hamiltonoperator in der Spektraldarstellung durch $\hat H=\mathds 1 \frac{E_n+\tilde{E} _ n}{2} + \sigma_z\frac{E_n-\tilde{E} _ n}{2}$ dargestellt werden kann. Der erste Term ist konstant, der zweite erzeugt die Dynamik. Durch diese Seperation kann der Zeitentwicklungsoperator $\hat U(t)$ in eine global wirkende Phase und einen Schwingungsterm mit der Pauli-Matrix $\sigma_z$ seperiert werden, also $\hat U(t)=\exp[i\frac{i}{\hbar}\Omega t]\cdot\exp[-\frac{i}{\hbar}\sigma_z\omega t]$. Nur der Term $\exp[-\frac{i}{\hbar}\sigma_\omega t]$ erzeugt die Dynamik.
 
-[^3]: Dies folgt aus dem Doppelkastenpotential
+[^7]: Dies folgt aus dem Doppelkastenpotential
 
 ### Superposition
 Die Superposition im Doppelkastenpotential kann durch den $n$-ten Grundzustand $\ket{\Psi}$ und den $n$-ten angeregten Zustand $\ket{\tilde{\Psi}}$ beschrieben werden.
@@ -1424,7 +1455,7 @@ $$
 ##### Eigenschaften
 Dazu stellt man den Ortsoperator und Impulsoperator mit den Leiteroperatoren dar und setzt diese in den Hamiltonoperator des harmonischen Oszillators ein. Dadurch hat der Operator $\hat N$ dasselbe Spektrum wie der Hamiltonoperator $\hat H$.
 
-Wenn $\nu$ ein Eigenwert von $\hat N$ ist, dann ist $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)$ ein Eigenwert zum Hamiltonoperator. Aus dem Kommutator der Leiteroperatoren folgt $\hatN^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist dann um $1$ erhöht.
+Wenn $\nu$ ein Eigenwert von $\hat N$ ist, dann ist $E_\nu=\hbar\omega\left(\nu+\frac{1}{2}\right)$ ein Eigenwert zum Hamiltonoperator. Aus dem Kommutator der Leiteroperatoren folgt $\hat N^\dagger\ket{n} = (1+n)\ket{n}$, der Eigenwert ist dann um $1$ erhöht.
 
 $N$ ist hermitesch, daher hat $N$ reelle Eigenwerte. Weiterhin ist $N$ positiv-semidefinit. Ähnlich wie beim Skalarprodukt bedeutet dies, dass der Eigenwert von $N$ nicht-negativ ist. Ist der betreffende Eigenzustand $\ket{\nu}=0$, so ist der Eigenwert $\nu>0$. Falls der Eigenwert $\nu=0$ verschwindet, ist der Eigenzustand $\ket{\nu}=0$ ebenfalls verschwunden.
 
@@ -1776,7 +1807,7 @@ Nach dem Messpostulat kann man einzelne Zustände mit einer bestimmbaren Wahrsch
 Das Produkt zweier Varianzen $\Delta \hat A_\Psi$ und $\Delta \hat B_\Psi$ von zwei Observablen $\hat A$ und $\hat B$ kann nicht kleiner werden, als der halbe Betrag des Erwartungswertes des Kommutators $[\hat A,\hat B]$ der Operatoren $\hat A$ und $\hat B$. Dazu müssen die Messungen von $\hat A$ und $\hat B$ an _unabhängigen_ Systemen im gleichen Zustand $\ket{\Psi}$ gemessen werden.
 
 ### Beweis
-Seien $\hat A$ und $\hat B$ Observablen, die durch hermitesche Operatoren dargestellt werden und sei $x\in\mathbb R$. Ohne Beschränkung der Allgemeinheit seien die Erwartungwerte von $\hat A$ und $\hat B$ $\braket{\hat A}_\Psi = \braket{\hat B}_\Psi = 0$.[^4] Dann kann damit die Unbestimmtheitsrelation gezeigt werden.
+Seien $\hat A$ und $\hat B$ Observablen, die durch hermitesche Operatoren dargestellt werden und sei $x\in\mathbb R$. Ohne Beschränkung der Allgemeinheit seien die Erwartungwerte von $\hat A$ und $\hat B$ $\braket{\hat A}_\Psi = \braket{\hat B}_\Psi = 0$.[^8] Dann kann damit die Unbestimmtheitsrelation gezeigt werden.
 
 $$
 \begin{aligned}
@@ -1802,7 +1833,7 @@ $$
 
 Durch quadratische Ergänzung kann die Gleichung $0\le a^2+b^2+xc$ zu $a^2b^2\ge \frac{c^2}{4}$ umgeformt werden, wenn $x=\frac{c}{2b^2}$ gewählt wird. Durch diese Wahl kann $x$ aus der Gleichung eliminiert werden. Daraus folgt die Unschärferelation.
 
-[^4]: Falls dies nicht der Fall ist, kann man Wertebereich um den entsprechenden Erwartungswert verschieben, um diesen Zustand zu erreichen.
+[^8]: Falls dies nicht der Fall ist, kann man Wertebereich um den entsprechenden Erwartungswert verschieben, um diesen Zustand zu erreichen.
 
 ### Orts- und Impulsungenauigkeit
 Der Ortsoperator $\hat x$ und der Impulsoperator $\hat p$ kommutieren nicht. Aus dem Kommutator folgt eine Unbestimmtheitsrelationen für Ort und Impuls.
@@ -2194,7 +2225,7 @@ Die Bell'sche Ungleichungen beschreiben Bedingungen, die ein Modell erfüllen mu
 Eine einfachere Formulierung der selben Idee ist die CHSH-Ungleichung.
 
 ### Die CHSH-Ungleichung
-Die CHSH[^5]-Ungleichung ist eine Variante der Bell'schen Ungleichungen, die leichter gemessen werden kann.
+Die CHSH[^9]-Ungleichung ist eine Variante der Bell'schen Ungleichungen, die leichter gemessen werden kann.
 
 Es wird ein korrelliertes System $AB$ mit gekoppelten Spins erzeugt. Diese Teilchen werden an zwei verschiedene Orte geschickt. In Teilsystem $A$ wird zufällig eine Eigenschaft aus der Menge $\{Q,R\}$ gemessen, wobei $q, r=\pm 1$ die möglichen Messergebnisse beschreibt. In System $B$ wird ebenso zufällig eine Eigenschaft aus der Menge $\{S,T\}$ gemessen, wobei $s,t=\pm 1$. Beispielsweise können $Q$ und $R$ die Spinkomponenten $S_3$ und $S_2$ beschreiben, während $S$ und $T$ auch Spinkomponenten beschreiben können, die nicht orthogonal zu $S_{2,3}$ sind.
 
@@ -2204,7 +2235,7 @@ $$
   M \equiv {\Large |}\overline{QS} - \overline{QT} + \overline{RS} + \overline{RT}{\Large |} \le 2
 $$
 
-[^5]: Benannt nach John Clauser, Michael Horne, Abner Shimony, Richard Holt
+[^9]: Benannt nach John Clauser, Michael Horne, Abner Shimony, Richard Holt
 
 #### Beweis der CHSH-Ungleichung nach Bell
 Die CHSH-Ungleichung ist zwar eine Vereinfachung der Bell'schen Ungleichungen, nach ihrer Veröffentlichung entwickelte Bell jedoch einen einfacheren Beweis. Dieser wird hier erläutert.
