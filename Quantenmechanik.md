@@ -283,6 +283,13 @@ Im Gegensatz zum öfter verwendeten Schrödinger-Bild steckt im Heisenberg-Bild 
 
 Anschaulich gesprochen rotieren im Schrödinger-Bild die Zustände im Zustands(vektor)raum, wohingegen sich im Heisenberg-Bild die Operationen auf dem Vektorraum unter den Zuständen hinweg rotieren.
 
+ Mit dem Kommutator $[\hat H, \hat A]$ folgt folgende Relation für eine Observable $A$, die durch den Operator $\hat A$ repräsentiert wird. Diese ist äquivalent zur Schrödingergleichung.
+
+$$
+  \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
+  \left<- \frac{i}{\hbar} [\hat A, \hat H]\right>_{\Psi(t)}
+$$
+
 ### Dirac-Bild / Wechselwirkungsbild
 Das Wechselwirkungsbild ist in der Quantenmechanik ein Modell für den Umgang mit zeitabhängigen Problemen unter Berücksichtigung von Wechselwirkungen. Dabei sind sowohl die Zustände zeitabhängig, wie es im Schrödinger-Bild der Fall ist, zusätzlich sind auch die Operatoren zeitabhängig, wie es im Heisenberg-Bild der Fall ist.
 
@@ -498,14 +505,9 @@ $$
   \dot{\Psi}(t) = -\frac{i}{\hbar} \hat H\Psi(t)
 $$
 
-Die Schrödingergleichung beschreibt eine lineare Dynamik. Nicht-lineare Dynamik verstößt gegen die spezielle Relativitätstheorie. Mit dem Kommutator $[\hat H, \hat A]$ folgt folgende Relation für eine Observable $A$, die durch den Operator $\hat A$ repräsentiert wird.
+Die Schrödingergleichung beschreibt eine lineare Dynamik. Nicht-lineare Dynamik verstößt gegen die spezielle Relativitätstheorie.
 
-$$
-  \frac{\mathrm d}{\mathrm d t} \braket{A}_{\Psi(t)} =
-  \left<- \frac{i}{\hbar} [\hat A, \hat H]\right>_{\Psi(t)}
-$$
-
-Die Darstellung mit dem Kommutator ist analog zu der Zeitentwicklung eines Operators mithilfe des Zeitentwicklungsoperators.
+Im Heisenberg-Bild gibt es eine analoge Gleichung für die Zeitentwicklung eines Operators die den Kommutator $- \frac{i}{\hbar} [\hat A, \hat H]$ verwendet.
 
 [^4]: Im Schrödinger-Bild
 
@@ -1091,7 +1093,7 @@ Nun sei $\Psi$ ein Eigenenergiezustand zur Energie $E$. Dann wird die stationär
 $$
   \Psi_E^{\prime\prime}(x) = \frac{2m}{\hbar}(u\delta(x) - E)\Psi_E(x)
 $$
-Für $x\neq0$ erhält man wie beim Potentialkasten die Lösung $\Psi_E=r\sin(kx)+s\cos(kx)$ mit $k=\frac{2mE}{\hbar^2}$. Das Verhalten bei $x=0$ ist dagegen anders zu bestimmen. In diesem Fall kann es symmetrische oder antisymmetrische Eigenzustände geben.
+Für $x\neq0$ erhält man wie beim Potentialkasten die Lösung $\Psi_E=r\sin(kx)+s\cos(kx)$ mit $k=\frac{\sqrt{2mE}}{\hbar}$. Das Verhalten bei $x=0$ ist dagegen anders zu bestimmen. In diesem Fall kann es symmetrische oder antisymmetrische Eigenzustände geben.
 
 ### symmetrische Zustände
 An der Stelle $x=0$ ist das Doppelkastenpotential schwieriger zu lösen als der Potentialkasten. Man kann symmetrische oder antisymmetrische Eigenzustände erhalten. Der symmetrische Eigenzustand $\ket{\Psi_n}$ ist der $n$-te Grundzustand.
@@ -1419,11 +1421,11 @@ $$
 $$
 
 ### Die Leiteroperatoren
-Der Erzeugeroperator $\hat a^\dagger$ und der Vernichteroperator $\hat a$ können einen Eigenzustand eines harmonischen Oszillators um ein Energieniveau anheben bzw. senken. Der Kommutator ergibt den Einheitsoperator.
+Der Erzeugeroperator $\hat a^\dagger$ und der Vernichteroperator $\hat a$ können einen Eigenzustand eines harmonischen Oszillators mit der charakteristischen Länge $l$ um ein Energieniveau anheben bzw. senken. Der Kommutator ergibt den Einheitsoperator.
 
 $$
 \begin{aligned}
-  \hat a &= \sqrt{\frac{m\omega}{2\hbar}}
+  \hat a &= \frac{1}{\sqrt{2}l}
   \left(
   \hat{x} + \frac{i\hat{p}}{m\omega}
   \right) \\
@@ -1563,9 +1565,11 @@ Dann kann der reelle Hamiltonoperator als $\hat H = \hat H_0 + \sum_{i=1}^n\lamb
 Man kann die zeitunabhängige Störungstheorie nutzen, wenn die Störung des Systems konstant in der Zeit ist, also wenn die Störung selbst zeitunabhängig ist.
 
 ### Entartung von Zuständen
-Man spricht in der Quantenphysik von Entartung, wenn zum selben Eigenwert einer Observablen mehrere voneinander linear unabhängige Eigenzustände existieren.
+Man spricht in der Quantenphysik von Entartung, wenn zum selben Eigenwert einer Observablen mehrere voneinander linear unabhängige Eigenzustände existieren. Dazu müssen die Energieniveaus für unterschiedliche Eigenzustände gleich sein.
 
-Dazu müssen die Energieniveaus für alle unterschiedlichen Eigenzustände $\forall \ket{m}\neq \ket{n}$ ungleich sein ($E_n\neq E_m$).
+$$
+  \exists \ket{m}\neq \ket{n}:\ E_n = E_m
+$$
 
 ### Nicht-entartete Zustände
 Die zeitunabhängige Störungstheorie soll hier für nicht-entartete Zustände angewandt werden. Das Fehlen von Entartung bedeutet, dass die Energieniveaus für $\forall m\neq n$ ungleich sind ($E_n\neq E_m$).
@@ -1680,11 +1684,11 @@ Falls das zeitabhängige Störungspotential $\hat V(t)=0$ verschwindet, ist die 
 $$
 \begin{aligned}
   i\hbar\ket{\dot{\Psi}(t)} &= (\hat H_0+\hat V(t))\ket{\Psi(t)} \\
-  \Rightarrow \ket{\Psi(t)} &= \hat U_0(t) \ket{\Psi(0)}
+  \ket{\Psi(t)} &= \hat U_0(t) \ket{\Psi(0)}
 \end{aligned}
 $$
 
-Den ersten Korrekturterm für die Übergangswahrscheinlichkeit $P_{nm}^{(1)}$ kann man über die Definition $P_{nm}^{(1)}(t)=|\braket{m|\Psi(t)}^{(1)}_I|^2$ berechnen, wobei $\ket{m}$ ein ungestörter Zustand ist und $\ket{\Psi(t)}_I^{(1)}$ der Störungszustand im Wechselwirkungsbild in erster Ordnung. Da $\ket{\Psi(t)}=\hat U_0(t)\ket{\Psi(t)}_I=\ket{\Psi(t)}_I^{(1)}$ folgt die Relation für die Übergangswahrscheinlichkeit in erster Ordnung.
+Den ersten Korrekturterm für die Übergangswahrscheinlichkeit $P_{nm}^{(1)}$ kann man über die Definition $P_{nm}^{(1)}(t)=|\braket{m|\Psi(t)}^{(1)}_I|^2$ berechnen, wobei $\ket{m}$ ein ungestörter Zustand ist und $\ket{\Psi(t)}_I^{(1)}$ der Störungszustand im Wechselwirkungsbild in erster Ordnung. Da $\ket{\Psi(t)}=\hat U_0(t)\ket{\Psi(t)}_I\equiv\ket{\Psi(t)}_I^{(1)}$ und $\ket{\Psi(0)}=\ket{n}$ gelten, folgt die Relation für die Übergangswahrscheinlichkeit in erster Ordnung.
 
 $$
 \begin{aligned}
@@ -1700,7 +1704,7 @@ $$
 ### Wechselwirkungsbild
 In der zeitabhängigen Störungstheorie wird die ungestörte $\hat H_0$-Dynamik von der störenden $\hat V(t)$-Dynamik getrennt. Dazu benutzt man das Wechselwirkungsbild.
 
-Hierzu sei $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (\hat H_0+\hat V(t))\ket{\Psi(t)}$ löst. Dann sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild, $\hat U_0^\dagger(t)$ ist der adjungierte Zeitentwicklungsoperator des ungestörten Systems.
+Seien $\ket{\Psi(t)}$ ein Zustand im ungestörten Schrödingerbild, das die Schrödingergleichung $i\hbar\ket{\dot{\Psi}(t)} = (\hat H_0+\hat V(t))\ket{\Psi(t)}$ löst und sei $\ket{\Psi(t)}_I$ ein Zustand im Wechselwirkungsbild, $\hat U_0^\dagger(t)$ ist der adjungierte Zeitentwicklungsoperator des ungestörten Systems.
 
 $$
   \ket{\Psi(t)}_I
@@ -1708,17 +1712,24 @@ $$
   = \exp\left[+i\frac{\hat H_0}{\hbar}t\right] \ket{\Psi(t)}
 $$
 
-Ohne Störung $(\hat V(t)=0)$ gilt mit dem Zeitentwicklungsoperatur $\hat U_0(t)$ die Relation $\ket{\Psi(t)}_I=\hat U_0(t)\ket{\Psi(0)}$.
+Dies entfernt die ungestörte Dynamik aus dem zeitabhängigen Zustand, ohne Störung $(\hat V(t)=0)$ ist der Zustand im Wechselwirkungsbild konstant gleich dem Zustand zum Zeitpunkt $0$ $(\ket{\Psi(t)}_I=\ket{\Psi(0)})$.
 
 Die Störungstheorie kann durch iteratives Lösen der Schrödingergleichung im Wechselwirkungsbild gelöst werden.
 
 #### Operatoren im Wechselwirkungsbild
-Ein Operator $\hat V(t)$ kann in das Wechselwirkungsbild transformiert werden. Diese Transformation erzeugt den Operator $\hat V_I(t)$ im Wechselwirkungsbild und ist folgendermaßen definiert. Damit kann die Schrödingergleichung im Wechselwirkungsbild aufgestellt werden.
+Ein Operator $\hat V(t)$ kann in das Wechselwirkungsbild transformiert werden. Diese Transformation erzeugt den Operator $\hat V_I(t)$ im Wechselwirkungsbild und ist folgendermaßen definiert. Damit kann die Schrödingergleichung im Wechselwirkungsbild aufgestellt werden. Dabei ist $\hat U_0(t)$ der Zeitentwicklungsoperator des ungestörten Systems
+
+$$
+  \hat V_I(t) = \hat U_0^\dagger(t) \hat V(t) \hat U_0(t)
+$$
+
+Wird $\hat V_I(t)$ auf einen Vektor $\ket{\Psi(0)}$ angewandt, beschreibt $\hat V_I(t)\ket{\Psi(0)}$ die Wirkung des Operators $\hat V(t)$ auf den Zustand $\ket{\Psi(t)}=\hat U_0(t)\ket{\Psi(0)}$, der ins Wechselwirkungsbild transformiert wurde wurde.
 
 $$
 \begin{aligned}
-  \hat V_I(t) &= \hat U_0^\dagger(t) \hat V(t) \hat U_0(t) \\
-  \hat V_I(t) &= \exp\left[+i\frac{\hat H_0}{\hbar}t\right] \hat V_0(t) \exp\left[-i\frac{\hat H_0}{\hbar}t\right]
+  \hat V_I(t)\ket{\Psi(0)}
+  &= \hat U_0^\dagger(t) \hat V(t) \cdot (\hat U_0(t) \ket{\Psi(0)}) \\
+  &= \hat U_0^\dagger(t) \cdot (\hat V(t) \ket{\Psi(t)})
 \end{aligned}
 $$
 
@@ -1731,6 +1742,15 @@ $$
 
 ### Störungstheorie in $n$-ter Ordnung
 Der Störungszustand in $n$-ter Ordnung wird durch die Wirkung der Störung auf den Störungszustand $n-1$-ter Ordnung beschrieben. In $0$-ter Ordnung gilt im Wechselwirkungsbild $i\hbar \ket{\dot{\Psi}(t)}_I^{(0)} = 0$, in $1$-ter Ordnung gilt $i\hbar \ket{\dot{\Psi}(t)}_I^{(1)} = \hat V_I(t) \ket{\Psi(t)}^{(0)}$ et cetera.
+
+$$
+\begin{aligned}
+  \ket{\Psi(t)}_I^{(0)} &= \ket{\Psi(0)} \\
+  i\hbar \ket{\dot{\Psi}(t)}_I^{(n)} &= \hat V_I(t) \ket{\Psi(t)}^{(n-1)}
+\end{aligned}
+$$
+
+Dadurch können die Störungszustände bis $2$-ter Ordnung folgendermaßen ermittelt werden. Das letzte Integral ist dabei extrem schwierig, da die Integrationsgrenze des inneren Integrals vom äußeren Integranten abhängt.
 
 $$
 \begin{aligned}
@@ -1916,9 +1936,9 @@ Nach der Messung ist der Erwartungswert $\braket{\hat x}_\Psi=x_n+\frac{L}{2}$ m
 ### Kommutierende Observablen
 Seien $\hat A$ und $\hat B$ hermitesche Operatoren. Genau dann, wenn sie kommutieren $([\hat A,\hat B]=0)$, dann gibt es eine gemeinsame Eigenbasis $\ket{\varphi_n}$ für beide Operatoren.
 
-Seien $\hat A$ und $\hat B$ Observablen, deren Operatoren kommutieren $([\hat A,\hat B]=0)$. Daraus folgt aus der Unschärferelation $\Delta \hat A_\Psi \Delta \hat B_\Psi \ge 0$. Diese Aussage ist zwar korrekt, aber nutzlos, da die Standardabweichung immer nicht-negativ ist.
+Seien $A$ und $B$ Observablen, deren Operatoren kommutieren $([\hat A,\hat B]=0)$. Daraus folgt aus der Unschärferelation $\Delta A_\Psi \Delta B_\Psi \ge 0$. Diese Aussage ist zwar korrekt, aber nutzlos, da die Standardabweichung immer nicht-negativ ist.
 
-Für beliebige Zustände $\ket{\Psi}$ sind die Unschärfen nicht-null. Dennoch gibt es Zustände, die exakt gemessen werden. Sei $\ket{a_n}$ ein Eigenzustand von $\hat A$, dann ist $\braket{\hat A}_{\ket{a_n}}=a_n$ mit $\Delta \hat A_{\ket{a_n}}=0$.
+Für beliebige Zustände $\ket{\Psi}$ sind die Unschärfen nicht-null. Dennoch gibt es Zustände, die exakt gemessen werden. Sei $\ket{a_n}$ ein Eigenzustand von $\hat A$, dann ist $\braket{A}_{\ket{a_n}}=a_n$ mit $\Delta A_{\ket{a_n}}=0$.
 
 Es gibt auch Zustände $\ket{\Psi}$, die zeitgleich Eigenzustände von $\hat A$ und $\hat B$ sind.
 
